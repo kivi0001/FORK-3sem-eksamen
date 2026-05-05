@@ -3,7 +3,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="">
-      <main className="">Hejjj natklub</main>
+      <main className="">
+        Hej Kia, vi tester nightclub
+      </main>
     </div>
   );
 }
