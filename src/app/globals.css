@@ -2,11 +2,110 @@
 
 :root {
   /* PRIMITIVES */
+  /* COLORS */
   --primary-light: oklch(97.614% 0.00011 271.152);
   --primary-dark: oklch(15.557% 0.0017 16.767);
   --pink: oklch(65.346% 0.24194 9.256);
   --medium-grey: oklch(82.032% 0.00009 271.152);
   --dark-grey: oklch(78.422% 0.00223 15.01);
+  --background: oklch(15.557% 0.0017 16.767);
+  --foreground: oklch(97.614% 0.00011 271.152);
+
+  /* FLUID FONT-SIZES */
+  --large: clamp(
+    0.8125rem,
+    0.3036rem + 2.2619cqi,
+    2rem
+  );
+  --medium-large: clamp(
+    2rem,
+    1.8393rem + 0.7143cqi,
+    2.375rem
+  );
+  --medium: clamp(
+    2rem,
+    1.6786rem + 1.4286cqi,
+    2.75rem
+  );
+  --medium-small: clamp(
+    1.25rem,
+    1.1429rem + 0.4762cqi,
+    1.5rem
+  );
+  --small: clamp(
+    1rem,
+    0.9464rem + 0.2381cqi,
+    1.125rem
+  );
+  --button-large: clamp(
+    1.25rem,
+    1.1429rem + 0.4762cqi,
+    1.5rem
+  );
+
+  /* NON-FLUID FONT-SIZES */
+  --non-fluid-medium: 24px;
+  --non-fluid-small: 18px;
+
+  /* FONT-WEIGHTS */
+  --weight-bold: 700;
+  --weight-medium: 500;
+  --weight-regular: 400;
+
+  /* LETTERSPACING */
+  --letterspace-wide: 100%;
+  --letterspace-medium: 7.5%;
+  --letterspace-narrow: 2%;
+
+  /* FLUID SPACING */
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,24—240 */
+  --fluid-24-240: clamp(
+    1.5rem,
+    -4.2857rem + 25.7143cqi,
+    15rem
+  );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,30—130 */
+  --fluid-30-130: clamp(
+    1.875rem,
+    -0.8036rem + 11.9048cqi,
+    8.125rem
+  );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,30—55 */
+  --fluid-30-55: clamp(
+    1.875rem,
+    1.2054rem + 2.9762cqi,
+    3.4375rem
+  );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,5—20 */
+  --fluid-5-20: clamp(
+    0.3125rem,
+    -0.0893rem + 1.7857cqi,
+    1.25rem
+  );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,12—24 */
+  --fluid-12-24: clamp(
+    0.75rem,
+    0.4286rem + 1.4286cqi,
+    1.5rem
+  );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,18—32 */
+  --fluid-18-32: clamp(
+    1.125rem,
+    0.75rem + 1.6667cqi,
+    2rem
+  );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,60—80 */
+  --fluid-60-80: clamp(
+    3.75rem,
+    3.2143rem + 2.381cqi,
+    5rem
+  );
 }
 
 @theme inline {
@@ -23,17 +122,99 @@
   --color-header-active: var(--pink);
   --color-button: var(--primary-light);
   --color-button-hover: var(--pink);
+  --color-headline: var(--primary-light);
 
-  /* FONT TOKES */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* FONT-SIZE TOKENS */
+  --font-home-h1: var(--large);
+  --font-home-h2: var(--medium-large);
+  --font-home-h3: var(--non-fluid-medium);
+  --font-home-track-h3: var(----medium-small);
+  --font-h1: var(--medium-large);
+  --font-h2: var(--non-fluid-medium);
+  --font-h3: var(--non-fluid-small);
+  --font-p: var(--small);
+  --font-input: var(--small);
+  --font-button: var(--small);
+  --font-event-form: var(--medium);
+  --font-book-h2: var(--medium);
+  --font-header-button: var(--button-large);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(15.557% 0.0017 16.767);
-    --foreground: oklch(97.614% 0.00011 271.152);
-  }
+  /* FONT WEIGHT TOKENS */
+  /* Home page */
+  --font-weight-home-h1: var(--weight-medium);
+  --font-weight-home-h2: var(--weight-medium);
+  --font-weight-home-track-h3: var(
+    --weight-medium
+  );
+  --font-weight-home-p: var(--weight-medium);
+
+  /* Standard weights */
+  --font-weight-h1: var(---weight-medium);
+  --font-weight-h2: var(--weight-medium);
+  --font-weight-h3: var(--weight-medium);
+  --font-weight-p: var(--weight-regular);
+  --font-weight-button: var(--weight-medium);
+  --font-weight-input: var(--weight-regular);
+
+  /* Special weights */
+  /* For: Event page, Comments, Form, Booking page, Header-buttons */
+  --font-weight-event-form: var(--weight-bold);
+  --font-weight-comments-date: var(
+    --weight-medium
+  );
+  --font-weight-comments: var(--weight-regular);
+  --font-weight-book-h2: var(--weight-bold);
+  --font-weight-header-button: var(
+    --weight-medium
+  );
+
+  /* TEXT LETTERSPACING */
+  /* Home page letter spacing */
+  --letter-spacing-home-h1: var(
+    --letterspace-wide
+  );
+  --letter-spacing-home-h2: var(
+    --letterspace-medium
+  );
+  --letter-spacing-home-h3: var(
+    --letterspace-narrow
+  );
+  --letter-spacing-home-track-h3: var(
+    --letterspace-medium
+  );
+
+  /* Standard letter spacings */
+  --letter-spacing-h1: var(--letterspace-medium);
+  --letter-spacing-h2: var(--letterspace-narrow);
+  --letter-spacing-h3: var(--letterspace-narrow);
+  --letter-spacing-p: var(--letterspace-narrow);
+  --letter-spacing-input: var(
+    --letterspace-narrow
+  );
+  --letter-spacing-button: var(
+    --letterspace-narrow
+  );
+
+  /* Special letter spacings for comments */
+  --letter-spacing-comments-date: var(
+    --letterspace-narrow
+  );
+  --letter-spacing-comments: var(
+    --letterspace-narrow
+  );
+
+  /* FLUID SPACING */
+  --margin-main: var(--fluid-24-240);
+
+  --spacing-large: var(--fluid-60-80);
+  --spacing-medium-to-large: var(--fluid-30-130);
+  --spacing-medium: var(--fluid-30-55);
+  --spacing-small: var(--fluid-5-20);
+
+  --padding-inline-input-field: var(
+    --fluid-12-24
+  );
+  --padding-block-input-field: var(--fluid-18-32);
 }
 
 body {
