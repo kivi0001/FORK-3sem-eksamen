@@ -2,11 +2,51 @@
 
 :root {
   /* PRIMITIVES */
+  /* COLORS */
   --primary-light: oklch(97.614% 0.00011 271.152);
   --primary-dark: oklch(15.557% 0.0017 16.767);
   --pink: oklch(65.346% 0.24194 9.256);
   --medium-grey: oklch(82.032% 0.00009 271.152);
   --dark-grey: oklch(78.422% 0.00223 15.01);
+  --background: oklch(15.557% 0.0017 16.767);
+  --foreground: oklch(97.614% 0.00011 271.152);
+
+  /* FLUID FONT-SIZES */
+  --large: clamp(
+    0.8125rem,
+    0.3036rem + 2.2619cqi,
+    2rem
+  );
+  --medium-large: clamp(
+    2rem,
+    1.8393rem + 0.7143cqi,
+    2.375rem
+  );
+  --medium: clamp(
+    2rem,
+    1.6786rem + 1.4286cqi,
+    2.75rem
+  );
+  --medium-small: clamp(
+    1.25rem,
+    1.1429rem + 0.4762cqi,
+    1.5rem
+  );
+  --small: clamp(
+    1rem,
+    0.9464rem + 0.2381cqi,
+    1.125rem
+  );
+  --button-large: clamp(
+    1.25rem,
+    1.1429rem + 0.4762cqi,
+    1.5rem
+  );
+
+  /* FONT-WEIGHTS */
+  --weight-bold: 700;
+  --weight-medium: 500;
+  --weight-regular: 400;
 }
 
 @theme inline {
@@ -23,17 +63,48 @@
   --color-header-active: var(--pink);
   --color-button: var(--primary-light);
   --color-button-hover: var(--pink);
+  --color-headline: var(--primary-light);
 
-  /* FONT TOKES */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* FONT-SIZE TOKENS */
+  --font-home-h1: var(--large);
+  --font-home-h2: var(--medium-large);
+  --font-home-track-h3: var(----medium-small);
+  --font-h1: var(--medium-large);
+  --font-event-form: var(--medium);
+  --font-book-h2: var(--medium);
+  --font-p: var(--small);
+  --font-input: var(--small);
+  --font-button: var(--small);
+  --font-header-button: var(--button-large);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(15.557% 0.0017 16.767);
-    --foreground: oklch(97.614% 0.00011 271.152);
-  }
+  /* FONT WEIGHT TOKENS */
+  /* Home page */
+  --font-weight-home-h1: var(--weight-medium);
+  --font-weight-home-h2: var(--weight-medium);
+  --font-weight-home-track-h3: var(
+    --weight-medium
+  );
+  --font-weight-home-p: var(--weight-medium);
+
+  /* Standard weights */
+  --font-weight-h1: var(---weight-medium);
+  --font-weight-h2: var(--weight-medium);
+  --font-weight-h3: var(--weight-medium);
+  --font-weight-p: var(--weight-regular);
+  --font-weight-button: var(--weight-medium);
+  --font-weight-input: var(--weight-regular);
+
+  /* Special weights */
+  /* For: Event page, Comments, Form, Booking page, Header-buttons */
+  --font-weight-event-form: var(--weight-bold);
+  --font-weight-comments-date: var(
+    --weight-medium
+  );
+  --font-weight-comments: var(--weight-regular);
+  --font-weight-book-h2: var(--weight-bold);
+  --font-weight-header-button: var(
+    --weight-medium
+  );
 }
 
 body {
