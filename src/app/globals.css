@@ -47,6 +47,11 @@
   --weight-bold: 700;
   --weight-medium: 500;
   --weight-regular: 400;
+
+  /* LETTERSPACING */
+  --letterspace-wide: 100%;
+  --letterspace-medium: 7.5%;
+  --letterspace-narrow: 2%;
 }
 
 @theme inline {
@@ -104,6 +109,41 @@
   --font-weight-book-h2: var(--weight-bold);
   --font-weight-header-button: var(
     --weight-medium
+  );
+
+  /* TEXT LETTERSPACING */
+  /* Home page */
+  --letter-spacing-home-h1: var(
+    --letterspace-wide
+  );
+  --letter-spacing-home-h2: var(
+    --letterspace-medium
+  );
+  --letter-spacing-home-h3: var(
+    --letterspace-narrow
+  );
+  --letter-spacing-home-track-h3: var(
+    --letterspace-medium
+  );
+
+  /* Standard spacings */
+  --letter-spacing-h1: var(--letterspace-medium);
+  --letter-spacing-h2: var(--letterspace-narrow);
+  --letter-spacing-h3: var(--letterspace-narrow);
+  --letter-spacing-p: var(--letterspace-narrow);
+  --letter-spacing-input: var(
+    --letterspace-narrow
+  );
+  --letter-spacing-button: var(
+    --letterspace-narrow
+  );
+
+  /* Special spacing for comments */
+  --letter-spacing-comments-date: var(
+    --letterspace-narrow
+  );
+  --letter-spacing-comments: var(
+    --letterspace-narrow
   );
 }
 
