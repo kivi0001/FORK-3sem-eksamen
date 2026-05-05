@@ -9,6 +9,13 @@ const nextConfig = {
         port: "4000",
         pathname: "/**",
       },
+      {
+        protocol: "http",
+        hostname:
+          "mmd3-nightclub-api.onrender.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
