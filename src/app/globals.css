@@ -43,6 +43,10 @@
     1.5rem
   );
 
+  /* NON-FLUID FONT-SIZES */
+  --non-fluid-medium: 24px;
+  --non-fluid-small: 18px;
+
   /* FONT-WEIGHTS */
   --weight-bold: 700;
   --weight-medium: 500;
@@ -73,13 +77,16 @@
   /* FONT-SIZE TOKENS */
   --font-home-h1: var(--large);
   --font-home-h2: var(--medium-large);
+  --font-home-h3: var(--non-fluid-medium);
   --font-home-track-h3: var(----medium-small);
   --font-h1: var(--medium-large);
-  --font-event-form: var(--medium);
-  --font-book-h2: var(--medium);
+  --font-h2: var(--non-fluid-medium);
+  --font-h3: var(--non-fluid-small);
   --font-p: var(--small);
   --font-input: var(--small);
   --font-button: var(--small);
+  --font-event-form: var(--medium);
+  --font-book-h2: var(--medium);
   --font-header-button: var(--button-large);
 
   /* FONT WEIGHT TOKENS */
@@ -112,7 +119,7 @@
   );
 
   /* TEXT LETTERSPACING */
-  /* Home page */
+  /* Home page letter spacing */
   --letter-spacing-home-h1: var(
     --letterspace-wide
   );
@@ -126,7 +133,7 @@
     --letterspace-medium
   );
 
-  /* Standard spacings */
+  /* Standard letter spacings */
   --letter-spacing-h1: var(--letterspace-medium);
   --letter-spacing-h2: var(--letterspace-narrow);
   --letter-spacing-h3: var(--letterspace-narrow);
@@ -138,7 +145,7 @@
     --letterspace-narrow
   );
 
-  /* Special spacing for comments */
+  /* Special letter spacings for comments */
   --letter-spacing-comments-date: var(
     --letterspace-narrow
   );
