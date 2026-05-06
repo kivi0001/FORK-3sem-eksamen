@@ -5,8 +5,9 @@ import HeaderButton from "./HeaderButton";
 
 const Header = () => {
   return (
-    <header className="flex justify-evenly">
-      <div>
+    <header className="flex justify-between border-y-(--pink) border-y-2">
+      <div className="border-s-transparent border-bs-(--pink) border-e-transparent border-be-transparent border-s-0 border-bs-40 border-e-40 border-be-0"></div>
+      <div className="py-4">
         <Image
           src="/assets/Logo.png"
           width={220}
@@ -26,6 +27,7 @@ const Header = () => {
           contact us
         </HeaderButton>
       </nav>
+      <div className="border-s-transparent border-bs-transparent border-e-transparent border-be-(--pink) border-s-40 border-bs-0 border-e-0 border-be-40"></div>
     </header>
   );
 };

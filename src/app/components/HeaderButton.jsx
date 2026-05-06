@@ -36,7 +36,7 @@ const HeaderButton = ({ children, href }) => {
         {children.split("").map((l, i) => {
           return (
             <motion.span
-              className="inline-block"
+              className="inline-block text-header-hover"
               variants={{
                 initial: { y: "100%" },
                 hovered: { y: 0 },

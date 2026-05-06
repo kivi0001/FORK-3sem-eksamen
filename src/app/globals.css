@@ -118,6 +118,7 @@
   --color-dates: var(--pink);
   --color-footerheadlines: var(--pink);
   --color-info: var(--pink);
+  --color-header-border: var(--pink);
   --color-header-hover: var(--pink);
   --color-header-active: var(--pink);
   --color-button: var(--primary-light);
