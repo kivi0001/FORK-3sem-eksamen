@@ -1,0 +1,32 @@
+/* HEADER */
+
+.header-wrapper {
+  container-type: inline-size;
+}
+
+.bar {
+  display: block;
+  width: 35px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+}
+
+@container (width < 700px) {
+  header nav {
+    display: none;
+  }
+}
+
+@container (width > 700px) {
+  .burger-container {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}

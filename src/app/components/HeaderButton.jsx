@@ -5,7 +5,7 @@ const STAGGER = 0.025;
 const HeaderButton = ({ children, href }) => {
   return (
     <motion.a
-      className="uppercase self-center relative block overflow-hidden whitespace-nowrap"
+      className="uppercase self-center font-(--font-weight-header-button) text-(length:--font-header-button) relative block overflow-hidden whitespace-nowrap"
       style={{ lineHeight: 0.8 }}
       href={href}
       initial="initial"
