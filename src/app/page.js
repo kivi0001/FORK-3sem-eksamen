@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PrimaryButton from "./components/buttons/PrimaryButton";
+import PrimaryButtons from "./components/buttons/PrimaryButtons";
 
 export default function Home() {
   return (
@@ -7,8 +7,7 @@ export default function Home() {
       <main className="">
         Hej Kia, vi tester nightclub
         <div>
-          {" "}
-          <PrimaryButton />
+          <PrimaryButtons textInput="click me" />
         </div>
       </main>
     </div>
