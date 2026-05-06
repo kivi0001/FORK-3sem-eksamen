@@ -1,5 +1,6 @@
 import PrimaryButtons from "./components/buttons/PrimaryButtons";
 import { SingleEventInfo } from "./components/events/SingleEventInfo";
+import { Suspense } from "react";
 export default function Home() {
   return (
     <div className="">

@@ -4,14 +4,14 @@ const nextConfig = {
   images: {
     dangerouslyAllowLocalIP: true,
     remotePatterns: [
-      // {
-      //   protocol: "http",
-      //   hostname: "localhost",
-      //   port: "4000",
-      //   pathname: "/**",
-      // },
       {
         protocol: "http",
+        hostname: "localhost",
+        port: "4000",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname:
           "mmd3-nightclub-api.onrender.com",
         port: "",

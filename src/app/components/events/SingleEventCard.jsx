@@ -14,11 +14,11 @@ const SingleEventCard = ({
       <h2>
         {date}
         <span>|</span>
-        <span></span>
+        <span>{date}</span>
       </h2>
       <p>{description}</p>
       <p>{alt}</p>
-      <PrimaryButtons />
+      <PrimaryButtons textInput="read more" />
     </div>
   );
 };

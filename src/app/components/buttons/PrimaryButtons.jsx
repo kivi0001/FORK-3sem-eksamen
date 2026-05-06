@@ -1,10 +1,10 @@
 "use client";
-import { color, motion } from "motion/react";
+import { motion } from "motion/react";
 
 const PrimaryButtons = ({ textInput, href }) => {
   return (
     <motion.a
-      className="relative inline-block w-fit overflow-hidden uppercase"
+      className="relative inline-block w-fit overflow-hidden uppercase py-2 px-4.5 place-items-center"
       href={href}
       initial="initial"
       whileHover="hovered"
@@ -12,7 +12,7 @@ const PrimaryButtons = ({ textInput, href }) => {
         hovered: { color: "var(--pink)" },
       }}
       transition={{
-        duration: 0.8,
+        duration: 0.5,
         ease: "easeInOut",
       }}
     >
@@ -26,7 +26,7 @@ const PrimaryButtons = ({ textInput, href }) => {
             },
           }}
           transition={{
-            duration: 0.8,
+            duration: 0.3,
             ease: "easeInOut",
           }}
         />
@@ -37,7 +37,7 @@ const PrimaryButtons = ({ textInput, href }) => {
             hovered: { x: 0 },
           }}
           transition={{
-            duration: 0.8,
+            duration: 0.3,
             ease: "easeInOut",
           }}
         />
@@ -49,7 +49,7 @@ const PrimaryButtons = ({ textInput, href }) => {
             hovered: { x: "-100%" },
           }}
           transition={{
-            duration: 0.5,
+            duration: 0.3,
             ease: "easeInOut",
           }}
         />
@@ -60,7 +60,7 @@ const PrimaryButtons = ({ textInput, href }) => {
             hovered: { x: 0 },
           }}
           transition={{
-            duration: 0.5,
+            duration: 0.3,
             ease: "easeInOut",
           }}
         />
