@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   images: {
     dangerouslyAllowLocalIP: true,
     remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "4000",
-        pathname: "/**",
-      },
+      // {
+      //   protocol: "http",
+      //   hostname: "localhost",
+      //   port: "4000",
+      //   pathname: "/**",
+      // },
       {
         protocol: "http",
         hostname:
@@ -18,6 +19,7 @@ const nextConfig = {
       },
     ],
   },
+  cacheComponents: true,
 };
 
 export default nextConfig;
