@@ -15,8 +15,7 @@ const Footer = () => {
             alt="Logo"
           />
           <p className="uppercase">
-            Have a good time a great time a lovely
-            fucking time
+            Have a good time
           </p>
           <div>
             <h3>Location</h3>
