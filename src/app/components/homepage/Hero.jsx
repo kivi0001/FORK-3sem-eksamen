@@ -23,9 +23,13 @@ const Hero = () => {
           height={100}
         ></Image>
       </div>
-      <div>
-        <button></button>
-        <button></button>
+      <div className="flex gap-5">
+        <button className="uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25">
+          view events
+        </button>
+        <button className="uppercase  cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#F72A78] to-[#B822B5]">
+          book table
+        </button>
       </div>
     </section>
   );
