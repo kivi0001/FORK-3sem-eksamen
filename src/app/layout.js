@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${UbuntuSans.variable}  h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <Header />
         {children}
       </body>
