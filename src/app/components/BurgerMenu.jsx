@@ -2,29 +2,40 @@
 import "@/app/custom.css";
 import { Popover } from "radix-ui";
 import HeaderButton from "./HeaderButton";
+import { RxCross2 } from "react-icons/rx";
 
 const BurgerMenu = () => {
   return (
     <div className="burger-container">
-      <Popover.Root>
+      <Popover.Root className="popover-root">
         <Popover.Trigger>
           <div className="trigger-div">
             <span className="popover-trigger"></span>
             <span className="popover-trigger"></span>
             <span className="popover-trigger"></span>
           </div>
+          <div className="close-div"></div>
         </Popover.Trigger>
         <Popover.Portal>
-          <Popover.Content className="flex flex-col gap-5 w-screen h-screen items-center justify-center">
-            <HeaderButton>home</HeaderButton>
-            <HeaderButton>events</HeaderButton>
-            <HeaderButton>
-              book table
-            </HeaderButton>
-            <HeaderButton>
-              contact us
-            </HeaderButton>
-            <Popover.Arrow />
+          <Popover.Content className="PopoverContent">
+            <Popover.Close
+              className="absolute top-0 right-5"
+              aria-label="Close"
+            >
+              <div className="bg-black">
+                <RxCross2 size={50}></RxCross2>
+              </div>
+            </Popover.Close>
+            <div className="flex flex-col gap-10 items-center justify-center w-screen h-screen">
+              <HeaderButton>home</HeaderButton>
+              <HeaderButton>events</HeaderButton>
+              <HeaderButton>
+                book table
+              </HeaderButton>
+              <HeaderButton>
+                contact us
+              </HeaderButton>
+            </div>
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
