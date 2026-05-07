@@ -1,40 +1,33 @@
 "use client";
 import "@/app/custom.css";
-import styles from "@/app/custom.css";
+import { Popover } from "radix-ui";
 import HeaderButton from "./HeaderButton";
-import { useState } from "react";
 
 const BurgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const openMenu = () => setIsOpen(!isOpen);
   return (
     <div className="burger-container">
-      <button popoverTarget="popup" className="">
-        <span className=""></span>
-        <span className=""></span>
-        <span className=""></span>
-      </button>
-
-      <div
-        className="dropdown-content"
-        id="popup"
-        popover="manual"
-      >
-        <div className="popup-container">
-          <HeaderButton href="#">
-            home
-          </HeaderButton>
-          <HeaderButton href="#">
-            events
-          </HeaderButton>
-          <HeaderButton href="#">
-            book table
-          </HeaderButton>
-          <HeaderButton href="#">
-            contact us
-          </HeaderButton>
-        </div>
-      </div>
+      <Popover.Root>
+        <Popover.Trigger>
+          <div className="trigger-div">
+            <span className="popover-trigger"></span>
+            <span className="popover-trigger"></span>
+            <span className="popover-trigger"></span>
+          </div>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content className="flex flex-col gap-5 w-screen h-screen items-center justify-center">
+            <HeaderButton>home</HeaderButton>
+            <HeaderButton>events</HeaderButton>
+            <HeaderButton>
+              book table
+            </HeaderButton>
+            <HeaderButton>
+              contact us
+            </HeaderButton>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
     </div>
   );
 };
