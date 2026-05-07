@@ -21,6 +21,10 @@
   background-color: #fff;
 }
 
+.PopoverContent {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 @container (width < 700px) {
   header nav {
     display: none;
@@ -30,10 +34,5 @@
 @container (width > 700px) {
   .burger-container {
     display: none;
-  }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
   }
 }
