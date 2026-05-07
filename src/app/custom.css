@@ -36,3 +36,27 @@
     display: none;
   }
 }
+
+/* HERO */
+
+.hero-image {
+  background: url("/assets/bg/header_bg_2.jpg")
+    no-repeat center/cover;
+
+  padding-block: 15rem;
+  position: relative;
+
+  > * {
+    z-index: 2;
+    position: relative;
+  }
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  opacity: 0.8;
+  z-index: 1;
+}
