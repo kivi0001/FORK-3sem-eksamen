@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Ubuntu } from "next/font/google";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const UbuntuSans = Ubuntu({
   variable: "--font-ubuntu-sans",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       className={`${UbuntuSans.variable}  h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Header />
         {children}
       </body>
     </html>
