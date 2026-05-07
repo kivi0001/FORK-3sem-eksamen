@@ -1,3 +1,9 @@
+import { ListEventInfo } from "@/app/components/events/ListEventInfo";
+
 export default function Events() {
-  return <main></main>;
+  return (
+    <main>
+      <ListEventInfo />
+    </main>
+  );
 }
