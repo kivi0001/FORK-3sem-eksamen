@@ -7,7 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 const BurgerMenu = () => {
   return (
     <div className="burger-container">
-      <Popover.Root>
+      <Popover.Root className="popover-root">
         <Popover.Trigger>
           <div className="trigger-div">
             <span className="popover-trigger"></span>
@@ -21,7 +21,11 @@ const BurgerMenu = () => {
             <Popover.Close
               className="absolute top-0 right-5"
               aria-label="Close"
-            ></Popover.Close>
+            >
+              <div className="bg-black">
+                <RxCross2 size={50}></RxCross2>
+              </div>
+            </Popover.Close>
             <div className="flex flex-col gap-10 items-center justify-center w-screen h-screen">
               <HeaderButton>home</HeaderButton>
               <HeaderButton>events</HeaderButton>
