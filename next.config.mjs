@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   images: {
     dangerouslyAllowLocalIP: true,
@@ -10,7 +11,7 @@ const nextConfig = {
         pathname: "/**",
       },
       {
-        protocol: "http",
+        protocol: "https",
         hostname:
           "mmd3-nightclub-api.onrender.com",
         port: "",
@@ -18,6 +19,7 @@ const nextConfig = {
       },
     ],
   },
+  cacheComponents: true,
 };
 
 export default nextConfig;
