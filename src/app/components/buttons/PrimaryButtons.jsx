@@ -1,0 +1,72 @@
+"use client";
+import { color, motion } from "motion/react";
+
+const PrimaryButtons = ({ textInput, href }) => {
+  return (
+    <motion.a
+      className="relative inline-block w-fit overflow-hidden uppercase"
+      href={href}
+      initial="initial"
+      whileHover="hovered"
+      variants={{
+        hovered: { color: "var(--pink)" },
+      }}
+      transition={{
+        duration: 0.8,
+        ease: "easeInOut",
+      }}
+    >
+      <div className="grid grid-cols-1">
+        <motion.span
+          className="absolute top-0 left-0 w-full h-0.5 border-t border-t-button inline-block"
+          variants={{
+            initial: { x: 0 },
+            hovered: {
+              x: "-100%",
+            },
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.span
+          className="absolute top-0 left-0 w-full h-0.5 border-t border-t-button-hover inline-block"
+          variants={{
+            initial: { x: "100%" },
+            hovered: { x: 0 },
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+        />
+        {textInput}
+        <motion.span
+          className="absolute bottom-0 left-0 w-full -h-0.5 border-t border-t-button inline-block rotate-180"
+          variants={{
+            initial: { x: 0 },
+            hovered: { x: "-100%" },
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.span
+          className="absolute bottom-0 left-0 w-full -h-0.5 border-b border-b-button-hover inline-block rotate-180"
+          variants={{
+            initial: { x: "100%" },
+            hovered: { x: 0 },
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+    </motion.a>
+  );
+};
+
+export default PrimaryButtons;
