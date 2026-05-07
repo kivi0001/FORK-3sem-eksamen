@@ -1,5 +1,5 @@
 import PrimaryButtons from "./components/buttons/PrimaryButtons";
-import { SingleEventInfo } from "./components/events/SingleEventInfo";
+import { ListEventInfo } from "./components/events/ListEventInfo";
 import { Suspense } from "react";
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
         Hej Kia, vi tester nightclub
         <div>
           <PrimaryButtons textInput="click me" />
-          <SingleEventInfo />
+          <ListEventInfo />
         </div>
       </main>
     </div>

@@ -1,7 +1,7 @@
 import { cacheLife } from "next/cache";
-import SingleEventCard from "./SingleEventCard";
+import ListEventCard from "./ListEventCard";
 
-export async function SingleEventInfo() {
+export async function ListEventInfo() {
   "use cache";
   cacheLife("hours");
   try {
@@ -13,9 +13,10 @@ export async function SingleEventInfo() {
 
     return FetchEvents.map((event) => {
       return (
-        <SingleEventCard
+        <ListEventCard
           key={event.id}
           date={event.date}
+          location={event.location}
           title={event.title}
           description={event.description}
           imagesrc={`${process.env.NEXT_PUBLIC_API_URL}${event.heroAsset?.url}`}

@@ -222,4 +222,18 @@ body {
   color: var(--foreground);
   font-family:
     var(--font-ubuntu-sans), sans-serif;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(24px, 240px)
+    [content]
+    [full-end];
+  /* margin: 0 var(--margin-main) 0
+    var(--margin-main); */
+}
+
+.fullbleed-events {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-area: full-start/full-end;
+  margin: 0;
 }
