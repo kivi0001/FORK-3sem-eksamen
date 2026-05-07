@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import HeaderButton from "./HeaderButton";
 import BurgerMenu from "./BurgerMenu";
 import "@/app/custom.css";
