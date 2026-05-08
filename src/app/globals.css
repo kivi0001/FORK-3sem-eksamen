@@ -118,6 +118,13 @@
     3.2143rem + 2.381cqi,
     5rem
   );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1240,20—40 */
+  --fluid-20-40: clamp(
+    1.25rem,
+    0.7386rem + 2.2727cqi,
+    2.5rem
+  );
 }
 
 @theme inline {
@@ -225,6 +232,7 @@
   --spacing-large: var(--fluid-60-80);
   --spacing-medium-to-large: var(--fluid-30-130);
   --spacing-medium: var(--fluid-30-55);
+  --spacing-small-medium: var(--fluid-20-40);
   --spacing-small: var(--fluid-5-20);
 
   --padding-inline-input-field: var(
@@ -308,7 +316,7 @@ footer {
 }
 
 .footer-img {
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .footer-wrapper {
@@ -317,7 +325,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   padding: 2rem 0 2rem 0;
   container-type: inline-size;
-  align-items: center;
+  align-items: start;
 }
 
 .clubinfo-wrapper {
@@ -335,45 +343,46 @@ footer {
 .club-info {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--spacing-small);
-}
-
-.newsandsocials-wrapper {
-  grid-column: 2;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-small);
-  padding-bottom: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .news-wrapper {
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small-medium);
+}
+
+.news {
+  display: flex;
   flex-direction: row;
-  gap: 1rem;
-  padding-top: var(--spacing-small);
+  gap: var(--spacing-small);
+  padding-bottom: var(--spacing-small);
 
   > img {
     width: 80px;
     height: 80px;
+    object-fit: cover;
+    align-self: start;
   }
 }
 
 .socialspost-wrapper {
-  grid-column: 3;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-small);
-  padding-bottom: 1rem;
+  gap: var(--spacing-small-medium);
+  margin-left: 1rem;
 }
 
 .socials-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
-  padding-top: var(--spacing-small);
+  padding-bottom: var(--spacing-small);
+  gap: var(--spacing-small);
 
   > svg {
     width: 40px;
+    object-fit: cover;
+    align-self: start;
   }
 }
 
@@ -420,7 +429,7 @@ footer {
 
 @container (width < 700px) {
   .socialspost-wrapper,
-  .newsandsocials-wrapper {
+  .news-wrapper {
     display: none;
   }
 

@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="relative bottom-0">
       <Image
-        className="footer-img "
+        className="footer-img brightness-25"
         src="/assets/bg/footerbg.jpg"
         layout="fill"
         objectFit="cover"
@@ -45,15 +45,15 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="newsandsocials-wrapper">
+        <div className="news-wrapper">
           <h3 className="uppercase text-footerheadlines text-(length:--font-home-track-h3)">
             News
           </h3>
-          <div className="news-wrapper">
+          <div className="news">
             <Image
               src="/assets/content-img/recent_post1.jpg"
-              width={80}
-              height={80}
+              width={50}
+              height={50}
               alt="DJ wearing cap playing music"
             />
             <div className="info-wrapper">
@@ -66,7 +66,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="news-wrapper">
+          <div className="news">
             <Image
               src="/assets/content-img/recent_post2.jpg"
               width={50}
