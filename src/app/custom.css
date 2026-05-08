@@ -40,7 +40,7 @@
 
 /* HERO */
 
-.hero-image {
+/* .hero-image {
   background: url("/assets/bg/header_bg_2.jpg")
     no-repeat center/cover;
 
@@ -51,15 +51,21 @@
     z-index: 1;
     position: relative;
   }
+} */
+
+.hero-image {
+  position: relative;
+  background: no-repeat center/cover;
+  height: 70vh;
+
+  > * {
+    z-index: 1;
+    /* position: relative; */
+  }
 }
 
-.hero-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: black;
-  opacity: 0.8;
-  z-index: 0;
+.image-party {
+  opacity: 0.3;
 }
 
 .pink-btn,
@@ -70,21 +76,8 @@
 
 .pink-btn:hover {
   background-position: right center;
-  /*   animation: hopla 3s ease-in-out 1; */
 }
 
 .black-btn:hover {
   background-color: oklch(8.811% 0.00455 17.93);
-}
-
-@keyframes hopla {
-  0% {
-    background: linear-gradient(
-      oklch(64.17% 0.2372 5.429),
-      #b822b5
-    );
-  }
-  100% {
-    background: oklch(55.879% 0.23493 329.085);
-  }
 }

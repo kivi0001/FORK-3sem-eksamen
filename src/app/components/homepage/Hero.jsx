@@ -2,34 +2,43 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="hero-image flex flex-col items-center">
-      <div>
-        <Image
-          alt="logo image with the text 'Night Club'"
-          className="logo-image"
-          src="/assets/icon/Logo.svg"
-          width={800}
-          height={200}
-        ></Image>
-        <h1 className="text-(length:--font-home-h1) text-center font-(--font-weight-home-h1) uppercase tracking-(--letter-spacing-home-h1)">
-          Have a good time
-        </h1>
-      </div>
-      <div>
-        <Image
-          alt="image of a pink decorative line"
-          src="/assets/bottom_line.png"
-          width={800}
-          height={100}
-        ></Image>
-      </div>
-      <div className="flex gap-5">
-        <button className="black-btn uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25">
-          view events
-        </button>
-        <button className="pink-btn uppercase border-2 border-white/50 cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]">
-          book table
-        </button>
+    <section className="hero-image flex flex-col items-center justify-center">
+      <Image
+        alt="background hero image of party people"
+        className="image-party"
+        src="/assets/bg/header_bg_2.jpg"
+        layout="fill"
+        objectFit="cover"
+      ></Image>
+      <div className="flex flex-col items-center ">
+        <div>
+          <Image
+            alt="logo image with the text 'Night Club'"
+            className="logo-image"
+            src="/assets/icon/Logo.svg"
+            width={800}
+            height={200}
+          ></Image>
+          <h1 className="text-(length:--font-home-h1) text-center font-(--font-weight-home-h1) uppercase tracking-(--letter-spacing-home-h1)">
+            Have a good time
+          </h1>
+        </div>
+        <div>
+          <Image
+            alt="image of a pink decorative line"
+            src="/assets/bottom_line.png"
+            width={800}
+            height={100}
+          ></Image>
+        </div>
+        <div className="flex gap-5">
+          <button className="black-btn uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25">
+            view events
+          </button>
+          <button className="pink-btn uppercase border-2 border-white/50 cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]">
+            book table
+          </button>
+        </div>
       </div>
     </section>
   );
