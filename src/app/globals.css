@@ -43,6 +43,12 @@
     1.5rem
   );
 
+  --small-p: clamp(
+    0.875rem,
+    0.8239rem + 0.2273cqi,
+    1rem
+  );
+
   /* NON-FLUID FONT-SIZES */
   --non-fluid-medium: 24px;
   --non-fluid-small: 18px;
@@ -140,6 +146,7 @@
   --font-event-form: var(--medium);
   --font-book-h2: var(--medium);
   --font-header-button: var(--button-large);
+  --font-footer-p: var(--small-p);
 
   /* FONT WEIGHT TOKENS */
   /* Home page */
@@ -282,4 +289,170 @@ main {
 
 .events-wrapper:nth-child(even) .events-content {
   grid-column: content-start / content-middle;
+}
+
+/* FOOTER */
+
+footer {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full;
+  padding: 1rem 0 1rem 0;
+}
+
+.footer-img {
+  opacity: 0.1;
+}
+
+.footer-wrapper {
+  display: grid;
+  grid-column: content-start / content-end;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  container-type: inline-size;
+}
+
+.clubinfo-wrapper {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logo {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.club-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  max-width: 250px;
+}
+
+.newsandsocials-wrapper {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.news-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 20px;
+
+  > img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.socialspost-wrapper {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.socials-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  padding-bottom: 1.5rem;
+  > svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* BOTTOM FOOTER STYLING */
+
+.bottom-wrapper {
+  display: grid;
+  grid-column: 1 / span 3;
+  grid-template-areas: "statement" "connect" "copyright";
+  grid-row: 2;
+  padding-top: 5rem;
+}
+
+.bottom-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-statement {
+  grid-area: "statement";
+  place-self: end;
+}
+
+.bottom-connect {
+  grid-area: "connect";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding-top: 10px;
+}
+
+.bottom-copyright {
+  grid-area: "copyright";
+  place-self: end;
+}
+
+@container (width < 700px) {
+  .socialspost-wrapper,
+  .newsandsocials-wrapper {
+    display: none;
+  }
+
+  .footer-wrapper,
+  .clubinfo-wrapper {
+    display: flex;
+    grid-column: 2;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    width: 250px;
+  }
+
+  .bottom-wrapper {
+    grid-template-areas: "connect" "statement" "copyright";
+    padding-top: 0;
+  }
+
+  .bottom-connect {
+    grid-area: "connect";
+    place-self: center;
+  }
+
+  .bottom-statement {
+    grid-area: "statement";
+    place-self: center;
+  }
+
+  .bottom-copyright {
+    grid-area: "copyright";
+    place-self: center;
+  }
+
+  .bottom-info {
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
