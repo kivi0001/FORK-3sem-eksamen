@@ -1,15 +1,35 @@
+"use client";
 import Image from "next/image";
 
+const heroImages = [
+  {
+    image: "img1",
+    link: "/assets/bg/header_bg_1.jpg",
+  },
+  {
+    image: "img2",
+    link: "/assets/bg/header_bg_2.jpg",
+  },
+];
+
 const Hero = () => {
+  var randomImage =
+    heroImages[
+      Math.floor(
+        Math.random() * heroImages.length,
+      )
+    ].link;
+
   return (
     <section className="hero-image flex flex-col items-center justify-center">
       <Image
         alt="background hero image of party people"
         className="image-party"
-        src="/assets/bg/header_bg_2.jpg"
+        src={randomImage}
         layout="fill"
         objectFit="cover"
       ></Image>
+
       <div className="flex flex-col items-center ">
         <div>
           <Image

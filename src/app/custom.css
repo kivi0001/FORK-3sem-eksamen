@@ -40,19 +40,7 @@
 
 /* HERO */
 
-/* .hero-image {
-  background: url("/assets/bg/header_bg_2.jpg")
-    no-repeat center/cover;
-
-  padding-block: 15rem;
-  position: relative;
-
-  > * {
-    z-index: 1;
-    position: relative;
-  }
-} */
-
+/* hero image */
 .hero-image {
   position: relative;
   background: no-repeat center/cover;
@@ -60,7 +48,6 @@
 
   > * {
     z-index: 1;
-    /* position: relative; */
   }
 }
 
@@ -68,6 +55,7 @@
   opacity: 0.3;
 }
 
+/* hero knapper */
 .pink-btn,
 .black-btn {
   transition: 0.5s;
