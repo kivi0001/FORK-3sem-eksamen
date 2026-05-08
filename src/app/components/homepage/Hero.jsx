@@ -27,7 +27,7 @@ const Hero = () => {
         <button className="uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25">
           view events
         </button>
-        <button className="uppercase  cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#F72A78] to-[#B822B5]">
+        <button className="pink-btn uppercase cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]">
           book table
         </button>
       </div>
