@@ -7,7 +7,9 @@ import Hero from "./components/homepage/Hero";
 export default function Home() {
   return (
     <main className="">
-      <Hero />
+      <Suspense>
+        <Hero />
+      </Suspense>
     </main>
   );
 }

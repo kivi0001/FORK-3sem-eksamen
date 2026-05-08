@@ -22,7 +22,8 @@
 }
 
 .PopoverContent {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2;
 }
 
 @container (width < 700px) {
@@ -39,42 +40,32 @@
 
 /* HERO */
 
+/* hero image */
 .hero-image {
-  background: url("/assets/bg/header_bg_2.jpg")
-    no-repeat center/cover;
-
-  padding-block: 15rem;
   position: relative;
+  background: no-repeat center/cover;
+  height: 70vh;
 
   > * {
-    z-index: 2;
-    position: relative;
+    z-index: 1;
   }
 }
 
-.hero-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: black;
-  opacity: 0.8;
-  z-index: 1;
+.image-party {
+  opacity: 0.3;
+}
+
+/* hero knapper */
+.pink-btn,
+.black-btn {
+  transition: 0.5s;
+  background-size: 200% auto;
 }
 
 .pink-btn:hover {
-  transform: fade-in;
-  background-color: oklch(
-    55.879% 0.23493 329.085
-  );
+  background-position: right center;
 }
 
-@keyframes fade-in {
-  from {
-    bottom: 0;
-    right: 0;
-  }
-  to {
-    top: 0;
-    left: 0;
-  }
+.black-btn:hover {
+  background-color: oklch(8.811% 0.00455 17.93);
 }
