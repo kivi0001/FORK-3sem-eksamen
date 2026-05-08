@@ -1,8 +1,6 @@
-import { main } from "framer-motion/client";
-import PrimaryButtons from "./components/buttons/PrimaryButtons";
-import { ListEventInfo } from "./components/events/ListEventInfo";
 import { Suspense } from "react";
 import Hero from "./components/homepage/Hero";
+import WelcomeSection from "./components/homepage/1: Welcome section/WelcomeSection";
 
 export default function Home() {
   return (
@@ -10,6 +8,7 @@ export default function Home() {
       <Suspense>
         <Hero />
       </Suspense>
+      <WelcomeSection />
     </main>
   );
 }
