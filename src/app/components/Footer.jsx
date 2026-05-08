@@ -5,91 +5,140 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="">
-      <section>
-        <div>
+    <footer className="relative bottom-0">
+      <Image
+        className="footer-img"
+        src="/assets/bg/footerbg.jpg"
+        layout="fill"
+        objectFit="cover"
+        alt="footer background"
+      />
+      <section className="footer-wrapper z-1">
+        <div className="clubinfo-wrapper">
           <Image
             src="/assets/icon/Logo_main.svg"
-            width={230}
+            width={150}
             height={50}
             alt="Logo"
+            className="logo"
           />
-          <p className="uppercase">
-            Have a good time
-          </p>
-          <div>
-            <h3>Location</h3>
-            <p>
-              Kompagnistræde 278 1265 Købehavn K
+          <div className="club-info">
+            <h3 className="uppercase text-footerheadlines mb-2">
+              Location
+            </h3>
+            <p className="text-(lenght: --font-footer-p) tracking-(--letter-spacing-p)">
+              Kompagnistræde 278
             </p>
-            <h3>Opening hours</h3>
-            <p>
+            <p className="text-(lenght: --font-footer-p) tracking-(--letter-spacing-p)">
+              1265 Købehavn K
+            </p>
+          </div>
+          <div className="club-info">
+            <h3 className="uppercase text-footerheadlines mb-2">
+              Opening hours
+            </h3>
+            <p className="text-(lenght: --font-footer-p) tracking-(--letter-spacing-p)">
               WED - THU 10:30 PM TO 3 AM SAT -
               SUN: 11 PM TO 5 AM
             </p>
           </div>
         </div>
-        <div>
-          <div>
-            <h3>News</h3>
+        <div className="newsandsocials-wrapper">
+          <h3 className="uppercase text-footerheadlines font-h2">
+            News
+          </h3>
+          <div className="news-wrapper">
             <Image
               src="/assets/content-img/recent_post1.jpg"
-              width={50}
-              height={50}
+              width={80}
+              height={80}
               alt="DJ wearing cap playing music"
             />
-            <p>
-              Lorem ipsum dolor sit amet
-              consectetur adipisicing elit.
-              Laboriosam, aspernatur quis!
-            </p>
-            <p>April 17, 2026</p>
+            <div className="info-wrapper">
+              <p className="text-(lenght: --font-footer-p) tracking-(--letter-spacing-p)">
+                Lorem Ipsum is simply dummy text
+                of the printing and typesetting.
+              </p>
+              <p className="uppercase text-dates text-(lenght: --font-footer-p) tracking-(--letter-spacing-p) mt-3">
+                April 17, 2026
+              </p>
+            </div>
           </div>
-          <div>
+          <div className="news-wrapper">
             <Image
               src="/assets/content-img/recent_post2.jpg"
               width={50}
               height={50}
               alt="DJ wearing cap playing music"
             />
-            <p>
-              Lorem ipsum dolor sit amet
-              consectetur adipisicing elit.
-              Laboriosam, aspernatur quis!
-            </p>
-            <p>April 17, 2026</p>
+            <div className="info-wrapper">
+              <p className="text-(lenght: --font-footer-p) tracking-(--letter-spacing-p)">
+                Lorem Ipsum is simply dummy text
+                of the printing and typesetting.
+              </p>
+              <p className="uppercase text-dates text-(lenght: --font-footer-p) tracking-(--letter-spacing-p) mt-3">
+                April 17, 2026
+              </p>
+            </div>
           </div>
         </div>
-        <div>
-          <div>
-            <h3>Recent Posts</h3>
-            <FaXTwitter />
-            <p>
-              It is a long established fact that a
-              reader will be distracted by the
-              readable...
-            </p>
-            <p>5 hours ago</p>
+        <div className="socialspost-wrapper">
+          <h3 className="uppercase text-footerheadlines">
+            Recent Posts
+          </h3>
+          <div className="socials-wrapper">
+            <FaXTwitter color="oklch(65.346% 0.24194 9.256)" />
+            <div className="socialsinfo-wrapper">
+              <p className="text-(lenght: --font-footer-p) tracking-(--letter-spacing-p)">
+                It is a long established fact that
+                a reader will be distracted by the
+                readable...
+              </p>
+              <p className="text-dates text-(lenght: --font-footer-p) tracking-(--letter-spacing-p) mt-3">
+                5 hours ago
+              </p>
+            </div>
           </div>
-          <div>
-            <FaXTwitter />
-            <p>
-              It is a long established fact that a
-              reader will be distracted by the
-              readable...
-            </p>
-            <p>5 hours ago</p>
+          <div className="socials-wrapper">
+            <FaXTwitter color="oklch(65.346% 0.24194 9.256)" />
+            <div className="socialsinfo-wrapper">
+              <p className="text-(lenght: --font-footer-p) tracking-(--letter-spacing-p)">
+                It is a long established fact that
+                a reader will be distracted by the
+                readable...
+              </p>
+              <p className="text-dates text-(lenght: --font-footer-p) tracking-(--letter-spacing-p) mt-3">
+                5 hours ago
+              </p>
+            </div>
           </div>
         </div>
-        <div>
-          <p>Night Club - All Rights Reserved</p>
-          <div>
-            <p>Stay Connected With Us</p>
-            <FaFacebookF />
-            <FaXTwitter />
-            <FaInstagram />
+        <div className="bottom-wrapper">
+          <div className="bottom-info">
+            <p className="bottom-statement">
+              Night Club - All Rights Reserved
+            </p>
+            <div className="bottom-connect">
+              <p>Stay Connected With Us</p>
+              <div className="bottom-icons">
+                <FaFacebookF
+                  size={25}
+                  className="border p-0.5"
+                />
+                <FaXTwitter
+                  size={25}
+                  className="border p-0.5"
+                />
+                <FaInstagram
+                  size={25}
+                  className="border p-0.5"
+                />
+              </div>
+            </div>
+            <p className="bottom-copyright">
+              Copyright © NightClub
+            </p>
           </div>
-          <p>Copyright © NightClub</p>
         </div>
       </section>
     </footer>
