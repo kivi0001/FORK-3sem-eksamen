@@ -69,3 +69,15 @@
 .black-btn:hover {
   background-color: oklch(8.811% 0.00455 17.93);
 }
+
+/* SEKTION 1: WELCOME */
+
+.welcome {
+  container-type: inline-size;
+}
+
+@container (width < 700px) {
+  .welcome-image-div {
+    flex-direction: column;
+  }
+}

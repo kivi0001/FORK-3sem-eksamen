@@ -1,14 +1,24 @@
 import Image from "next/image";
 
-const WelcomeCard = (link) => {
+const WelcomeCard = ({
+  link,
+  icon,
+  theme,
+  description,
+}) => {
   return (
     <div>
       <Image
         src={link}
         alt="a picture representing the theme"
-        layout="fill"
-        objectFit="cover"
+        width={500}
+        height={600}
       ></Image>
+      <div>
+        <Icon></Icon>
+        <h3>{theme}</h3>
+        <p>{description}</p>
+      </div>
     </div>
   );
 };
