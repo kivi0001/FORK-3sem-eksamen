@@ -22,7 +22,8 @@
 }
 
 .PopoverContent {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2;
 }
 
 @container (width < 700px) {
@@ -47,7 +48,7 @@
   position: relative;
 
   > * {
-    z-index: 2;
+    z-index: 1;
     position: relative;
   }
 }
@@ -58,23 +59,32 @@
   inset: 0;
   background: black;
   opacity: 0.8;
-  z-index: 1;
+  z-index: 0;
+}
+
+.pink-btn,
+.black-btn {
+  transition: 0.5s;
+  background-size: 200% auto;
 }
 
 .pink-btn:hover {
-  transform: fade-in;
-  background-color: oklch(
-    55.879% 0.23493 329.085
-  );
+  background-position: right center;
+  /*   animation: hopla 3s ease-in-out 1; */
 }
 
-@keyframes fade-in {
-  from {
-    bottom: 0;
-    right: 0;
+.black-btn:hover {
+  background-color: oklch(8.811% 0.00455 17.93);
+}
+
+@keyframes hopla {
+  0% {
+    background: linear-gradient(
+      oklch(64.17% 0.2372 5.429),
+      #b822b5
+    );
   }
-  to {
-    top: 0;
-    left: 0;
+  100% {
+    background: oklch(55.879% 0.23493 329.085);
   }
 }

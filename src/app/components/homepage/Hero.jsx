@@ -24,10 +24,10 @@ const Hero = () => {
         ></Image>
       </div>
       <div className="flex gap-5">
-        <button className="uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25">
+        <button className="black-btn uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25">
           view events
         </button>
-        <button className="pink-btn uppercase cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]">
+        <button className="pink-btn uppercase border-2 border-white/50 cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]">
           book table
         </button>
       </div>
