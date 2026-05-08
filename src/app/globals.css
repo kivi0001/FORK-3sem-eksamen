@@ -249,7 +249,7 @@ main {
 }
 
 .hero-image {
-  grid-column: full;
+  grid-column: full-start / full-end;
 }
 
 .events-wrapper,
