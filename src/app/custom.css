@@ -60,3 +60,21 @@
   opacity: 0.8;
   z-index: 1;
 }
+
+.pink-btn:hover {
+  transform: fade-in;
+  background-color: oklch(
+    55.879% 0.23493 329.085
+  );
+}
+
+@keyframes fade-in {
+  from {
+    bottom: 0;
+    right: 0;
+  }
+  to {
+    top: 0;
+    left: 0;
+  }
+}
