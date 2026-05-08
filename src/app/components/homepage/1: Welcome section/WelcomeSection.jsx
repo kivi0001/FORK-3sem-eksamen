@@ -10,19 +10,19 @@ const WelcomeSection = () => {
           link="/assets/content-img/thumb1.jpg"
           iconlink=""
           theme="nightclub"
-          description=""
+          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, ex!"
         />
         <WelcomeCard
           link="/assets/content-img/reastaurant_1.jpg"
           iconlink=""
           theme="restaurant"
-          description=""
+          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, ex!"
         />
         <WelcomeCard
           link="/assets/content-img/thumb2.jpg"
           iconlink=""
           theme="bar"
-          description=""
+          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, ex!"
         />
       </div>
     </section>
