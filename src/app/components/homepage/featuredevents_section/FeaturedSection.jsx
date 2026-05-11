@@ -6,9 +6,9 @@ const FeaturedSection = () => {
   return (
     <section className="featuredsection relative">
       <HomeHeadlines text="featured events" />
-      <div className="flex gap-4">
+      <ul className="full-width-scroller">
         <FeaturedSectionFetch />
-      </div>
+      </ul>
     </section>
   );
 };

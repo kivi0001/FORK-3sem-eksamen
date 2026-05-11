@@ -7,7 +7,7 @@ export async function FeaturedSectionFetch() {
   cacheLife("hours");
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/events?_limit=2`,
+      `${process.env.NEXT_PUBLIC_API_URL}/events`,
     );
 
     const fetchEvents = await response.json();

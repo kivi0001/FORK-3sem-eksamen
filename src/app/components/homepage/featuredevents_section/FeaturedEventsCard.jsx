@@ -10,7 +10,7 @@ const FeaturedEventsCard = ({
   location,
 }) => {
   return (
-    <div className="relative">
+    <li className="relative">
       <div className="image-hover relative">
         <Image
           className="w-full h-80 object-cover"
@@ -24,7 +24,7 @@ const FeaturedEventsCard = ({
           <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40"></div>
           <div className="flex justify-center mt-15">
             <Link href="#">
-              <button className="cursor-pointer bg-(--pink) py-2 px-4">
+              <button className="cursor-pointer bg-(--pink) py-2 px-4 uppercase">
                 book event
               </button>
             </Link>
@@ -38,11 +38,11 @@ const FeaturedEventsCard = ({
           <div className="mt-auto border-s-transparent border-bs-transparent border-e-(--pink) border-be-transparent border-s-0 border-bs-40 border-e-40 border-be-0"></div>
         </div>
       </div>
-      <div className="flex absolute justify-between p-1 gap-2 bg-(--pink) w-full">
+      <div className="flex justify-between p-1 gap-2 bg-(--pink) w-full">
         <p>{location}</p>
         <p>{date}</p>
       </div>
-    </div>
+    </li>
   );
 };
 
