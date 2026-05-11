@@ -5,11 +5,9 @@ import Image from "next/image";
 const FeaturedSection = () => {
   return (
     <section className="featuredsection relative">
-      <div className="">
-        <HomeHeadlines text="featured events" />
-        <div className="flex gap-4">
-          <FeaturedSectionFetch />
-        </div>
+      <HomeHeadlines text="featured events" />
+      <div className="flex gap-4">
+        <FeaturedSectionFetch />
       </div>
     </section>
   );

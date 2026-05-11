@@ -113,7 +113,7 @@
 /* featured card overlay */
 
 .featured-overlay-text {
-  transform: translate(-50%, -10%);
+  transform: translate(-50%, 0%);
 }
 
 /* featured card grid and background */

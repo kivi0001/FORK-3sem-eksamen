@@ -22,8 +22,12 @@ const FeaturedEventsCard = ({
 
         <div className="flex flex-col overlay border-y-(--pink) border-y-2">
           <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40"></div>
-          <div>
-            <Link href="#" />
+          <div className="flex justify-center mt-15">
+            <Link href="#">
+              <button className="cursor-pointer bg-(--pink) py-2 px-4">
+                book event
+              </button>
+            </Link>
           </div>
           <div className="w-full p-4 gap-2 featured-overlay-text absolute top-[50%] left-[50%]">
             <h3 className="font-(--font-weight-h3) text-(length:--font-h3) tracking-(--letter-spacing-home-h3) uppercase">
