@@ -276,7 +276,7 @@ main {
   grid-column: full-start / full-end;
 }
 
-.welcome {
+main section {
   grid-column: content;
 }
 

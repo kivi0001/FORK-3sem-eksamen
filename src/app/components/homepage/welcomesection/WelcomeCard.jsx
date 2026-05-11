@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const WelcomeCard = ({
   link,
-  icon,
+  iconlink,
   theme,
   description,
 }) => {
@@ -16,7 +16,15 @@ const WelcomeCard = ({
       ></Image>
       <div className="flex flex-col overlay border-y-(--pink) border-y-2">
         <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40"></div>
-        <div className="w-full p-4 flex flex-col gap-2 overlay-text absolute top-[50%] left-[50%]">
+        <div className="w-full p-4 justify-center items-center flex flex-col gap-2 overlay-text absolute top-[50%] left-[50%]">
+          <div className="mb-4 p-2 border-2 border-(--pink) rounded-md">
+            <Image
+              src={iconlink}
+              alt="an icon representing the theme"
+              width={50}
+              height={50}
+            />
+          </div>
           <h3 className=" text-(length:--font-home-track-h3) uppercase font-(--font-weight-h3)">
             {theme}
           </h3>
