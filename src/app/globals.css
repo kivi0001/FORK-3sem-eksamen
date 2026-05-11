@@ -461,3 +461,7 @@ footer {
     place-self: center;
   }
 }
+
+.gallery-section {
+  grid-column: full-start / full-end;
+}
