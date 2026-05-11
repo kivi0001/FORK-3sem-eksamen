@@ -136,10 +136,6 @@
 /* featured card scroller */
 
 ul.full-width-scroller {
-  /*  padding-inline: max(
-    0.5rem,
-    50% - var(--content-width) / 2
-  ); */
   scroll-padding-inline: 2rem;
   overflow-inline: auto;
   scroll-snap-type: inline mandatory;
