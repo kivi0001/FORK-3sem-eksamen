@@ -101,7 +101,34 @@
   opacity: 90%;
 }
 
+/* welcome card overlay */
+
 .overlay-text {
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+/* SEKTION 2: FEATURED CARD */
+
+/* featured card overlay */
+
+.featured-overlay-text {
+  transform: translate(-50%, -10%);
+}
+
+/* featured card grid and background */
+
+.featuredsection {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full-start / full-end;
+  padding-bottom: 6em;
+  margin-block: 4em;
+  background: url("/assets/bg/slider_bg_overlay.png")
+    no-repeat center/cover;
+
+  > * {
+    z-index: 1;
+    grid-column: content-start / content-end;
+  }
 }

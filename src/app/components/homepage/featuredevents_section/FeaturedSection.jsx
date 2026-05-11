@@ -1,12 +1,15 @@
 import HomeHeadlines from "../HomeHeadlines";
-import FeaturedEventsCard from "./FeaturedEventsCard";
+import { FeaturedSectionFetch } from "./FeaturedSectionFetch";
+import Image from "next/image";
 
 const FeaturedSection = () => {
   return (
-    <section>
-      <HomeHeadlines text="featured events" />
-      <div>
-        <FeaturedEventsCard></FeaturedEventsCard>
+    <section className="featuredsection relative">
+      <div className="">
+        <HomeHeadlines text="featured events" />
+        <div className="flex gap-4">
+          <FeaturedSectionFetch />
+        </div>
       </div>
     </section>
   );
