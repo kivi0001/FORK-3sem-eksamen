@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Hero from "./components/homepage/Hero";
 import WelcomeSection from "./components/homepage/welcomesection/WelcomeSection";
+import GallerySection from "./components/homepage/night_club_gallery/GallerySection";
 import FeaturedSection from "./components/homepage/featuredevents_section/FeaturedSection";
 import HomeHeadlines from "./components/homepage/HomeHeadlines";
 
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
       </Suspense>
       <WelcomeSection />
+      <GallerySection />
       <FeaturedSection />
     </main>
   );
