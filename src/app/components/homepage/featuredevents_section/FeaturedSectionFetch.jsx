@@ -33,17 +33,3 @@ export async function FeaturedSectionFetch() {
     );
   }
 }
-
-/* const FeaturedSection = () => {
-  return (
-    <section>
-      <HomeHeadlines text="featured events" />
-      <div>
-        <FeaturedEventsCard></FeaturedEventsCard>
-      </div>
-    </section>
-  );
-};
-
-export default FeaturedSection;
- */
