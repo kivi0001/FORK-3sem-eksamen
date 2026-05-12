@@ -14,25 +14,25 @@ const Gallery = ({
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-background/90 flex items-center justify-center z-50 p-4"
           onClick={() => setIsOpen(false)}
         >
-          <div className="relative max-w-4xl max-h-[90vh]">
+          <div className="relative max-w-4xl max-h-full bg-background pb-5 flex flex-col">
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute -top-10 right-0 text-white text-2xl"
+              className="absolute right-2 text-bodyfont text-3xl"
             >
               &times;
             </button>
             <img
               src={imagesrc}
               alt={descprition}
-              className="max-w-full max-h-[80vh] object-contain"
+              className="max-h-120 object-contain"
             />
-            <p className="text-white mt-4 text-center">
+            <p className="text-bodyfont mt-4 px-5 text-left text-(length:--font-h3) ">
               {alt}
             </p>
-            <div className="mt-4 flex justify-center">
+            <div className="mt-4 flex justify-end px-5">
               <PrimaryButtons textInput="read more" />
             </div>
           </div>
