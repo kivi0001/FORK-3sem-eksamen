@@ -9,6 +9,7 @@ const WelcomeCard = ({
   return (
     <div className="image-hover relative">
       <Image
+        className="w-full h-80 object-cover"
         src={link}
         alt="a picture representing the theme"
         width={500}

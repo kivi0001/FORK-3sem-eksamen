@@ -6,7 +6,7 @@ import "@/app/custom.css";
 
 const Header = () => {
   return (
-    <div className="header-wrapper">
+    <div className="header-wrapper sticky z-100 top-0 bg-background">
       <header className="flex justify-between border-y-(--pink) border-y-2">
         <div className="border-s-transparent border-bs-(--pink) border-e-transparent border-be-transparent border-s-0 border-bs-40 border-e-40 border-be-0"></div>
         <div className="py-4">
