@@ -1,6 +1,5 @@
 import HomeHeadlines from "../HomeHeadlines";
 import { FeaturedSectionFetch } from "./FeaturedSectionFetch";
-import Image from "next/image";
 
 const FeaturedSection = () => {
   return (
