@@ -1,4 +1,5 @@
 import PrimaryButtons from "../buttons/PrimaryButtons";
+import Link from "next/link";
 
 const SingleEventCard = ({
   date,
@@ -7,6 +8,7 @@ const SingleEventCard = ({
   imagesrc,
   alt,
   location,
+  slug,
 }) => {
   return (
     <div className="events-wrapper ">
@@ -31,7 +33,9 @@ const SingleEventCard = ({
           <p className="text-bodyfont text-font-p tracking-(--letter-spacing-p) leading-6">
             {description}
           </p>
-          <PrimaryButtons textInput="read more" />
+          <Link href={`/singleevent/${slug}`}>
+            Read More
+          </Link>
         </div>
       </div>
     </div>
