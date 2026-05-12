@@ -7,12 +7,16 @@ const Gallery = ({
 }) => {
   return (
     <>
-      <div>
-        <img src={imagesrc} alt={descprition} />
-      </div>
-      <div>
-        <p>{alt}</p>
-        <PrimaryButtons textInput={"read more"} />
+      <div className="gallery-wrapper">
+        <div className="gallery-container">
+          <img src={imagesrc} alt={descprition} />
+        </div>
+        <div className="hidden">
+          <p>{alt}</p>
+          <PrimaryButtons
+            textInput={"read more"}
+          />
+        </div>
       </div>
     </>
   );

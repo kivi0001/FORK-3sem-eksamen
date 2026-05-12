@@ -6,7 +6,7 @@ export async function GalleryInfo() {
   cacheLife("hours");
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/gallery`,
+      `${process.env.NEXT_PUBLIC_API_URL}/gallery?_limit=7`,
     );
 
     const FetchGallery = await response.json();

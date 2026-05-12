@@ -149,3 +149,29 @@ ul.full-width-scroller {
     scroll-snap-align: center;
   }
 }
+
+/* SECTION 3 - NIGHT CLUB GALLERY */
+
+.gallery-section {
+  grid-column: full-start / full-end;
+}
+
+.gallery-img-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.gallery-wrapper {
+  height: 320px;
+  flex: 1 1 21%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.gallery-container,
+.gallery-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

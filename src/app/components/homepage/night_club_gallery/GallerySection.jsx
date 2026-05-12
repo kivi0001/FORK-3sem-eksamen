@@ -5,7 +5,7 @@ const GallerySection = () => {
   return (
     <section className="gallery-section">
       <HomeHeadlines text="Night Club Callery" />
-      <div>
+      <div className="gallery-img-wrapper">
         <GalleryInfo />
       </div>
     </section>
