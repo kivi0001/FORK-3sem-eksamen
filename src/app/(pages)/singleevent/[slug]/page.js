@@ -1,6 +1,6 @@
 import Headline from "@/app/components/Headline";
 import CommentForm from "@/app/components/singleevent/CommentForm";
-import EventComments from "@/app/components/singleevent/EventComments";
+import { EventComments } from "@/app/components/singleevent/EventComments";
 import EventOverview from "@/app/components/singleevent/EventOverview";
 import { Suspense } from "react";
 
@@ -42,7 +42,7 @@ const Details = async ({ params }) => {
         schedule={event.schedule[2].time}
         content={event.content}
       />
-      <EventComments />
+      <EventComments id={event.id} />
       <CommentForm />
     </main>
   );

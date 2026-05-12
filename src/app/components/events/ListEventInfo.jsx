@@ -16,6 +16,7 @@ export async function ListEventInfo() {
         <ListEventCard
           key={event.id}
           slug={event.slug}
+          id={event.id}
           date={event.date}
           location={event.location}
           title={event.title}

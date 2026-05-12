@@ -1,11 +1,27 @@
 import Comment from "./Comment";
+import { cacheLife } from "next/cache";
 
-const EventComments = ({ commentsAmount }) => {
-  return (
-    <section>
-      <h2>{commentsAmount}</h2>
-    </section>
-  );
-};
+export async function EventComments({ id }) {
+  "use cache";
+  cacheLife("hours");
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${id}`,
+    );
 
-export default EventComments;
+    const fetchComments = await response.json();
+
+    return fetchComments.map((comment) => {
+      return (
+        <Comment
+          key={comment.eventId}
+          name={comment.name}
+          content={comment.content}
+          date={comment.date}
+        />
+      );
+    });
+  } catch (error) {
+    return <p>Failed to load comments...</p>;
+  }
+}
