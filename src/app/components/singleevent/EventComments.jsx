@@ -14,7 +14,7 @@ export async function EventComments({ id }) {
     return fetchComments.map((comment) => {
       return (
         <Comment
-          key={comment.eventId}
+          key={comment.id}
           name={comment.name}
           content={comment.content}
           date={comment.date}
