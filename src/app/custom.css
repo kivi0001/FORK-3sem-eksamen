@@ -175,3 +175,17 @@ ul.full-width-scroller {
   height: 100%;
   object-fit: cover;
 }
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 1.5s ease;
+}
+
+.gallery-hover:hover .gallery-overlay {
+  opacity: 100%;
+}
