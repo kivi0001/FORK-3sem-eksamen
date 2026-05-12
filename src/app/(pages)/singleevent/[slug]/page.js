@@ -1,4 +1,4 @@
-import HomeHeadlines from "@/app/components/homepage/HomeHeadlines";
+import Headline from "@/app/components/Headline";
 import CommentForm from "@/app/components/singleevent/CommentForm";
 import EventComments from "@/app/components/singleevent/EventComments";
 import EventOverview from "@/app/components/singleevent/EventOverview";
@@ -14,7 +14,7 @@ const SingleEvent = ({ params }) => {
   );
 };
 
-const Details = async ({ params, title }) => {
+const Details = async ({ params }) => {
   const { slug } = await params;
 
   const response = await fetch(
@@ -25,7 +25,7 @@ const Details = async ({ params, title }) => {
 
   return (
     <main>
-      <HomeHeadlines text={title}></HomeHeadlines>
+      <Headline text={event.title} />
       <EventOverview
         imagesrc={`${process.env.NEXT_PUBLIC_API_URL}${event.heroAsset?.url}`}
         alt={
