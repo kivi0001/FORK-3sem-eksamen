@@ -40,7 +40,7 @@ const Details = async ({ params }) => {
         ageRestriction={event.ageLimit}
         lineUp={event.lineup}
         schedule={event.schedule[2].time}
-        description={event.description}
+        content={event.content}
       />
       <EventComments />
       <CommentForm />

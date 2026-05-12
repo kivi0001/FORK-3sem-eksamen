@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Headline = ({ text }) => {
   return (
-    <div className="flex flex-col py-8 col-span-full relative h-70">
+    <div className="flex flex-col py-8 col-span-full relative h-60">
       <Image
         className="opacity-20 brightness-45"
         src="/assets/bg/footerbg.jpg"

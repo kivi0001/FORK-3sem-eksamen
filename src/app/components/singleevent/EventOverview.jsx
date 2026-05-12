@@ -13,10 +13,10 @@ const EventOverview = ({
   ageRestriction,
   lineUp,
   schedule,
-  description,
+  content,
 }) => {
   return (
-    <section>
+    <section className="mt-15">
       <div>
         <Image
           src={imagesrc}
@@ -25,48 +25,68 @@ const EventOverview = ({
           height={800}
         />
       </div>
-      <div>
-        <div>
-          <p>date:</p>
-          <p>{date}</p>
+      <div className="flex justify-between my-4 flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            date:
+          </p>
+          <p className="uppercase">{date}</p>
         </div>
-        <div>
-          <p>doors open:</p>
-          <p>{doorsOpen}</p>
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            doors open:
+          </p>
+          <p className="uppercase">{doorsOpen}</p>
         </div>
-        <div>
-          <p>event start:</p>
-          <p>{startTime}</p>
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            event start:
+          </p>
+          <p className="uppercase">{startTime}</p>
         </div>
-        <div>
-          <p>place:</p>
-          <p>{location}</p>
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            place:
+          </p>
+          <p className="uppercase">{location}</p>
         </div>
-        <div>
-          <p>category</p>
-          <p>{category}</p>
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            category:
+          </p>
+          <p className="uppercase">{category}</p>
+        </div>
+      </div>
+      <div className="flex justify-between mb-4 flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            price:
+          </p>
+          <p className="uppercase">{price}</p>
+        </div>
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            age:
+          </p>
+          <p className="uppercase">
+            {ageRestriction}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            schedule:
+          </p>
+          <p className="uppercase">{schedule}</p>
+        </div>
+        <div className="flex flex-wrap gap-1">
+          <p className="uppercase text-(--pink) font-bold">
+            lineup:
+          </p>
+          <p className="uppercase">{lineUp}</p>
         </div>
       </div>
       <div>
-        <div>
-          <p>price:</p>
-          <p>{price} kr.</p>
-        </div>
-        <div>
-          <p>age:</p>
-          <p>{ageRestriction}+</p>
-        </div>
-        <div>
-          <p>schedule:</p>
-          <p>{schedule}</p>
-        </div>
-        <div>
-          <p>lineup:</p>
-          <p>{lineUp}</p>
-        </div>
-      </div>
-      <div>
-        <p>{description}</p>
+        <p>{content}</p>
         <PrimaryButtons textInput="book now" />
       </div>
     </section>
