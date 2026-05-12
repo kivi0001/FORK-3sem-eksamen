@@ -85,9 +85,11 @@ const EventOverview = ({
           <p className="uppercase">{lineUp}</p>
         </div>
       </div>
-      <div>
-        <p>{content}</p>
-        <PrimaryButtons textInput="book now" />
+      <div className="flex flex-wrap mx-medium-to-large my-20">
+        <p className="w-[80ch]">{content}</p>
+        <div className="mt-auto ml-auto pt-10">
+          <PrimaryButtons textInput="book now" />
+        </div>
       </div>
     </section>
   );
