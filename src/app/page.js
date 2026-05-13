@@ -4,6 +4,7 @@ import WelcomeSection from "./components/homepage/welcomesection/WelcomeSection"
 import GallerySection from "./components/homepage/night_club_gallery/GallerySection";
 import FeaturedSection from "./components/homepage/featuredevents_section/FeaturedSection";
 import TestimonialsSection from "./components/homepage/testimonials_section/TestimonialsSection";
+import LatestVideo from "./components/latest_video/LatestVideoSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <FeaturedSection />
       <GallerySection />
       <TestimonialsSection />
+      <LatestVideo />
     </main>
   );
 }
