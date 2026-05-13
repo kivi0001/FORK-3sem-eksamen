@@ -189,3 +189,11 @@ ul.full-width-scroller {
 .gallery-hover:hover .gallery-overlay {
   opacity: 100%;
 }
+
+/* SECTION 5 - LATEST VIDEO */
+.video-container video {
+  display: grid;
+  grid-column: content-start / content-end;
+  place-items: center;
+  justify-content: center;
+}
