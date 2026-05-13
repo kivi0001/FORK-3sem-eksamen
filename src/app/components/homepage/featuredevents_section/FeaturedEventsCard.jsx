@@ -8,6 +8,7 @@ const FeaturedEventsCard = ({
   imagesrc,
   alt,
   location,
+  slug,
 }) => {
   return (
     <li className="relative">
@@ -23,7 +24,7 @@ const FeaturedEventsCard = ({
         <div className="flex flex-col overlay border-y-(--pink) border-y-2">
           <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40"></div>
           <div className="flex justify-center mt-15">
-            <Link href="#">
+            <Link href={`/singleevent/${slug}`}>
               <button className="cursor-pointer bg-(--pink) py-2 px-4 uppercase">
                 book event
               </button>
