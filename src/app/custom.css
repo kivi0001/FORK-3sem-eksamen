@@ -191,9 +191,13 @@ ul.full-width-scroller {
 }
 
 /* SECTION 5 - LATEST VIDEO */
-.video-container video {
-  display: grid;
+.video-section {
   grid-column: content-start / content-end;
-  place-items: center;
-  justify-content: center;
+}
+
+.video-container,
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
