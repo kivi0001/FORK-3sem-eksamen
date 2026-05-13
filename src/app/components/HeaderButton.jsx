@@ -2,12 +2,11 @@ import { motion } from "framer-motion";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
-const HeaderButton = ({ children, href }) => {
+const HeaderButton = ({ children }) => {
   return (
-    <motion.a
+    <motion.button
       className="uppercase self-center font-(--font-weight-header-button) text-(length:--font-header-button) relative block overflow-hidden whitespace-nowrap"
       style={{ lineHeight: 0.8 }}
-      href={href}
       initial="initial"
       whileHover="hovered"
     >
@@ -53,7 +52,7 @@ const HeaderButton = ({ children, href }) => {
           );
         })}
       </div>
-    </motion.a>
+    </motion.button>
   );
 };
 

@@ -34,7 +34,7 @@ const SingleEventCard = ({
             {description}
           </p>
           <Link href={`/singleevent/${slug}`}>
-            Read More
+            <PrimaryButtons textInput="book event"></PrimaryButtons>
           </Link>
         </div>
       </div>
