@@ -16,6 +16,15 @@ const EventOverview = ({
   schedule,
   content,
 }) => {
+  const newDate = new Date(Date(date));
+  let options = {
+    month: "long",
+    day: "numeric",
+  };
+  const actualDate = new Intl.DateTimeFormat(
+    "en-UK",
+    options,
+  ).format(newDate);
   return (
     <section className="mt-15">
       <div>
@@ -31,7 +40,9 @@ const EventOverview = ({
           <p className="uppercase text-(--pink) font-bold">
             date:
           </p>
-          <p className="uppercase">{date}</p>
+          <p className="uppercase">
+            {actualDate}
+          </p>
         </div>
         <div className="flex flex-wrap gap-1">
           <p className="uppercase text-(--pink) font-bold">
