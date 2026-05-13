@@ -1,9 +1,8 @@
 import Comment from "./Comment";
-import { cacheLife } from "next/cache";
 
 export async function EventComments({ id }) {
-  "use cache";
-  cacheLife("hours");
+  "use server";
+
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${id}`,
