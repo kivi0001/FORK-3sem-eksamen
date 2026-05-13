@@ -190,6 +190,18 @@ ul.full-width-scroller {
   opacity: 100%;
 }
 
+/* SECTION 5 - LATEST VIDEO */
+.video-section {
+  display: grid;
+  grid-column: full-start / full-end;
+}
+
+.video-container,
+.video-container video {
+  place-self: center;
+  object-fit: cover;
+}
+
 /* SEKTION 6: TESTIMONIALS */
 
 .testimonials-section {
@@ -214,14 +226,4 @@ ul.testimonials-scroller {
     flex: 1 0 300px;
     scroll-snap-align: center;
   }
-/* SECTION 5 - LATEST VIDEO */
-.video-section {
-  display: grid;
-  grid-column: full-start / full-end;
-}
-
-.video-container,
-.video-container video {
-  place-self: center;
-  object-fit: cover;
 }
