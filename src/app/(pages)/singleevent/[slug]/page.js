@@ -44,10 +44,10 @@ const Details = async ({ params }) => {
         schedule={event.schedule[2].time}
         content={event.content}
       />
-      <div>
+      <section className="commentsection">
         <AmountFetch id={event.id}></AmountFetch>
         <EventComments id={event.id} />
-      </div>
+      </section>
       <CommentForm />
     </main>
   );
