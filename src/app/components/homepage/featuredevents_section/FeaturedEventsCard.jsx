@@ -10,6 +10,18 @@ const FeaturedEventsCard = ({
   location,
   slug,
 }) => {
+  const newDate = new Date(date);
+  let options = {
+    hour: "numeric",
+    minute: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const actualDate = new Intl.DateTimeFormat(
+    "en-UK",
+    options,
+  ).format(newDate);
+
   return (
     <li className="relative">
       <div className="image-hover relative">
@@ -41,7 +53,7 @@ const FeaturedEventsCard = ({
       </div>
       <div className="flex justify-between p-1 gap-2 bg-(--pink) w-full">
         <p>{location}</p>
-        <p>{date}</p>
+        <p>{actualDate}</p>
       </div>
     </li>
   );

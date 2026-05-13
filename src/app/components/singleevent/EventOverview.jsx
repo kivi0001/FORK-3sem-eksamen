@@ -16,9 +16,29 @@ const EventOverview = ({
   schedule,
   content,
 }) => {
+  const newDate = new Date(date);
+  let options = {
+    month: "long",
+    day: "numeric",
+  };
+  const actualDate = new Intl.DateTimeFormat(
+    "en-UK",
+    options,
+  ).format(newDate);
+
+  const newDoors = new Date(doorsOpen);
+  let openOptions = {
+    hour: "numeric",
+    minute: "numeric",
+  };
+  const actualDoorsOpen = new Intl.DateTimeFormat(
+    "en-UK",
+    openOptions,
+  ).format(newDoors);
+
   return (
     <section className="mt-15">
-      <div>
+      <div className="flex items-center justify-center">
         <Image
           src={imagesrc}
           alt={alt}
@@ -31,13 +51,17 @@ const EventOverview = ({
           <p className="uppercase text-(--pink) font-bold">
             date:
           </p>
-          <p className="uppercase">{date}</p>
+          <p className="uppercase">
+            {actualDate}
+          </p>
         </div>
         <div className="flex flex-wrap gap-1">
           <p className="uppercase text-(--pink) font-bold">
             doors open:
           </p>
-          <p className="uppercase">{doorsOpen}</p>
+          <p className="uppercase">
+            {actualDoorsOpen}
+          </p>
         </div>
         <div className="flex flex-wrap gap-1">
           <p className="uppercase text-(--pink) font-bold">
