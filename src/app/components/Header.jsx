@@ -18,16 +18,16 @@ const Header = () => {
           ></Image>
         </div>
         <nav className="flex gap-(--padding-block-input-field) place-content-center justify-between">
-          <HeaderButton href="#">
+          <HeaderButton href="/">
             home
           </HeaderButton>
-          <HeaderButton href="#">
+          <HeaderButton href="/events">
             events
           </HeaderButton>
-          <HeaderButton href="#">
+          <HeaderButton href="/booktable">
             book table
           </HeaderButton>
-          <HeaderButton href="#">
+          <HeaderButton href="/contact">
             contact us
           </HeaderButton>
         </nav>
