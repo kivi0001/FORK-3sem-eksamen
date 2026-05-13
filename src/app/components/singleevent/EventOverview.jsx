@@ -16,7 +16,7 @@ const EventOverview = ({
   schedule,
   content,
 }) => {
-  const newDate = new Date(Date(date));
+  const newDate = new Date(date);
   let options = {
     month: "long",
     day: "numeric",
