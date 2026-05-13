@@ -5,7 +5,7 @@ const STAGGER = 0.025;
 const HeaderButton = ({ children }) => {
   return (
     <motion.button
-      className="uppercase self-center font-(--font-weight-header-button) text-(length:--font-header-button) relative block overflow-hidden whitespace-nowrap"
+      className="uppercase self-center font-(--font-weight-header-button) text-(length:--font-header-button) relative block overflow-hidden whitespace-nowrap cursor-pointer"
       style={{ lineHeight: 0.8 }}
       initial="initial"
       whileHover="hovered"

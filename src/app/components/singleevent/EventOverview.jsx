@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PrimaryButtons from "../buttons/PrimaryButtons";
+import Link from "next/link";
 
 const EventOverview = ({
   imagesrc,
@@ -88,7 +89,9 @@ const EventOverview = ({
       <div className="flex flex-wrap mx-medium-to-large my-20">
         <p className="w-[80ch]">{content}</p>
         <div className="mt-auto ml-auto pt-10">
-          <PrimaryButtons textInput="book now" />
+          <Link href="/booktable">
+            <PrimaryButtons textInput="book now" />
+          </Link>
         </div>
       </div>
     </section>
