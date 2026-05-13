@@ -14,7 +14,6 @@ const Gallery = ({
         translateX: "-100%",
       }}
       whileInView={{ opacity: 1, translateX: 0 }}
-      viewport={{ once: true }}
       transition={{ duration: 1 }}
       className="gallery-wrapper gallery-hover relative cursor-pointer"
       onClick={onClick}

@@ -6,6 +6,8 @@ import {
 } from "framer-motion";
 import Gallery from "./Gallery";
 import PrimaryButtons from "../../buttons/PrimaryButtons";
+import { BiSolidLeftArrow } from "react-icons/bi";
+import { BiSolidRightArrow } from "react-icons/bi";
 
 export default function GalleryLightBox({
   initialImages,
@@ -65,35 +67,50 @@ export default function GalleryLightBox({
           >
             <button
               onClick={prevImage}
-              className="absolute left-100 text-white text-5xl z-2 hover:text-button-hover"
+              className="absolute left-50 text-white text-3xl z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
             >
-              ‹
+              <BiSolidLeftArrow />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-100 text-white text-5xl z-2 hover:text-button-hover"
+              className="absolute right-50 text-white text-3xl z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
             >
-              ›
+              <BiSolidRightArrow />
             </button>
             <button
               onClick={closeLightbox}
-              className="relative -top-65 left-180 right-0 text-white text-3xl z-20 hover:text-button-hover"
+              className="absolute top-25 right-85 text-white text-3xl z-20 hover:text-button-hover hover:cursor-pointer"
             >
               X
             </button>
 
             <motion.div
-              key={selectedImage.id}
-              layoutId={`img-${selectedImage.id}`}
-              className="relative max-w-3xl bg-background pb-5 flex flex-col  overflow-hidden"
+              key={currentIndex}
+              initial={{
+                opacity: 0,
+                translateX: "100%",
+              }}
+              animate={{
+                opacity: 1,
+                translateX: 0,
+              }}
+              exit={{
+                opacity: 0,
+                translateX: "-100%",
+              }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.4,
+              }}
+              className="relative max-w-full h-fit bg-background pb-5 flex flex-col overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={`${process.env.NEXT_PUBLIC_API_URL}${selectedImage.asset?.url}`}
-                className="max-h-[70vh] object-contain"
+                className=" object-cover"
                 alt=""
               />
-              <div className="px-6 py-4">
+              <div className="flex-1 flex flex-col justify-between p-6">
                 <p className="text-bodyfont text-xl font-semibold">
                   {selectedImage.asset?.alt ||
                     selectedImage.asset
