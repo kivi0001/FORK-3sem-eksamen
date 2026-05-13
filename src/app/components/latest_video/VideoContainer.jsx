@@ -37,7 +37,7 @@ export default function VideoContainer() {
       <VideoComponent
         src={videoPlaylist[currentVideoIndex]}
       />
-      <div className="flex justify-center gap-x-6">
+      <div className="flex justify-center gap-x-6 mt-10">
         <button
           onClick={previousVideo}
           className="py-2 px-2 text-white border"
