@@ -10,6 +10,17 @@ const SingleEventCard = ({
   location,
   slug,
 }) => {
+  const newDate = new Date(date);
+  let options = {
+    hour: "numeric",
+    minute: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const actualDate = new Intl.DateTimeFormat(
+    "en-UK",
+    options,
+  ).format(newDate);
   return (
     <div className="events-wrapper ">
       <div className="events-wrapper-content">
@@ -21,7 +32,7 @@ const SingleEventCard = ({
             {title}
           </h2>
           <h3 className="text-info">
-            {date}
+            {actualDate}
             <span className="text-divider">
               {" "}
               |{" "}
