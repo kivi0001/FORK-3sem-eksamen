@@ -1,4 +1,6 @@
 "use client";
+import { BiSolidLeftArrow } from "react-icons/bi";
+import { BiSolidRightArrow } from "react-icons/bi";
 
 import { useState } from "react";
 import VideoComponent from "./VideoComponent";
@@ -31,13 +33,23 @@ export default function VideoContainer() {
   };
 
   return (
-    <div>
-      <button onClick={previousVideo}>◀</button>
+    <div className="video-container place-items-center mb-20">
       <VideoComponent
         src={videoPlaylist[currentVideoIndex]}
       />
-      <div>
-        <button onClick={nextVideo}>▶</button>
+      <div className="flex justify-center gap-x-6">
+        <button
+          onClick={previousVideo}
+          className="py-2 px-2 text-white border"
+        >
+          <BiSolidLeftArrow size={25} />
+        </button>
+        <button
+          onClick={nextVideo}
+          className="py-2 px-2 text-white border"
+        >
+          <BiSolidRightArrow size={25} />
+        </button>
       </div>
     </div>
   );
