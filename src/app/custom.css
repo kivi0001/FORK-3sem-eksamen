@@ -203,6 +203,43 @@ ul.full-width-scroller {
   }
 }
 
+/* SEKTION 4: NIGHT CLUB TRACK */
+
+ul.artists-scroller {
+  scroll-padding-inline: 2rem;
+  overflow-inline: auto;
+  scroll-snap-type: inline mandatory;
+  list-style: none;
+  display: flex;
+  height: fit-content;
+
+  & li {
+    flex: 1 0 250px;
+    scroll-snap-align: center;
+  }
+}
+
+.track-active-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1.5s ease;
+  background-color: oklch(0% 0 0);
+}
+
+.artist-track:hover .track-active-overlay {
+  opacity: 90%;
+}
+
+.play-button:focus .track-active-overlay {
+  opacity: 90%;
+}
+
 /* SECTION 5 - LATEST VIDEO */
 .video-section {
   display: grid;
