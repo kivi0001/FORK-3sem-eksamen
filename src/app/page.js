@@ -5,8 +5,6 @@ import GallerySection from "./components/homepage/night_club_gallery/GallerySect
 import FeaturedSection from "./components/homepage/featuredevents_section/FeaturedSection";
 import TestimonialsSection from "./components/homepage/testimonials_section/TestimonialsSection";
 import LatestVideo from "./components/latest_video/LatestVideoSection";
-import TrackPlayer from "./components/homepage/club_track_section/TrackPlayer";
-
 export default function Home() {
   return (
     <main className="">
@@ -18,7 +16,6 @@ export default function Home() {
       <GallerySection />
       <LatestVideo />
       <TestimonialsSection />
-      <TrackPlayer />
     </main>
   );
 }
