@@ -1,4 +1,3 @@
-import HomeHeadlines from "../HomeHeadlines";
 import FeaturedEventsCard from "./FeaturedEventsCard";
 import { cacheLife } from "next/cache";
 
@@ -15,6 +14,7 @@ export async function FeaturedSectionFetch() {
       return (
         <FeaturedEventsCard
           key={event.id}
+          slug={event.slug}
           date={event.date}
           location={event.location}
           title={event.title}

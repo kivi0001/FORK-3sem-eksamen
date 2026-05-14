@@ -8,7 +8,20 @@ const FeaturedEventsCard = ({
   imagesrc,
   alt,
   location,
+  slug,
 }) => {
+  const newDate = new Date(date);
+  let options = {
+    hour: "numeric",
+    minute: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const actualDate = new Intl.DateTimeFormat(
+    "en-UK",
+    options,
+  ).format(newDate);
+
   return (
     <li className="relative">
       <div className="image-hover relative">
@@ -23,7 +36,7 @@ const FeaturedEventsCard = ({
         <div className="flex flex-col overlay border-y-(--pink) border-y-2">
           <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40"></div>
           <div className="flex justify-center mt-15">
-            <Link href="#">
+            <Link href={`/singleevent/${slug}`}>
               <button className="cursor-pointer bg-(--pink) py-2 px-4 uppercase">
                 book event
               </button>
@@ -40,7 +53,7 @@ const FeaturedEventsCard = ({
       </div>
       <div className="flex justify-between p-1 gap-2 bg-(--pink) w-full">
         <p>{location}</p>
-        <p>{date}</p>
+        <p>{actualDate}</p>
       </div>
     </li>
   );

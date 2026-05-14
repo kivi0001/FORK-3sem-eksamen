@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PrimaryButtons from "../buttons/PrimaryButtons";
+import Link from "next/link";
 
 const EventOverview = ({
   imagesrc,
@@ -15,9 +16,29 @@ const EventOverview = ({
   schedule,
   content,
 }) => {
+  const newDate = new Date(date);
+  let options = {
+    month: "long",
+    day: "numeric",
+  };
+  const actualDate = new Intl.DateTimeFormat(
+    "en-UK",
+    options,
+  ).format(newDate);
+
+  const newDoors = new Date(doorsOpen);
+  let openOptions = {
+    hour: "numeric",
+    minute: "numeric",
+  };
+  const actualDoorsOpen = new Intl.DateTimeFormat(
+    "en-UK",
+    openOptions,
+  ).format(newDoors);
+
   return (
     <section className="mt-15">
-      <div>
+      <div className="flex items-center justify-center">
         <Image
           src={imagesrc}
           alt={alt}
@@ -30,13 +51,17 @@ const EventOverview = ({
           <p className="uppercase text-(--pink) font-bold">
             date:
           </p>
-          <p className="uppercase">{date}</p>
+          <p className="uppercase">
+            {actualDate}
+          </p>
         </div>
         <div className="flex flex-wrap gap-1">
           <p className="uppercase text-(--pink) font-bold">
             doors open:
           </p>
-          <p className="uppercase">{doorsOpen}</p>
+          <p className="uppercase">
+            {actualDoorsOpen}
+          </p>
         </div>
         <div className="flex flex-wrap gap-1">
           <p className="uppercase text-(--pink) font-bold">
@@ -88,7 +113,9 @@ const EventOverview = ({
       <div className="flex flex-wrap mx-medium-to-large my-20">
         <p className="w-[80ch]">{content}</p>
         <div className="mt-auto ml-auto pt-10">
-          <PrimaryButtons textInput="book now" />
+          <Link href="/booktable">
+            <PrimaryButtons textInput="book now" />
+          </Link>
         </div>
       </div>
     </section>

@@ -1,11 +1,10 @@
 "use client";
 import { motion } from "motion/react";
 
-const PrimaryButtons = ({ textInput, href }) => {
+const PrimaryButtons = ({ textInput }) => {
   return (
-    <motion.a
-      className="relative inline-block w-fit overflow-hidden uppercase py-2 px-4.5 place-items-center"
-      href={href}
+    <motion.button
+      className="relative inline-block w-fit overflow-hidden uppercase py-2 px-4.5 place-items-center cursor-pointer"
       initial="initial"
       whileHover="hovered"
       variants={{
@@ -65,7 +64,7 @@ const PrimaryButtons = ({ textInput, href }) => {
           }}
         />
       </div>
-    </motion.a>
+    </motion.button>
   );
 };
 
