@@ -191,18 +191,18 @@ ul.full-width-scroller {
   opacity: 100%;
 }
 
-.button-left,
-.button-right,
-.button-exit {
-}
-
 @container (width < 850px) {
   .gallery-img-wrapper {
     display: flex;
     flex-direction: column;
   }
 
-  .button-left {
+  .button-left,
+  .button-right,
+  .button-exit {
+  }
+}
+
 /* SECTION 5 - LATEST VIDEO */
 .video-section {
   display: grid;
