@@ -6,6 +6,8 @@ import FeaturedSection from "./components/homepage/featuredevents_section/Featur
 import TestimonialsSection from "./components/homepage/testimonials_section/TestimonialsSection";
 import LatestVideo from "./components/latest_video/LatestVideoSection";
 import TrackSection from "./components/homepage/club_track_section/TrackSection";
+import MailForm from "./components/homepage/mail_list/MailForm";
+import MailSection from "./components/homepage/mail_list/MailSection";
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
       <TrackSection />
       <LatestVideo />
       <TestimonialsSection />
+      <MailSection />
     </main>
   );
 }
