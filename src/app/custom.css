@@ -154,6 +154,7 @@ ul.full-width-scroller {
 
 .gallery-section {
   grid-column: full-start / full-end;
+  container-type: inline-size;
 }
 
 .gallery-img-wrapper {
@@ -188,4 +189,19 @@ ul.full-width-scroller {
 
 .gallery-hover:hover .gallery-overlay {
   opacity: 100%;
+}
+
+.button-left,
+.button-right,
+.button-exit {
+}
+
+@container (width < 850px) {
+  .gallery-img-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-left {
+  }
 }

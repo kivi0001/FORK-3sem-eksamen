@@ -8,6 +8,7 @@ import Gallery from "./Gallery";
 import PrimaryButtons from "../../buttons/PrimaryButtons";
 import { BiSolidLeftArrow } from "react-icons/bi";
 import { BiSolidRightArrow } from "react-icons/bi";
+import { MdClose } from "react-icons/md";
 
 export default function GalleryLightBox({
   initialImages,
@@ -62,26 +63,26 @@ export default function GalleryLightBox({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-background/95 flex items-center justify-center z-2 p-4"
+            className="gallery-lightbox fixed inset-0 bg-background/95 flex items-center justify-center z-2 p-4"
             onClick={closeLightbox}
           >
             <button
               onClick={prevImage}
-              className="absolute left-50 text-white text-3xl z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
+              className="button-left absolute left-50 text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
             >
-              <BiSolidLeftArrow />
+              <BiSolidLeftArrow size={25} />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-50 text-white text-3xl z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
+              className="button-right absolute right-50 text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
             >
-              <BiSolidRightArrow />
+              <BiSolidRightArrow size={25} />
             </button>
             <button
               onClick={closeLightbox}
-              className="absolute top-25 right-85 text-white text-3xl z-20 hover:text-button-hover hover:cursor-pointer"
+              className="button-exit absolute top-25 right-85 text-white z-20 hover:text-button-hover hover:cursor-pointer"
             >
-              X
+              <MdClose size={35} />
             </button>
 
             <motion.div
@@ -107,8 +108,11 @@ export default function GalleryLightBox({
             >
               <img
                 src={`${process.env.NEXT_PUBLIC_API_URL}${selectedImage.asset?.url}`}
-                className=" object-cover"
-                alt=""
+                className="object-cover"
+                alt={
+                  selectedImage.asset?.alt ||
+                  selectedImage.asset.description
+                }
               />
               <div className="flex-1 flex flex-col justify-between p-6">
                 <p className="text-bodyfont text-xl font-semibold">
