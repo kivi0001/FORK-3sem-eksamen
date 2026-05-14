@@ -232,7 +232,11 @@ ul.artists-scroller {
   background-color: oklch(0% 0 0);
 }
 
-.artist-track:focus .track-active-overlay {
+.artist-track:hover .track-active-overlay {
+  opacity: 90%;
+}
+
+.play-button:focus .track-active-overlay {
   opacity: 90%;
 }
 

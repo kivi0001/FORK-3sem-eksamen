@@ -16,7 +16,7 @@ const Artists = () => {
           <div className="track-active-overlay inset-0 flex flex-col">
             <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40"></div>
             <div className="flex flex-col items-center mt-auto">
-              <button className="play-button cursor-pointer">
+              <button className="play-button cursor-pointer p-4 relative z-1">
                 <Image
                   src="/assets/icon/Play_btn.svg"
                   alt="a play button"
