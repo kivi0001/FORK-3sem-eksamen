@@ -211,30 +211,12 @@ ul.artists-scroller {
   scroll-snap-type: inline mandatory;
   list-style: none;
   display: flex;
-  gap: 2rem;
   height: fit-content;
 
   & li {
-    flex: 1 0 500px;
+    flex: 1 0 250px;
     scroll-snap-align: center;
   }
-}
-
-.track-hover-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 1.5s ease;
-  background-color: oklch(0% 0 0);
-}
-
-.artist-image-hover:hover .track-hover-overlay {
-  opacity: 90%;
 }
 
 .track-active-overlay {
@@ -250,7 +232,7 @@ ul.artists-scroller {
   background-color: oklch(0% 0 0);
 }
 
-.artist-track:active .track-active-overlay {
+.artist-track:focus .track-active-overlay {
   opacity: 90%;
 }
 
