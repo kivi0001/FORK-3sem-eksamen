@@ -15,7 +15,7 @@ const SingleEvent = ({ params }) => {
   );
 };
 
-const Details = async ({ params, eventId }) => {
+const Details = async ({ params }) => {
   const { slug } = await params;
 
   const response = await fetch(
