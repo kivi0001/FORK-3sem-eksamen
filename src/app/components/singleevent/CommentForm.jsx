@@ -6,7 +6,22 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
 const valideringsSkema = z.object({
-  name: z.string().min(2),
+  name: z.string(
+    "Hard to have a name without letters... Please use the alphabet for your name.",
+  ),
+  name: z
+    .string()
+    .min(
+      2,
+      "Please have a name with more than one letter",
+    ),
+  email: z.email(),
+  comment: z
+    .string()
+    .max(
+      100,
+      "Say it with less words, please... No more than 100 characters!",
+    ),
 });
 
 const CommentForm = () => {
@@ -21,46 +36,65 @@ const CommentForm = () => {
   const [message, setMessage] = useState("");
   const onSubmit = (data) => {
     console.log(data);
-    setMessage("Tak!");
+    setMessage("Thank you for your comment!");
   };
   return (
-    <section>
-      <h2>leave a comment</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+    <section className="my-6">
+      <h2 className="flex gap-1 text-(length:--font-h2) font-bold uppercase my-6">
+        leave a comment
+      </h2>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-4"
+      >
+        <div className="flex gap-[1em] flex-wrap mx-4">
           <input
             {...register("name")}
             type="text"
             name="name"
             id="name"
             placeholder="Your name"
+            className="border p-4 w-[30em]"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
           )}
           <input
-            {...register("email", {
-              required: true,
-            })}
+            {...register("email")}
             type="text"
             name="email"
             id="email"
             placeholder="Your email"
+            className="border p-4 w-[30em]"
           ></input>
+          {errors.email && (
+            <div>{errors.email.message}</div>
+          )}
         </div>
-        <textarea
-          {...register("comment", {
-            required: true,
-          })}
-          type="text"
-          name="comment"
-          id="comment"
-          placeholder="Your comment"
-        ></textarea>
-        <PrimaryButtons
-          type="submit"
-          textInput="submit"
-        ></PrimaryButtons>
+        <div className="flex flex-col max-w-[61em]">
+          <textarea
+            {...register("comment")}
+            type="text"
+            name="comment"
+            id="comment"
+            placeholder="Your comment"
+            className="border p-4 w-full h-[12em] mx-4"
+          ></textarea>
+          {errors.comment && (
+            <div className="my-4 mx-4">
+              {errors.comment.message}
+            </div>
+          )}
+          <div className="ml-auto mt-5">
+            <PrimaryButtons
+              type="submit"
+              textInput="submit"
+            ></PrimaryButtons>
+          </div>
+        </div>
+        <div className="font-h3 font-bold mx-4">
+          {message}
+        </div>
       </form>
     </section>
   );
