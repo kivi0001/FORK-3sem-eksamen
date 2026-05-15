@@ -10,6 +10,10 @@
   --dark-grey: oklch(78.422% 0.00223 15.01);
   --background: oklch(15.557% 0.0017 16.767);
   --foreground: oklch(97.614% 0.00011 271.152);
+  --form-background: oklch(
+    24.807% 0.00715 325.606 / 0.825
+  );
+  --green: oklch(87.088% 0.27592 143.572);
 
   /* FLUID FONT-SIZES */
   --large: clamp(
@@ -37,6 +41,7 @@
     0.9464rem + 0.2381cqi,
     1.125rem
   );
+
   --button-large: clamp(
     1.25rem,
     1.1429rem + 0.4762cqi,
@@ -53,6 +58,12 @@
     0.75rem,
     0.6989rem + 0.2273vw,
     0.875rem
+  );
+
+  --medium-v2: clamp(
+    1.125rem,
+    0.9076rem + 0.8696vw,
+    1.5rem
   );
 
   /* NON-FLUID FONT-SIZES */
@@ -145,6 +156,9 @@
   --color-headline: var(--primary-light);
   --color-divider: var(--medium-grey);
   --color-footer: var(--medium-grey);
+  --color-input-bg: var(--form-background);
+  --color-alert: var(--pink);
+  --color-validation: var(--green);
   /* FONT-SIZE TOKENS */
   --font-home-h1: var(--large);
   --font-home-h2: var(--medium-large);
@@ -161,6 +175,7 @@
   --font-header-button: var(--button-large);
   --font-footer-p: var(--small-p);
   --font-xs-footer-p: var(--xtrasmall-p);
+  --font-home-form-h2: var(--medium-v2);
 
   /* FONT WEIGHT TOKENS */
   /* Home page */
@@ -172,7 +187,7 @@
   --font-weight-home-p: var(--weight-medium);
 
   /* Standard weights */
-  --font-weight-h1: var(---weight-medium);
+  --font-weight-h1: var(--weight-medium);
   --font-weight-h2: var(--weight-medium);
   --font-weight-h3: var(--weight-medium);
   --font-weight-p: var(--weight-regular);
@@ -190,12 +205,12 @@
   --font-weight-header-button: var(
     --weight-medium
   );
-
-  /* TEXT LETTERSPACING */
-  /* Home page letter spacing */
-  --letter-spacing-home-h1: var(
-    --letterspace-wide
-  );
+  --font-weight-v2-p: var(--weight-medium)
+    /* TEXT LETTERSPACING */
+    /* Home page letter spacing */
+    --letter-spacing-home-h1: var(
+      --letterspace-wide
+    );
   --letter-spacing-home-h2: var(
     --letterspace-medium
   );
