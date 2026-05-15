@@ -70,19 +70,19 @@ const ContactForm = () => {
   };
 
   return (
-    <section>
+    <section className="my-20">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4"
+        className="flex flex-col justify-center items-center gap-4"
       >
-        <div className="flex gap-[1em] flex-wrap mx-4">
+        <div className="flex gap-[1em] w-[90%] flex-wrap">
           <input
             {...register("name")}
             type="text"
             name="name"
             id="name"
             placeholder="Your name"
-            className="border p-4 w-[30em]"
+            className="border p-4 w-full"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
@@ -93,20 +93,20 @@ const ContactForm = () => {
             name="email"
             id="email"
             placeholder="Your email"
-            className="border p-4 w-[30em]"
+            className="border p-4 w-full"
           ></input>
           {errors.email && (
             <div>{errors.email.message}</div>
           )}
         </div>
-        <div className="flex flex-col max-w-[61em]">
+        <div className="flex w-[90%] flex-col">
           <textarea
             {...register("contactMessage")}
             type="text"
             name="contactMessage"
             id="contactMessage"
             placeholder="Your comment"
-            className="border p-4 w-full h-[12em] mx-4"
+            className="border p-4 w-full h-[12em]"
           ></textarea>
           {errors.contactMessage && (
             <div className="my-4 mx-4">
