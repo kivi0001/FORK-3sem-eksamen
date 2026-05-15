@@ -15,7 +15,7 @@ const SingleEvent = ({ params }) => {
   );
 };
 
-const Details = async ({ params }) => {
+const Details = async ({ params, eventId }) => {
   const { slug } = await params;
 
   const response = await fetch(
@@ -47,7 +47,7 @@ const Details = async ({ params }) => {
         <AmountFetch id={event.id}></AmountFetch>
         <EventComments id={event.id} />
       </section>
-      <CommentForm />
+      <CommentForm eventId={event.id} />
     </main>
   );
 };

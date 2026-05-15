@@ -1,26 +1,47 @@
-export async function PostComment(formComment) {
-  /* AI HJALP MED DETTE: HUSK AT MEDTAGE VARIABLER */
+"use server";
 
-  const { eventId, name, email, comment } =
-    formComment;
-
-  /**********************/
-
+export async function PostComment({
+  eventId,
+  name,
+  email,
+  comment,
+}) {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/comments?eventId=${eventId}`,
       {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           eventId,
           name,
           content: comment,
-          date: new Date(),
+          /* AI HELPED WITH THIS */
+          date: new Date().toISOString(),
+          /************/
           email,
         }),
       },
     );
+    /* AI HELPED WITH THIS: */
+    if (!response.ok) {
+      const errorComment = await response.json();
+      return {
+        success: false,
+        error: errorComment.message,
+      };
+    }
+
+    const data = await response.json();
+    return { success: true, data };
   } catch (error) {
-    return <p>Failed to load comments form...</p>;
+    return {
+      success: false,
+      error: error.message,
+    };
   }
+
+  /***************/
 }

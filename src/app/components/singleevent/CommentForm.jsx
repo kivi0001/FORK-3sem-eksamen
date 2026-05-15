@@ -38,10 +38,13 @@ const CommentForm = ({ eventId }) => {
 
   const onSubmit = async (data) => {
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POSTCOMMENT */
-    await PostComment({
+    const result = await PostComment({
       eventId,
-      ...data,
+      name: data.name,
+      email: data.email,
+      comment: data.comment,
     });
+    console.log("result:", result);
     /*************/
 
     setMessage("Thank you for your comment!");
