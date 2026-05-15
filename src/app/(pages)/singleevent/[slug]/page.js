@@ -1,8 +1,8 @@
 import Headline from "@/app/components/Headline";
 import { AmountFetch } from "@/app/components/singleevent/AmountFetch";
+import CommentForm from "@/app/components/singleevent/CommentForm";
 import { EventComments } from "@/app/components/singleevent/EventComments";
 import EventOverview from "@/app/components/singleevent/EventOverview";
-import { PostComment } from "@/app/components/singleevent/PostComment";
 import { Suspense } from "react";
 
 const SingleEvent = ({ params }) => {
@@ -47,7 +47,7 @@ const Details = async ({ params }) => {
         <AmountFetch id={event.id}></AmountFetch>
         <EventComments id={event.id} />
       </section>
-      <PostComment />
+      <CommentForm />
     </main>
   );
 };

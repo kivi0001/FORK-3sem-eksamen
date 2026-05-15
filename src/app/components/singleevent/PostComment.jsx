@@ -1,7 +1,10 @@
-import CommentForm from "./CommentForm";
+export async function PostComment(formComment) {
+  /* AI HJALP MED DETTE: HUSK AT MEDTAGE VARIABLER */
 
-export async function PostComment({ eventId }) {
-  "use server";
+  const { eventId, name, email, comment } =
+    formComment;
+
+  /**********************/
 
   try {
     const response = await fetch(
@@ -9,40 +12,14 @@ export async function PostComment({ eventId }) {
       {
         method: "POST",
         body: JSON.stringify({
-          id,
+          eventId,
           name,
-          content,
-          date,
+          content: comment,
+          date: new Date(),
           email,
         }),
       },
     );
-
-    const fetchComments = await response.json();
-
-    return fetchComments.map((comment) => {
-      return (
-        <>
-          <CommentForm
-            key={comment.id}
-            event={comment.eventId}
-            name={comment.name}
-            content={comment.content}
-            date={comment.Date()}
-          />
-          <div className="ml-auto mt-5">
-            <PrimaryButtons
-              type="submit"
-              textInput="submit"
-              onClick={() => {
-                (updateCommentSection,
-                  PostComment);
-              }}
-            ></PrimaryButtons>
-          </div>
-        </>
-      );
-    });
   } catch (error) {
     return <p>Failed to load comments form...</p>;
   }

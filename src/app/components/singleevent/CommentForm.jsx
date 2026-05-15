@@ -4,6 +4,7 @@ import PrimaryButtons from "../buttons/PrimaryButtons";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { PostComment } from "./PostComment";
 
 const valideringsSkema = z.object({
   name: z.string(
@@ -24,7 +25,7 @@ const valideringsSkema = z.object({
     ),
 });
 
-const CommentForm = () => {
+const CommentForm = ({ eventId }) => {
   const {
     register,
     handleSubmit,
@@ -34,18 +35,25 @@ const CommentForm = () => {
   });
 
   const [message, setMessage] = useState("");
-  const onSubmit = (data) => {
-    console.log(data);
+
+  const onSubmit = async (data) => {
+    /* AI HJALP MED DETTE: MEDTAG DATA FRA POSTCOMMENT */
+    await PostComment({
+      eventId,
+      ...data,
+    });
+    /*************/
+
     setMessage("Thank you for your comment!");
   };
 
-  const [commentId, setCommentId] = useState(" ");
+  const [commentId, setCommentId] = useState("");
   const [commentName, setCommentName] =
-    useState(" ");
+    useState("");
   const [commentEmail, setCommentEmail] =
-    useState(" ");
+    useState("");
   const [commentContent, setCommentContent] =
-    useState(" ");
+    useState("");
 
   const updateCommentSection = () => {
     (setCommentId(commentId),
@@ -62,7 +70,6 @@ const CommentForm = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4"
-        commentId={commentId}
       >
         <div className="flex gap-[1em] flex-wrap mx-4">
           <input
@@ -71,7 +78,6 @@ const CommentForm = () => {
             name="name"
             id="name"
             placeholder="Your name"
-            commentName={commentName}
             className="border p-4 w-[30em]"
           ></input>
           {errors.name && (
@@ -83,7 +89,6 @@ const CommentForm = () => {
             name="email"
             id="email"
             placeholder="Your email"
-            commentEmail={commentEmail}
             className="border p-4 w-[30em]"
           ></input>
           {errors.email && (
@@ -97,7 +102,6 @@ const CommentForm = () => {
             name="comment"
             id="comment"
             placeholder="Your comment"
-            commentContent={commentContent}
             className="border p-4 w-full h-[12em] mx-4"
           ></textarea>
           {errors.comment && (
@@ -105,7 +109,7 @@ const CommentForm = () => {
               {errors.comment.message}
             </div>
           )}
-          {/* <div className="ml-auto mt-5">
+          <div className="ml-auto mt-5">
             <PrimaryButtons
               type="submit"
               textInput="submit"
@@ -113,7 +117,7 @@ const CommentForm = () => {
                 updateCommentSection;
               }}
             ></PrimaryButtons>
-          </div> */}
+          </div>
         </div>
         <div className="font-h3 font-bold mx-4">
           {message}
