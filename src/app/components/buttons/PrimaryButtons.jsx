@@ -17,7 +17,7 @@ const PrimaryButtons = ({ textInput }) => {
     >
       <div className="grid grid-cols-1">
         <motion.span
-          className="absolute top-0 left-0 w-full h-0.5 border-t border-t-button inline-block"
+          className="absolute top-0 left-0 w-full h-0.5 border-t-2 border-t-button inline-block"
           variants={{
             initial: { x: 0 },
             hovered: {
@@ -30,7 +30,7 @@ const PrimaryButtons = ({ textInput }) => {
           }}
         />
         <motion.span
-          className="absolute top-0 left-0 w-full h-0.5 border-t border-t-button-hover inline-block"
+          className="absolute top-0 left-0 w-full h-0.5 border-t-2 border-t-button-hover inline-block"
           variants={{
             initial: { x: "100%" },
             hovered: { x: 0 },
@@ -42,7 +42,7 @@ const PrimaryButtons = ({ textInput }) => {
         />
         {textInput}
         <motion.span
-          className="absolute bottom-0 left-0 w-full -h-0.5 border-t border-t-button inline-block rotate-180"
+          className="absolute bottom-0 left-0 w-full -h-0.5 border-t-2 border-t-button inline-block rotate-180"
           variants={{
             initial: { x: 0 },
             hovered: { x: "-100%" },
@@ -53,7 +53,7 @@ const PrimaryButtons = ({ textInput }) => {
           }}
         />
         <motion.span
-          className="absolute bottom-0 left-0 w-full -h-0.5 border-b border-b-button-hover inline-block rotate-180"
+          className="absolute bottom-0 left-0 w-full -h-0.5 border-b-2 border-b-button-hover inline-block rotate-180"
           variants={{
             initial: { x: "100%" },
             hovered: { x: 0 },
