@@ -1,4 +1,4 @@
-import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 
 export async function PostComment({ eventId }) {
   "use server";
@@ -22,15 +22,28 @@ export async function PostComment({ eventId }) {
 
     return fetchComments.map((comment) => {
       return (
-        <Comment
-          key={comment.eventId}
-          name={comment.name}
-          content={comment.content}
-          date={comment.date}
-        />
+        <>
+          <CommentForm
+            key={comment.id}
+            event={comment.eventId}
+            name={comment.name}
+            content={comment.content}
+            date={comment.Date()}
+          />
+          <div className="ml-auto mt-5">
+            <PrimaryButtons
+              type="submit"
+              textInput="submit"
+              onClick={() => {
+                (updateCommentSection,
+                  PostComment);
+              }}
+            ></PrimaryButtons>
+          </div>
+        </>
       );
     });
   } catch (error) {
-    return <p>Failed to load comments...</p>;
+    return <p>Failed to load comments form...</p>;
   }
 }

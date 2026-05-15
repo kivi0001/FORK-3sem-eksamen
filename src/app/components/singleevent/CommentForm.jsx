@@ -48,9 +48,10 @@ const CommentForm = () => {
     useState(" ");
 
   const updateCommentSection = () => {
-    (setCommentId(id), setCommentName(name));
-    setCommentEmail(email);
-    setCommentContent(content);
+    (setCommentId(commentId),
+      setCommentName(commentName));
+    setCommentEmail(commentEmail);
+    setCommentContent(commentContent);
   };
 
   return (
@@ -61,6 +62,7 @@ const CommentForm = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4"
+        commentId={commentId}
       >
         <div className="flex gap-[1em] flex-wrap mx-4">
           <input
@@ -69,6 +71,7 @@ const CommentForm = () => {
             name="name"
             id="name"
             placeholder="Your name"
+            commentName={commentName}
             className="border p-4 w-[30em]"
           ></input>
           {errors.name && (
@@ -80,6 +83,7 @@ const CommentForm = () => {
             name="email"
             id="email"
             placeholder="Your email"
+            commentEmail={commentEmail}
             className="border p-4 w-[30em]"
           ></input>
           {errors.email && (
@@ -93,6 +97,7 @@ const CommentForm = () => {
             name="comment"
             id="comment"
             placeholder="Your comment"
+            commentContent={commentContent}
             className="border p-4 w-full h-[12em] mx-4"
           ></textarea>
           {errors.comment && (
@@ -100,7 +105,7 @@ const CommentForm = () => {
               {errors.comment.message}
             </div>
           )}
-          <div className="ml-auto mt-5">
+          {/* <div className="ml-auto mt-5">
             <PrimaryButtons
               type="submit"
               textInput="submit"
@@ -108,7 +113,7 @@ const CommentForm = () => {
                 updateCommentSection;
               }}
             ></PrimaryButtons>
-          </div>
+          </div> */}
         </div>
         <div className="font-h3 font-bold mx-4">
           {message}
