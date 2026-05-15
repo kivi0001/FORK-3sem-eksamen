@@ -38,6 +38,21 @@ const CommentForm = () => {
     console.log(data);
     setMessage("Thank you for your comment!");
   };
+
+  const [commentId, setCommentId] = useState(" ");
+  const [commentName, setCommentName] =
+    useState(" ");
+  const [commentEmail, setCommentEmail] =
+    useState(" ");
+  const [commentContent, setCommentContent] =
+    useState(" ");
+
+  const updateCommentSection = () => {
+    (setCommentId(id), setCommentName(name));
+    setCommentEmail(email);
+    setCommentContent(content);
+  };
+
   return (
     <section className="my-6">
       <h2 className="flex gap-1 text-(length:--font-h2) font-bold uppercase my-6">
@@ -89,6 +104,9 @@ const CommentForm = () => {
             <PrimaryButtons
               type="submit"
               textInput="submit"
+              onClick={() => {
+                updateCommentSection;
+              }}
             ></PrimaryButtons>
           </div>
         </div>
