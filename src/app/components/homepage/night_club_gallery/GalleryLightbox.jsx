@@ -69,13 +69,13 @@ export default function GalleryLightBox({
             <div className="button-container relative w-full max-w-260 block mx-8">
               <button
                 onClick={prevImage}
-                className=" absolute left-1 top-1/2 -translate-y-1/2 z-30 text-white hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-(length:--font-button) "
+                className="button-left absolute left-1 top-1/2 -translate-y-1/2 z-30 text-white hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-(length:--font-button) "
               >
                 <BiSolidLeftArrow />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-1 top-1/2 -translate-y-1/2 z-30 text-white hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-(length:--font-button) "
+                className="button-right absolute right-1 top-1/2 -translate-y-1/2 z-30 text-white hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-(length:--font-button) "
               >
                 <BiSolidRightArrow />
               </button>

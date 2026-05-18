@@ -226,6 +226,13 @@ ul.full-width-scroller {
     min-height: 230px;
   }
 
+  .button-left,
+  .button-right {
+    background-color: oklch(
+      24.807% 0.00715 325.606 / 0.63
+    );
+  }
+
   .button-exit {
     top: 15px;
     right: 15px;
