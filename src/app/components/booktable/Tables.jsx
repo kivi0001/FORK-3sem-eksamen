@@ -1,0 +1,178 @@
+import Image from "next/image";
+
+const Tables = () => {
+  return (
+    <section>
+      <div className="table-container mb-(--spacing-large)">
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 1"
+            width={300}
+            height={200}
+            className="table-img"
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            1
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 2"
+            width={400}
+            height={200}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            2
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_2.png"
+            alt="Table 3"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            3
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 4"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            4
+          </p>
+        </div>
+        <div className="relative">
+          <Image
+            src="/assets/table/table_3.png"
+            alt="Table 5"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute  text-center text-(length:--font-table-p)">
+            5
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 6"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            6
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 7"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            7
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_2.png"
+            alt="Table 8"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            8
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 9"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            9
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_3.png"
+            alt="Table 10"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            10
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 11"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            11
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 12"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            12
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_2.png"
+            alt="Table 13"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            13
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 14"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            14
+          </p>
+        </div>
+        <div className="relative text-center">
+          <Image
+            src="/assets/table/table_3.png"
+            alt="Table 15"
+            width={200}
+            height={100}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            15
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Tables;

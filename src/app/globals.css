@@ -176,9 +176,9 @@
   --font-footer-p: var(--small-p);
   --font-xs-footer-p: var(--xtrasmall-p);
   --font-home-form-h2: var(--medium-v2);
+  --font-table-p: var(--non-fluid-medium);
 
-  /* FONT WEIGHT TOKENS */
-  /* Home page */
+  /* FONT WEIGHT TOKENS */ /* Home page */
   --font-weight-home-h1: var(--weight-medium);
   --font-weight-home-h2: var(--weight-medium);
   --font-weight-home-track-h3: var(
@@ -254,9 +254,19 @@
     --fluid-12-24
   );
   --padding-block-input-field: var(--fluid-18-32);
+
+  /* FLUID GRID SIZING */
+  --space-grid-table: clamp(
+    6.25rem,
+    5.4rem + 4cqi,
+    9rem
+  );
 }
 
 /* GRIDS */
+html {
+  background: var(--background);
+}
 
 body {
   background: var(--background);
@@ -271,6 +281,8 @@ body {
     )
     [full-end];
   grid-template-rows: auto;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .header-wrapper {
