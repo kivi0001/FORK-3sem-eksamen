@@ -63,7 +63,7 @@ const BookTableForm = () => {
     /*************/
 
     setMessage(
-      "Thank you for submitting your message!",
+      "Thank you for submitting your booking!",
     );
   };
 
@@ -88,21 +88,21 @@ const BookTableForm = () => {
 
   return (
     <section className="my-20">
-      <h1 className="text-(length:--font-h1) uppercase font-bold">
+      <h1 className="text-(length:--font-h2) uppercase font-bold my-6 mx-4">
         book a table
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col justify-center items-center gap-4 "
+        className="flex flex-col gap-4 "
       >
-        <div className="flex gap-[1em] w-[90%] flex-wrap">
+        <div className="flex gap-[1em] flex-wrap mx-4">
           <input
             {...register("name")}
             type="text"
             name="name"
             id="name"
             placeholder="Your name"
-            className="border p-4 w-full"
+            className="border p-4 w-[30em]"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
@@ -113,19 +113,19 @@ const BookTableForm = () => {
             name="email"
             id="email"
             placeholder="Your email"
-            className="border p-4 w-full"
+            className="border p-4 w-[30em]"
           ></input>
           {errors.email && (
             <div>{errors.email.message}</div>
           )}
         </div>
-        <div className="flex gap-[1em] w-[90%] flex-wrap">
+        <div className="flex gap-[1em] flex-wrap mx-4">
           <select
             {...register("tableNumber")}
             name="tableNumber"
             id="tableNumber"
             placeholder="Table Number"
-            className="border p-4 w-full text-(--color-placeholderfont)"
+            className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
             <option value="">Table Number</option>
             <option value="1">1</option>
@@ -155,7 +155,7 @@ const BookTableForm = () => {
             name="guestsAmount"
             id="guestsAmount"
             placeholder="Number Of Guests"
-            className="border p-4 w-full"
+            className="border p-4 w-[30em]"
           ></input>
           {errors.guestsAmount && (
             <div>
@@ -163,13 +163,13 @@ const BookTableForm = () => {
             </div>
           )}
         </div>
-        <div className="flex gap-[1em] w-[90%] flex-wrap">
+        <div className="flex gap-[1em] flex-wrap mx-4">
           <select
             {...register("choiceNight")}
             name="choiceNight"
             id="choiceNight"
             placeholder="Choose Night"
-            className="border p-4 w-full text-(--color-placeholderfont)"
+            className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
             <option
               className="text-(--color-formfont)"
@@ -192,7 +192,7 @@ const BookTableForm = () => {
             name="phoneNumber"
             id="phoneNumber"
             placeholder="Your Contact Number"
-            className="border p-4 w-full"
+            className="border p-4 w-[30em]"
           ></input>
           {errors.phoneNumber && (
             <div>
@@ -200,14 +200,14 @@ const BookTableForm = () => {
             </div>
           )}
         </div>
-        <div className="flex w-[90%] flex-col">
+        <div className="flex flex-col max-w-[61em]">
           <textarea
             {...register("bookingMessage")}
             type="text"
             name="bookingMessage"
             id="bookingMessage"
             placeholder="Your comment"
-            className="border p-4 w-full h-[12em]"
+            className="border p-4 w-full h-[12em] mx-4"
           ></textarea>
           {errors.bookingMessage && (
             <div className="my-4 mx-4">
@@ -224,7 +224,7 @@ const BookTableForm = () => {
             ></PrimaryButtons>
           </div>
         </div>
-        <div className="font-h3 font-bold mx-4">
+        <div className="font-h3 place-self-center font-bold mx-4">
           {message}
         </div>
       </form>
