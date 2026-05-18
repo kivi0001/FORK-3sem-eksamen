@@ -176,7 +176,7 @@
   --font-footer-p: var(--small-p);
   --font-xs-footer-p: var(--xtrasmall-p);
   --font-home-form-h2: var(--medium-v2);
-  --font-table-p: var(--non-fluid-medium);
+  --font-table-p: var(--medium-small);
 
   /* FONT WEIGHT TOKENS */ /* Home page */
   --font-weight-home-h1: var(--weight-medium);
@@ -258,8 +258,8 @@
   /* FLUID GRID SIZING */
   --space-grid-table: clamp(
     6.25rem,
-    5.4rem + 4cqi,
-    9rem
+    4.9364rem + 6.1818cqi,
+    10.5rem
   );
 }
 
