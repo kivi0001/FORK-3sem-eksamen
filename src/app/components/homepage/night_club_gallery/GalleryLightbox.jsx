@@ -87,41 +87,43 @@ export default function GalleryLightBox({
               className="lightbox-wrapper bg-background pb-5 flex flex-col overflow-hidden object-cover"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                onClick={prevImage}
-                className="button-left text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-2xl"
-              >
-                <BiSolidLeftArrow />
-              </button>
-              <button
-                onClick={nextImage}
-                className="button-right text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-2xl"
-              >
-                <BiSolidRightArrow />
-              </button>
-              <button
-                onClick={closeLightbox}
-                className="button-exit text-white z-20 hover:text-button-hover hover:cursor-pointer text-3xl"
-              >
-                <MdClose />
-              </button>
-
-              <img
-                src={`${process.env.NEXT_PUBLIC_API_URL}${selectedImage.asset?.url}`}
-                className="object-cover"
-                alt={
-                  selectedImage.asset?.alt ||
-                  selectedImage.asset.description
-                }
-              />
-              <div className="flex-1 flex flex-col justify-between p-6">
-                <p className="text-bodyfont text-xl font-semibold">
-                  {selectedImage.asset?.alt ||
+              <div className="h-fit w-fit">
+                <img
+                  src={`${process.env.NEXT_PUBLIC_API_URL}${selectedImage.asset?.url}`}
+                  className="object-cover"
+                  alt={
+                    selectedImage.asset?.alt ||
                     selectedImage.asset
-                      .description}
-                </p>
-                <div className="mt-6 flex justify-end">
-                  <PrimaryButtons textInput="read more" />
+                      .description
+                  }
+                />
+                <div className="flex-1 flex flex-col justify-between p-6">
+                  <p className="text-bodyfont text-xl font-semibold">
+                    {selectedImage.asset?.alt ||
+                      selectedImage.asset
+                        .description}
+                  </p>
+                  <div className="mt-6 flex justify-end">
+                    <PrimaryButtons textInput="read more" />
+                  </div>
+                  <button
+                    onClick={prevImage}
+                    className="button-left text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-2xl"
+                  >
+                    <BiSolidLeftArrow />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="button-right text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-2xl"
+                  >
+                    <BiSolidRightArrow />
+                  </button>
+                  <button
+                    onClick={closeLightbox}
+                    className="button-exit text-white z-20 hover:text-button-hover hover:cursor-pointer text-3xl"
+                  >
+                    <MdClose />
+                  </button>
                 </div>
               </div>
             </motion.div>

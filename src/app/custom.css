@@ -198,12 +198,25 @@ ul.full-width-scroller {
   margin: 0 auto;
 }
 
+/* .gallery-lightbox {
+  position: fixed;
+}
+
+.gallery-lightbox img {
+  width: auto;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+  object-fit: cover;
+} */
+
 .button-left {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 70px;
+  left: -20px;
   font-size: 24px;
+  z-index: 10;
 }
 
 .button-right {
