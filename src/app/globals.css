@@ -205,12 +205,12 @@
   --font-weight-header-button: var(
     --weight-medium
   );
-  --font-weight-v2-p: var(--weight-medium)
-    /* TEXT LETTERSPACING */
-    /* Home page letter spacing */
-    --letter-spacing-home-h1: var(
-      --letterspace-wide
-    );
+  --font-weight-v2-p: var(--weight-medium);
+  /* TEXT LETTERSPACING */
+  /* Home page letter spacing */
+  --letter-spacing-home-h1: var(
+    --letterspace-wide
+  );
   --letter-spacing-home-h2: var(
     --letterspace-medium
   );
