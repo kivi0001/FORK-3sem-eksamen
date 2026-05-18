@@ -99,7 +99,131 @@ const BookTableForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col justify-center items-center gap-4"
       >
-        <div></div>
+        <div className="flex gap-[1em] w-[90%] flex-wrap">
+          <input
+            {...register("name")}
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Your name"
+            className="border p-4 w-full"
+          ></input>
+          {errors.name && (
+            <div>{errors.name.message}</div>
+          )}
+          <input
+            {...register("email")}
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Your email"
+            className="border p-4 w-full"
+          ></input>
+          {errors.email && (
+            <div>{errors.email.message}</div>
+          )}
+        </div>
+        <div className="flex gap-[1em] w-[90%] flex-wrap">
+          <select
+            {...register("tableNumber")}
+            name="tableNumber"
+            id="tableNumber"
+            placeholder="Table Number"
+            className="border p-4 w-full"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+          </select>
+          {errors.tableNumber && (
+            <div>
+              {errors.tableNumber.message}
+            </div>
+          )}
+          <input
+            {...register("guestsAmount")}
+            type="text"
+            name="guestsAmount"
+            id="guestsAmount"
+            placeholder="Number Of Guests"
+            className="border p-4 w-full"
+          ></input>
+          {errors.guestsAmount && (
+            <div>
+              {errors.guestsAmount.message}
+            </div>
+          )}
+        </div>
+        <div className="flex gap-[1em] w-[90%] flex-wrap">
+          <select
+            {...register("choiceNight")}
+            name="choiceNight"
+            id="choiceNight"
+            placeholder="Choose Night"
+            className="border p-4 w-full"
+          >
+            <option value="1">{}</option>
+
+            {/* make dynamic options of nights here */}
+          </select>
+          {errors.choiceNight && (
+            <div>
+              {errors.choiceNight.message}
+            </div>
+          )}
+          <input
+            {...register("phoneNumber")}
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber"
+            placeholder="Your email"
+            className="border p-4 w-full"
+          ></input>
+          {errors.phoneNumber && (
+            <div>
+              {errors.phoneNumber.message}
+            </div>
+          )}
+        </div>
+        <div className="flex w-[90%] flex-col">
+          <textarea
+            {...register("bookingMessage")}
+            type="text"
+            name="bookingMessage"
+            id="bookingMessage"
+            placeholder="Your comment"
+            className="border p-4 w-full h-[12em]"
+          ></textarea>
+          {errors.bookingMessage && (
+            <div className="my-4 mx-4">
+              {errors.bookingMessage.message}
+            </div>
+          )}
+          <div className="ml-auto mt-5">
+            <PrimaryButtons
+              type="submit"
+              textInput="submit"
+              onClick={() => {
+                updateBooking;
+              }}
+            ></PrimaryButtons>
+          </div>
+        </div>
+        <div className="font-h3 font-bold mx-4">
+          {message}
+        </div>
       </form>
     </section>
   );
