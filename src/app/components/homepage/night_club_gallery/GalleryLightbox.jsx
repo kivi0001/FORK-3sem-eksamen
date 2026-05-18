@@ -63,28 +63,9 @@ export default function GalleryLightBox({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="gallery-lightbox fixed inset-0 bg-background/95 flex items-center justify-center z-2 p-4"
+            className="gallery-lightbox fixed inset-0 bg-background/95 flex items-center justify-center z-2 p-4 top-20"
             onClick={closeLightbox}
           >
-            <button
-              onClick={prevImage}
-              className="button-left absolute left-50 text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
-            >
-              <BiSolidLeftArrow size={25} />
-            </button>
-            <button
-              onClick={nextImage}
-              className="button-right absolute right-50 text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer"
-            >
-              <BiSolidRightArrow size={25} />
-            </button>
-            <button
-              onClick={closeLightbox}
-              className="button-exit absolute top-25 right-85 text-white z-20 hover:text-button-hover hover:cursor-pointer"
-            >
-              <MdClose size={35} />
-            </button>
-
             <motion.div
               key={currentIndex}
               initial={{
@@ -103,9 +84,28 @@ export default function GalleryLightBox({
                 ease: "easeInOut",
                 duration: 0.4,
               }}
-              className="relative max-w-full h-fit bg-background pb-5 flex flex-col overflow-hidden"
+              className="lightbox-wrapper bg-background pb-5 flex flex-col overflow-hidden object-cover"
               onClick={(e) => e.stopPropagation()}
             >
+              <button
+                onClick={prevImage}
+                className="button-left text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-2xl"
+              >
+                <BiSolidLeftArrow />
+              </button>
+              <button
+                onClick={nextImage}
+                className="button-right text-white z-2 hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-2xl"
+              >
+                <BiSolidRightArrow />
+              </button>
+              <button
+                onClick={closeLightbox}
+                className="button-exit text-white z-20 hover:text-button-hover hover:cursor-pointer text-3xl"
+              >
+                <MdClose />
+              </button>
+
               <img
                 src={`${process.env.NEXT_PUBLIC_API_URL}${selectedImage.asset?.url}`}
                 className="object-cover"
