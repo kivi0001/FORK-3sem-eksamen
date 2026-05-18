@@ -177,9 +177,7 @@ const BookTableForm = () => {
             >
               Choose Night
             </option>
-            <option value="1">{}</option>
-
-            {/* make dynamic options of nights here */}
+            make dynamic options of nights here
           </select>
           {errors.choiceNight && (
             <div>
