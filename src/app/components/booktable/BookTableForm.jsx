@@ -5,8 +5,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
-const phone = z.e164();
-
 const valideringsSkema = z.object({
   name: z.string(
     "Hard to have a name without letters... Please use the alphabet for your name.",
@@ -24,19 +22,17 @@ const valideringsSkema = z.object({
       100,
       "Say it with less words, please... No more than 100 characters!",
     ),
-  guestsAmount: z
+  guestsAmount: z.coerce
     .number()
     .gte(
       1,
       "Please insert a number bewteen 1-8 guests",
-    ),
-  guestsAmount: z
-    .number()
+    )
     .lte(
       8,
       "Please insert a number bewteen 1-8 guests",
     ),
-  phoneNumber: phone.parse("+45"),
+  phoneNumber: z.e164("+45"),
   phoneNumber: z
     .string()
     .length(
@@ -97,7 +93,7 @@ const BookTableForm = () => {
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col justify-center items-center gap-4"
+        className="flex flex-col justify-center items-center gap-4 "
       >
         <div className="flex gap-[1em] w-[90%] flex-wrap">
           <input
@@ -129,8 +125,9 @@ const BookTableForm = () => {
             name="tableNumber"
             id="tableNumber"
             placeholder="Table Number"
-            className="border p-4 w-full"
+            className="border p-4 w-full text-(--color-placeholderfont)"
           >
+            <option value="">Table Number</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -154,7 +151,7 @@ const BookTableForm = () => {
           )}
           <input
             {...register("guestsAmount")}
-            type="text"
+            type="number"
             name="guestsAmount"
             id="guestsAmount"
             placeholder="Number Of Guests"
@@ -172,8 +169,14 @@ const BookTableForm = () => {
             name="choiceNight"
             id="choiceNight"
             placeholder="Choose Night"
-            className="border p-4 w-full"
+            className="border p-4 w-full text-(--color-placeholderfont)"
           >
+            <option
+              className="text-(--color-formfont)"
+              value=""
+            >
+              Choose Night
+            </option>
             <option value="1">{}</option>
 
             {/* make dynamic options of nights here */}
@@ -185,10 +188,10 @@ const BookTableForm = () => {
           )}
           <input
             {...register("phoneNumber")}
-            type="text"
+            type="number"
             name="phoneNumber"
             id="phoneNumber"
-            placeholder="Your email"
+            placeholder="Your Contact Number"
             className="border p-4 w-full"
           ></input>
           {errors.phoneNumber && (
