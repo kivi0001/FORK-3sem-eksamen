@@ -5,11 +5,9 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useEffect } from "react";
+import { PostBooking } from "./PostBooking";
 
 const valideringsSkema = z.object({
-  name: z.string(
-    "Hard to have a name without letters... Please use the alphabet for your name.",
-  ),
   name: z
     .string()
     .min(
@@ -33,16 +31,24 @@ const valideringsSkema = z.object({
       8,
       "Please insert a number bewteen 1-8 guests",
     ),
-  phoneNumber: z.e164("+45"),
   phoneNumber: z
     .string()
     .length(
       8,
       "Please insert a danish phone number, 8 digits long.",
     ),
+  tableNumber: z
+    .string()
+    .min(1, "Please select a table"),
+  choiceNight: z
+    .string()
+    .min(1, "Please select an event"),
 });
 
-const BookTableForm = ({ children }) => {
+const BookTableForm = ({
+  children,
+  eventDate,
+}) => {
   const {
     register,
     handleSubmit,
@@ -68,42 +74,56 @@ const BookTableForm = ({ children }) => {
   /*  ********************** */
 
   const [message, setMessage] = useState("");
-  const [title, setTitle] = useState("");
-  const [table, setTable] = useState("");
 
   const onSubmit = async (data) => {
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
-    /*     const result = await PostBookingInfo({
+    const result = await PostBooking({
       name: data.name,
       email: data.email,
-      contactMessage: data.contactMessage,
+      tableNumber: data.tableNumber,
+      guestsAmount: data.guestsAmount,
+      choiceNight: data.choiceNight,
+      phoneNumber: data.phoneNumber,
+      eventDate: eventDate,
+      bookingMessage: data.bookingMessage,
     });
-    console.log("result:", result); */
+    console.log("result:", result);
     /*************/
 
-    setMessage(
-      "Thank you for submitting your booking!",
-    );
+    if (result.success) {
+      setMessage(
+        "Thank you for submitting your booking!",
+      );
+      reset();
+    } else {
+      setMessage(`${result.error}`);
+    }
   };
 
-  /*     const [contactDate, setContactDate] =
+  const [bookingName, setBookingName] =
     useState("");
-  const [contactId, setContactId] = useState("");
-  const [contactName, setContactName] =
+  const [bookingEmail, setBookingEmail] =
     useState("");
-  const [contactEmail, setContactEmail] =
+  const [bookingTable, setBookingTable] =
     useState("");
-  const [contactMessage, setContactMessage] =
+  const [guestsAmount, setGuestsAmount] =
+    useState("");
+  const [bookingEvent, setBookingEvent] =
     useState("");
 
-  const updateContact = () => {
-    setContactDate(contactDate);
-    setContactId(contactId);
-    setContactName(contactName);
-    setContactEmail(contactEmail);
-    setContactMessage(contactMessage);
+  const [bookingComment, setBookingComment] =
+    useState("");
+  const [bookingId, setBookingId] = useState("");
+
+  const updateBookings = () => {
+    setBookingName(bookingName);
+    setBookingEmail(bookingEmail);
+    setBookingTable(bookingTable);
+    setGuestsAmount(guestsAmount);
+    setBookingEvent(bookingEvent);
+    setBookingComment(bookingComment);
+    setBookingId(bookingId);
   };
- */
 
   return (
     <section className="my-20">
@@ -244,7 +264,7 @@ const BookTableForm = ({ children }) => {
               type="submit"
               textInput="submit"
               onClick={() => {
-                updateBooking;
+                updateBookings;
               }}
             ></PrimaryButtons>
           </div>

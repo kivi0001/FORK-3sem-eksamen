@@ -29,7 +29,7 @@ const Details = async ({ params }) => {
       <h2>{event.title}</h2>
       <h2>{event.date}</h2>
       <Tables eventId={event.id} />
-      <BookTableForm>
+      <BookTableForm eventDate={event.date}>
         <EventFetch />
       </BookTableForm>
     </main>
