@@ -41,7 +41,7 @@ const valideringsSkema = z.object({
     ),
 });
 
-const BookTableForm = ({ id }) => {
+const BookTableForm = ({ children }) => {
   const {
     register,
     handleSubmit,
@@ -173,12 +173,11 @@ const BookTableForm = ({ id }) => {
           >
             <option
               className="text-(--color-formfont)"
-              autoComplete={id}
               value=""
             >
               Choose Night
             </option>
-            make dynamic options of nights here
+            {children}
           </select>
           {errors.choiceNight && (
             <div>
