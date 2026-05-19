@@ -12,7 +12,10 @@ const Tables = async ({ eventId }) => {
   return (
     <section>
       <div className="table-container mb-(--spacing-large)">
-        <TableClick tableNumber="1">
+        <TableClick
+          tableNumber="1"
+          reserved={reserved}
+        >
           <Image
             src="/assets/table/table_1.png"
             alt="Table 1"
