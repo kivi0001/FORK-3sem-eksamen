@@ -52,6 +52,7 @@ const BookTableForm = ({ children }) => {
 
   const [message, setMessage] = useState("");
   const [title, setTitle] = useState("");
+  const [table, setTable] = useState("");
 
   const onSubmit = async (data) => {
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
@@ -129,21 +130,21 @@ const BookTableForm = ({ children }) => {
             className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
             <option value="">Table Number</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
+            <option value="1">Table: 1</option>
+            <option value="2">Table: 2</option>
+            <option value="3">Table: 3</option>
+            <option value="4">Table: 4</option>
+            <option value="5">Table: 5</option>
+            <option value="6">Table: 6</option>
+            <option value="7">Table: 7</option>
+            <option value="8">Table: 8</option>
+            <option value="9">Table: 9</option>
+            <option value="10">Table: 10</option>
+            <option value="11">Table: 11</option>
+            <option value="12">Table: 12</option>
+            <option value="13">Table: 13</option>
+            <option value="14">Table: 14</option>
+            <option value="15">Table: 15</option>
           </select>
           {errors.tableNumber && (
             <div>

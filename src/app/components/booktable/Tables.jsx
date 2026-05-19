@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ReservationsFetch } from "./ReservationsFetch";
+import TableClick from "./TableClick";
 
 const Tables = async ({ eventId }) => {
   /* AI HELPED WITH THIS */
@@ -7,10 +8,11 @@ const Tables = async ({ eventId }) => {
     eventId,
   });
   /*  ****************** */
+
   return (
     <section>
       <div className="table-container mb-(--spacing-large)">
-        <div className="relative text-center">
+        <TableClick tableNumber="1">
           <Image
             src="/assets/table/table_1.png"
             alt="Table 1"
@@ -30,7 +32,38 @@ const Tables = async ({ eventId }) => {
           <p className="booking-number absolute text-(length:--font-table-p)">
             1
           </p>
-        </div>
+        </TableClick>
+        {/*         <div
+          className="relative text-center cursor-pointer"
+          id="table1"
+           onClick={(table) => {
+            const selectedTable =
+              table.target.value;
+            if (selectedTable) {
+              table.id;
+            }
+          }}
+        >
+          <Image
+            src="/assets/table/table_1.png"
+            alt="Table 1"
+            width={300}
+            height={200}
+            id="1"
+            className="table-img"
+            style={{
+              opacity: reserved.includes("1")
+                ? 0.3
+                : 1,
+              background: reserved.includes("1")
+                ? "red"
+                : "none",
+            }}
+          />
+          <p className="booking-number absolute text-(length:--font-table-p)">
+            1
+          </p>
+        </div> */}
         <div className="relative text-center">
           <Image
             src="/assets/table/table_1.png"
