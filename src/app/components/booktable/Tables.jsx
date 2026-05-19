@@ -1,6 +1,12 @@
 import Image from "next/image";
+import { ReservationsFetch } from "./ReservationsFetch";
 
-const Tables = ({ reserved = [] }) => {
+const Tables = async ({ eventId }) => {
+  /* AI HELPED WITH THIS */
+  const reserved = await ReservationsFetch({
+    eventId,
+  });
+  /*  ****************** */
   return (
     <section>
       <div className="table-container mb-(--spacing-large)">
@@ -14,7 +20,7 @@ const Tables = ({ reserved = [] }) => {
             className="table-img"
             style={{
               opacity: reserved.includes("1")
-                ? 0.5
+                ? 0.3
                 : 1,
             }}
           />
@@ -48,8 +54,11 @@ const Tables = ({ reserved = [] }) => {
             height={100}
             style={{
               opacity: reserved.includes("3")
-                ? 0.5
+                ? 0.3
                 : 1,
+              background: reserved.includes("3")
+                ? "red"
+                : "none",
             }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
