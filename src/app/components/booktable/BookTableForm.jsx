@@ -167,6 +167,15 @@ const BookTableForm = ({ children }) => {
         <div className="flex gap-[1em] flex-wrap mx-4">
           <select
             {...register("choiceNight")}
+            /* AI HELPED WITH THIS SYNTAX: */
+            onChange={(night) => {
+              const selectedNight =
+                night.target.value;
+              if (selectedNight) {
+                window.location.href = `/booktable/${selectedNight}`;
+              }
+            }}
+            /* **************************** */
             name="choiceNight"
             id="choiceNight"
             className="border p-4 w-[30em] text-(--color-placeholderfont)"

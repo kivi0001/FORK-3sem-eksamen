@@ -1,5 +1,7 @@
-const BookEventTitle = ({ title }) => {
-  return <option>{title}</option>;
+import Link from "next/link";
+
+const BookEventTitle = ({ title, id }) => {
+  return <option value={id}>{title}</option>;
 };
 
 export default BookEventTitle;
