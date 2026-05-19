@@ -13,6 +13,7 @@ export async function FeaturedSectionFetch() {
     return fetchEvents.map((event) => {
       return (
         <FeaturedEventsCard
+          id={event.id}
           key={event.id}
           slug={event.slug}
           date={event.date}

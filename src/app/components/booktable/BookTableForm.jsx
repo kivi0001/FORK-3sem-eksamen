@@ -41,7 +41,7 @@ const valideringsSkema = z.object({
     ),
 });
 
-const BookTableForm = () => {
+const BookTableForm = ({ id }) => {
   const {
     register,
     handleSubmit,
@@ -51,6 +51,7 @@ const BookTableForm = () => {
   });
 
   const [message, setMessage] = useState("");
+  const [title, setTitle] = useState("");
 
   const onSubmit = async (data) => {
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
@@ -168,11 +169,11 @@ const BookTableForm = () => {
             {...register("choiceNight")}
             name="choiceNight"
             id="choiceNight"
-            placeholder="Choose Night"
             className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
             <option
               className="text-(--color-formfont)"
+              autoComplete={id}
               value=""
             >
               Choose Night
