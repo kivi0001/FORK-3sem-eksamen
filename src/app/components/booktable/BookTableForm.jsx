@@ -4,6 +4,7 @@ import PrimaryButtons from "../buttons/PrimaryButtons";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const valideringsSkema = z.object({
   name: z.string(
@@ -46,9 +47,25 @@ const BookTableForm = ({ children }) => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({
     resolver: zodResolver(valideringsSkema),
   });
+
+  /* AI HELPED WITH THIS FUNCTION: */
+  useEffect(() => {
+    const diffPageRoute =
+      window.location.pathname;
+    const eventId = diffPageRoute
+      .split("/")
+      .pop();
+    const defaultTitle =
+      document.querySelector("#default");
+    if (eventId) {
+      setValue("choiceNight", eventId);
+    }
+  }, [setValue]);
+  /*  ********************** */
 
   const [message, setMessage] = useState("");
   const [title, setTitle] = useState("");
@@ -182,8 +199,8 @@ const BookTableForm = ({ children }) => {
             className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
             <option
+              id="default"
               className="text-(--color-formfont)"
-              value=""
             >
               Choose Night
             </option>
