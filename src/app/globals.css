@@ -159,6 +159,8 @@
   --color-input-bg: var(--form-background);
   --color-alert: var(--pink);
   --color-validation: var(--green);
+  --color-trackbg: var(--pink);
+  --color-progressbg: var(--foreground);
   /* FONT-SIZE TOKENS */
   --font-home-h1: var(--large);
   --font-home-h2: var(--medium-large);
