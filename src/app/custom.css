@@ -328,6 +328,15 @@ ul.artists-scroller {
   .track-controls {
     flex-wrap: wrap;
   }
+
+  .artists-scroller {
+    display: block;
+    min-block-size: 150px;
+
+    img {
+      min-block-size: 150px;
+    }
+  }
 }
 
 /* SECTION 5 - LATEST VIDEO */
