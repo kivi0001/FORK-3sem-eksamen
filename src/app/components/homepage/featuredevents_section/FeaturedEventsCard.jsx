@@ -8,9 +8,7 @@ const FeaturedEventsCard = ({
   imagesrc,
   alt,
   location,
-  slug,
   id,
-  key,
 }) => {
   const newDate = new Date(date);
   let options = {

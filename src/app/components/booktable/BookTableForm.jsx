@@ -4,11 +4,10 @@ import PrimaryButtons from "../buttons/PrimaryButtons";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { useEffect } from "react";
+import { PostBooking } from "./PostBooking";
 
 const valideringsSkema = z.object({
-  name: z.string(
-    "Hard to have a name without letters... Please use the alphabet for your name.",
-  ),
   name: z
     .string()
     .min(
@@ -32,60 +31,99 @@ const valideringsSkema = z.object({
       8,
       "Please insert a number bewteen 1-8 guests",
     ),
-  phoneNumber: z.e164("+45"),
   phoneNumber: z
     .string()
     .length(
       8,
       "Please insert a danish phone number, 8 digits long.",
     ),
+  tableNumber: z
+    .string()
+    .min(1, "Please select a table"),
+  choiceNight: z
+    .string()
+    .min(1, "Please select an event"),
 });
 
-const BookTableForm = ({ id }) => {
+const BookTableForm = ({
+  children,
+  eventDate,
+}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({
     resolver: zodResolver(valideringsSkema),
   });
 
+  /* AI HELPED WITH THIS FUNCTION: */
+  useEffect(() => {
+    const diffPageRoute =
+      window.location.pathname;
+    const eventId = diffPageRoute
+      .split("/")
+      .pop();
+    const defaultTitle =
+      document.querySelector("#default");
+    if (eventId) {
+      setValue("choiceNight", eventId);
+    }
+  }, [setValue]);
+  /*  ********************** */
+
   const [message, setMessage] = useState("");
-  const [title, setTitle] = useState("");
 
   const onSubmit = async (data) => {
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
-    /*     const result = await PostBookingInfo({
+    const result = await PostBooking({
       name: data.name,
       email: data.email,
-      contactMessage: data.contactMessage,
+      tableNumber: data.tableNumber,
+      guestsAmount: data.guestsAmount,
+      choiceNight: data.choiceNight,
+      phoneNumber: data.phoneNumber,
+      eventDate: eventDate,
+      bookingMessage: data.bookingMessage,
     });
-    console.log("result:", result); */
+    console.log("result:", result);
     /*************/
 
-    setMessage(
-      "Thank you for submitting your booking!",
-    );
+    if (result.success) {
+      setMessage(
+        "Thank you for submitting your booking!",
+      );
+      reset();
+    } else {
+      setMessage(`${result.error}`);
+    }
   };
 
-  /*     const [contactDate, setContactDate] =
+  const [bookingName, setBookingName] =
     useState("");
-  const [contactId, setContactId] = useState("");
-  const [contactName, setContactName] =
+  const [bookingEmail, setBookingEmail] =
     useState("");
-  const [contactEmail, setContactEmail] =
+  const [bookingTable, setBookingTable] =
     useState("");
-  const [contactMessage, setContactMessage] =
+  const [guestsAmount, setGuestsAmount] =
+    useState("");
+  const [bookingEvent, setBookingEvent] =
     useState("");
 
-  const updateContact = () => {
-    setContactDate(contactDate);
-    setContactId(contactId);
-    setContactName(contactName);
-    setContactEmail(contactEmail);
-    setContactMessage(contactMessage);
+  const [bookingComment, setBookingComment] =
+    useState("");
+  const [bookingId, setBookingId] = useState("");
+
+  const updateBookings = () => {
+    setBookingName(bookingName);
+    setBookingEmail(bookingEmail);
+    setBookingTable(bookingTable);
+    setGuestsAmount(guestsAmount);
+    setBookingEvent(bookingEvent);
+    setBookingComment(bookingComment);
+    setBookingId(bookingId);
   };
- */
 
   return (
     <section className="my-20">
@@ -129,21 +167,21 @@ const BookTableForm = ({ id }) => {
             className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
             <option value="">Table Number</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
+            <option value="1">Table: 1</option>
+            <option value="2">Table: 2</option>
+            <option value="3">Table: 3</option>
+            <option value="4">Table: 4</option>
+            <option value="5">Table: 5</option>
+            <option value="6">Table: 6</option>
+            <option value="7">Table: 7</option>
+            <option value="8">Table: 8</option>
+            <option value="9">Table: 9</option>
+            <option value="10">Table: 10</option>
+            <option value="11">Table: 11</option>
+            <option value="12">Table: 12</option>
+            <option value="13">Table: 13</option>
+            <option value="14">Table: 14</option>
+            <option value="15">Table: 15</option>
           </select>
           {errors.tableNumber && (
             <div>
@@ -167,18 +205,26 @@ const BookTableForm = ({ id }) => {
         <div className="flex gap-[1em] flex-wrap mx-4">
           <select
             {...register("choiceNight")}
+            /* AI HELPED WITH THIS SYNTAX: */
+            onChange={(night) => {
+              const selectedNight =
+                night.target.value;
+              if (selectedNight) {
+                window.location.href = `/booktable/${selectedNight}`;
+              }
+            }}
+            /* **************************** */
             name="choiceNight"
             id="choiceNight"
             className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
             <option
+              id="default"
               className="text-(--color-formfont)"
-              autoComplete={id}
-              value=""
             >
               Choose Night
             </option>
-            make dynamic options of nights here
+            {children}
           </select>
           {errors.choiceNight && (
             <div>
@@ -218,7 +264,7 @@ const BookTableForm = ({ id }) => {
               type="submit"
               textInput="submit"
               onClick={() => {
-                updateBooking;
+                updateBookings;
               }}
             ></PrimaryButtons>
           </div>

@@ -2,6 +2,8 @@ import BookTableForm from "@/app/components/booktable/BookTableForm";
 import Headline from "@/app/components/Headline";
 import Tables from "@/app/components/booktable/Tables";
 import { Suspense } from "react";
+import { EventFetch } from "@/app/components/booktable/EventFetch";
+
 const BookTable = ({ params }) => {
   return (
     <main>
@@ -26,8 +28,10 @@ const Details = async ({ params }) => {
       <Headline text="Book Table" />
       <h2>{event.title}</h2>
       <h2>{event.date}</h2>
-      <Tables />
-      <BookTableForm />
+      <Tables eventId={event.id} />
+      <BookTableForm eventDate={event.date}>
+        <EventFetch />
+      </BookTableForm>
     </main>
   );
 };

@@ -1,0 +1,27 @@
+import Tables from "./Tables";
+
+export async function ReservationsFetch({
+  eventId,
+}) {
+  "use server";
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/reservations`,
+    );
+
+    /* AI HELPED WITH THIS */
+    const fetchReservations =
+      await response.json();
+    const reserved = fetchReservations
+      .filter(
+        (eventRes) =>
+          eventRes.eventId === eventId,
+      )
+      .map((res) => res.table);
+
+    return reserved;
+  } catch (error) {
+    return [];
+  }
+  /*  ******************* */
+}
