@@ -82,7 +82,7 @@ const TrackPlayer = () => {
 
   return (
     <div className="track-player-container w-full m-auto select-none">
-      <div className="track-player-wrapper flex flex-row w-full h-full justify-center gap-2">
+      <div className="track-player-wrapper flex flex-row w-full h-full relative">
         <div className="current-track-image max-w-50 max-h-50 relative">
           <Image
             className="object-cover"
@@ -96,7 +96,7 @@ const TrackPlayer = () => {
             priority
           />
         </div>
-        <div className="player-controls-wrapper flex flex-col justify-center w-full min-w-0 pb-2">
+        <div className="player-controls-wrapper flex flex-col justify-center w-full min-w-0">
           <audio
             src={currentSong.src}
             ref={audioElem}
