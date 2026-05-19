@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Tables = () => {
+const Tables = ({ reserved = [] }) => {
   return (
     <section>
       <div className="table-container mb-(--spacing-large)">
@@ -10,7 +10,13 @@ const Tables = () => {
             alt="Table 1"
             width={300}
             height={200}
+            id="1"
             className="table-img"
+            style={{
+              opacity: reserved.includes("1")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             1
@@ -20,8 +26,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 2"
+            id="2"
             width={400}
             height={200}
+            style={{
+              opacity: reserved.includes("2")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             2
@@ -31,8 +43,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_2.png"
             alt="Table 3"
+            id="3"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("3")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             3
@@ -42,8 +60,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 4"
+            id="4"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("4")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             4
@@ -53,8 +77,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_3.png"
             alt="Table 5"
+            id="5"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("5")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute  text-center text-(length:--font-table-p)">
             5
@@ -64,8 +94,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 6"
+            id="6"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("6")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             6
@@ -75,8 +111,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 7"
+            id="7"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("7")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             7
@@ -86,8 +128,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_2.png"
             alt="Table 8"
+            id="8"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("8")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             8
@@ -97,8 +145,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 9"
+            id="9"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("9")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             9
@@ -108,8 +162,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_3.png"
             alt="Table 10"
+            id="10"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("10")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             10
@@ -119,8 +179,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 11"
+            id="11"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("11")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             11
@@ -130,8 +196,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 12"
+            id="12"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("12")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             12
@@ -141,8 +213,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_2.png"
             alt="Table 13"
+            id="13"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("13")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             13
@@ -152,8 +230,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_1.png"
             alt="Table 14"
+            id="14"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("14")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             14
@@ -163,8 +247,14 @@ const Tables = () => {
           <Image
             src="/assets/table/table_3.png"
             alt="Table 15"
+            id="15"
             width={200}
             height={100}
+            style={{
+              opacity: reserved.includes("15")
+                ? 0.5
+                : 1,
+            }}
           />
           <p className="booking-number absolute text-(length:--font-table-p)">
             15
