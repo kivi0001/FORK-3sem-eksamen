@@ -251,17 +251,19 @@ ul.full-width-scroller {
 /* SEKTION 4: NIGHT CLUB TRACK */
 
 ul.artists-scroller {
-  scroll-padding-inline: 2rem;
-  overflow-inline: auto;
-  scroll-snap-type: inline mandatory;
+  /* scroll-padding-inline: 2rem; */
+  /* overflow-inline: auto;
+  scroll-snap-type: inline mandatory; */
   list-style: none;
   display: flex;
   height: fit-content;
+  align-items: center;
+  place-content: center;
 
-  & li {
+  /* & li {
     flex: 1 0 250px;
     scroll-snap-align: center;
-  }
+  } */
 }
 
 .track-active-overlay {
@@ -277,12 +279,64 @@ ul.artists-scroller {
   background-color: oklch(0% 0 0);
 }
 
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+.volume-slider::-moz-range-thumb {
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
 .artist-track:hover .track-active-overlay {
   opacity: 90%;
 }
 
 .play-button:focus .track-active-overlay {
   opacity: 90%;
+}
+
+.track-player-container {
+  container-type: inline-size;
+}
+
+.track-controls {
+  container-type: inline-size;
+}
+
+@container (width < 760px) {
+  .track-player-wrapper {
+    margin-bottom: 20px;
+    img {
+      display: none;
+    }
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .track-controls {
+    flex-wrap: wrap;
+  }
+
+  .artists-scroller {
+    display: block;
+    min-block-size: 150px;
+
+    img {
+      min-block-size: 150px;
+    }
+  }
 }
 
 /* SECTION 5 - LATEST VIDEO */
