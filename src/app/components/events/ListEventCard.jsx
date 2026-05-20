@@ -46,7 +46,7 @@ const ListEventCard = ({
           </p>
           <div className="mt-auto ml-auto">
             <Link href={`/singleevent/${slug}`}>
-              <PrimaryButtons textInput="book event"></PrimaryButtons>
+              <PrimaryButtons textInput="Read More"></PrimaryButtons>
             </Link>
           </div>
         </div>
