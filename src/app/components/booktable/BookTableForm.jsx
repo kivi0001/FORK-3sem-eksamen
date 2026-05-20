@@ -96,7 +96,9 @@ const BookTableForm = ({
       );
       reset();
     } else {
-      setMessage(`${result.error}`);
+      setMessage(
+        "Ooops! We failed to submit your booking...",
+      );
     }
   };
 
@@ -104,24 +106,27 @@ const BookTableForm = ({
     useState("");
   const [bookingEmail, setBookingEmail] =
     useState("");
-  const [bookingTable, setBookingTable] =
+  const [phoneNumber, setPhoneNumber] =
+    useState("");
+  const [tableNumber, setTableNumber] =
     useState("");
   const [guestsAmount, setGuestsAmount] =
     useState("");
-  const [bookingEvent, setBookingEvent] =
+  const [choiceNight, setChoiceNight] =
     useState("");
 
-  const [bookingComment, setBookingComment] =
+  const [bookingMessage, setBookingMessage] =
     useState("");
   const [bookingId, setBookingId] = useState("");
 
   const updateBookings = () => {
     setBookingName(bookingName);
     setBookingEmail(bookingEmail);
-    setBookingTable(bookingTable);
+    setPhoneNumber(phoneNumber);
+    setTableNumber(tableNumber);
     setGuestsAmount(guestsAmount);
-    setBookingEvent(bookingEvent);
-    setBookingComment(bookingComment);
+    setChoiceNight(choiceNight);
+    setBookingMessage(bookingMessage);
     setBookingId(bookingId);
   };
 
