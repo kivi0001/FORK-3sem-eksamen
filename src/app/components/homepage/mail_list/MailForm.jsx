@@ -8,14 +8,9 @@ import { PostMailInfo } from "./PostMailInfo";
 
 const mailvalidation = z.object({
   email: z.email(),
-  emailMessage: z.string(
-    "E-mail already exists in our system!",
-  ),
 });
 
 const MailForm = () => {
-  // const [isSubscribed, setIsSubscribed] =
-  //   useState(false);
   const {
     register,
     handleSubmit,
@@ -24,24 +19,14 @@ const MailForm = () => {
   } = useForm({
     resolver: zodResolver(mailvalidation),
   });
-
-  // useEffect(() => {
-  //   if (!isSubscribed) return;
-
-  //   const timer = setTimeout(() => {
-  //     setIsSubscribed(false);
-  //   }, 3000);
-
-  //   return () => clearTimeout(timer);
-  // }, [isSubscribed]);
-
   const [message, setMessage] = useState("");
 
   const onSubmit = async (data) => {
+    /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
     const result = await PostMailInfo({
       email: data.email,
     });
-
+    /*************/
     if (result.success) {
       setMessage(
         "Thank you for subscribing to our newsletter!",
@@ -52,7 +37,7 @@ const MailForm = () => {
         "Subscription failed! Please try again.",
       );
     }
-    console.log("data", data);
+    console.log("result", result);
   };
 
   const [email, setEmail] = useState("");
@@ -81,16 +66,11 @@ const MailForm = () => {
       />
       <PrimaryButtons
         type="submit"
-        textInput={"Subscribe"}
+        textInput="Subscribe"
         onClick={() => {
-          updateNewsletter;
+          updateNewsletter();
         }}
       />
-      {/* {isSubscribed && (
-        <div className="self-center text-validation">
-          You have subscribed!
-        </div>
-      )} */}
       <div>{message}</div>
     </form>
   );

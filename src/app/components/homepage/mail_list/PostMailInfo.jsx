@@ -24,7 +24,7 @@ export async function PostMailInfo({ email }) {
     }
 
     const data = await response.json();
-    return { sucess: true, data };
+    return { success: true, data };
   } catch (error) {
     return {
       success: false,
