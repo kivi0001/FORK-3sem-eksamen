@@ -170,7 +170,7 @@
   --font-h1: var(--medium-large);
   --font-h2: var(--non-fluid-medium);
   --font-h3: var(--non-fluid-small);
-  --font-p: var(--small);
+  --font-p: var(--small-p);
   --font-input: var(--small);
   --font-button: var(--small);
   --font-event-form: var(--medium);
@@ -310,6 +310,7 @@ main section {
   grid-column: content;
 }
 
+/* EVENTS */
 .events-wrapper,
 .events-wrapper-content {
   display: grid;
@@ -327,12 +328,12 @@ main section {
   grid-row: 1;
 }
 
-.events-wrapper:nth-child(even)
+.events-wrapper:nth-child(odd)
   .fullbleed-eventsimg {
   grid-column: content-middle / full-end;
 }
 
-.events-wrapper:nth-child(even) .events-content {
+.events-wrapper:nth-child(odd) .events-content {
   grid-column: content-start / content-middle;
 }
 
