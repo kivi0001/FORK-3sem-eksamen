@@ -28,6 +28,7 @@ const Hero = () => {
         src={randomImage}
         layout="fill"
         objectFit="cover"
+        suppressHydrationWarning={true}
       ></Image>
 
       <div className="flex flex-col items-center ">
