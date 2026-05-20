@@ -14,12 +14,22 @@ export async function PostMailInfo({ email }) {
         }),
       },
     );
-
+    /* AI HELPED WITH THIS: */
     if (!response.ok) {
-      const errorEmail = await response.json();
+      if (response.status === 409) {
+        return {
+          success: false,
+          error:
+            "This email is already subscribed to our newsletter!",
+        };
+      }
+
+      const errorResponse = await response.json();
       return {
         success: false,
-        error: errorEmail.message,
+        error:
+          errorResponse.message ||
+          "Subscription failed!",
       };
     }
 
@@ -28,7 +38,10 @@ export async function PostMailInfo({ email }) {
   } catch (error) {
     return {
       success: false,
-      error: error.message,
+      error:
+        error.message ||
+        "An unexpected error occured.",
     };
   }
 }
+/***************/

@@ -33,17 +33,9 @@ const MailForm = () => {
       );
       reset();
     } else {
-      setMessage(
-        "Subscription failed! Please try again.",
-      );
+      setMessage(result.error);
     }
     console.log("result", result);
-  };
-
-  const [email, setEmail] = useState("");
-
-  const updateNewsletter = () => {
-    setEmail(email);
   };
 
   return (
@@ -58,7 +50,7 @@ const MailForm = () => {
       )}
       <input
         {...register("email")}
-        type="text"
+        type="email"
         name="email"
         id="email"
         placeholder="Enter your e-mail"
@@ -67,11 +59,13 @@ const MailForm = () => {
       <PrimaryButtons
         type="submit"
         textInput="Subscribe"
-        onClick={() => {
-          updateNewsletter();
-        }}
+        reset
       />
-      <div>{message}</div>
+      {message && (
+        <div className="text-alert self-center">
+          {message}
+        </div>
+      )}
     </form>
   );
 };
