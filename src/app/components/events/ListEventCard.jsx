@@ -1,7 +1,7 @@
 import PrimaryButtons from "../buttons/PrimaryButtons";
 import Link from "next/link";
 
-const SingleEventCard = ({
+const ListEventCard = ({
   date,
   title,
   description,
@@ -22,35 +22,37 @@ const SingleEventCard = ({
     options,
   ).format(newDate);
   return (
-    <div className="events-wrapper ">
-      <div className="events-wrapper-content">
+    <div className="events-wrapper mt-medium-to-large">
+      <div className="events-wrapper-content flex gap-x-5">
         <div className="fullbleed-eventsimg">
           <img src={imagesrc} alt={alt} />
         </div>
-        <div className="events-content">
-          <h2 className="uppercase text-foreground">
+        <div className="events-content flex flex-col w-fit">
+          <h2 className="uppercase text-foreground mb-2 font-(--font-weight-h2) text-(length:--font-h2)">
             {title}
           </h2>
-          <h3 className="text-info">
+          <h3 className="text-info text-(length:--font-h3)">
             {actualDate}
             <span className="text-divider">
               {" "}
               |{" "}
             </span>
-            <span className="uppercase text-foreground">
+            <span className="uppercase text-foreground font-(--font-weight-h2)">
               {location}
             </span>
           </h3>
-          <p className="text-bodyfont text-font-p tracking-(--letter-spacing-p) leading-6">
+          <p className="text-bodyfont text-(length:--font-table-p) tracking-(--letter-spacing-p) mt-6 leading-7">
             {description}
           </p>
-          <Link href={`/singleevent/${slug}`}>
-            <PrimaryButtons textInput="book event"></PrimaryButtons>
-          </Link>
+          <div className="mt-auto ml-auto">
+            <Link href={`/singleevent/${slug}`}>
+              <PrimaryButtons textInput="book event"></PrimaryButtons>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default SingleEventCard;
+export default ListEventCard;

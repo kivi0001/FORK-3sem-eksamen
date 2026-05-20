@@ -8,7 +8,6 @@ export async function ListEventInfo() {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/events`,
     );
-
     const FetchEvents = await response.json();
 
     return FetchEvents.map((event) => {
