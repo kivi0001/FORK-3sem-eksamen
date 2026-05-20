@@ -8,14 +8,9 @@ import { PostMailInfo } from "./PostMailInfo";
 
 const mailvalidation = z.object({
   email: z.email(),
-  emailMessage: z.string(
-    "E-mail already exists in our system!",
-  ),
 });
 
 const MailForm = () => {
-  // const [isSubscribed, setIsSubscribed] =
-  //   useState(false);
   const {
     register,
     handleSubmit,
@@ -24,41 +19,23 @@ const MailForm = () => {
   } = useForm({
     resolver: zodResolver(mailvalidation),
   });
-
-  // useEffect(() => {
-  //   if (!isSubscribed) return;
-
-  //   const timer = setTimeout(() => {
-  //     setIsSubscribed(false);
-  //   }, 3000);
-
-  //   return () => clearTimeout(timer);
-  // }, [isSubscribed]);
-
   const [message, setMessage] = useState("");
 
   const onSubmit = async (data) => {
+    /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
     const result = await PostMailInfo({
       email: data.email,
     });
-
+    /*************/
     if (result.success) {
       setMessage(
         "Thank you for subscribing to our newsletter!",
       );
       reset();
     } else {
-      setMessage(
-        "Subscription failed! Please try again.",
-      );
+      setMessage(result.error);
     }
-    console.log("data", data);
-  };
-
-  const [email, setEmail] = useState("");
-
-  const updateNewsletter = () => {
-    setEmail(email);
+    console.log("result", result);
   };
 
   return (
@@ -73,7 +50,7 @@ const MailForm = () => {
       )}
       <input
         {...register("email")}
-        type="text"
+        type="email"
         name="email"
         id="email"
         placeholder="Enter your e-mail"
@@ -81,17 +58,14 @@ const MailForm = () => {
       />
       <PrimaryButtons
         type="submit"
-        textInput={"Subscribe"}
-        onClick={() => {
-          updateNewsletter;
-        }}
+        textInput="Subscribe"
+        reset
       />
-      {/* {isSubscribed && (
-        <div className="self-center text-validation">
-          You have subscribed!
+      {message && (
+        <div className="text-alert self-center">
+          {message}
         </div>
-      )} */}
-      <div>{message}</div>
+      )}
     </form>
   );
 };
