@@ -15,6 +15,7 @@ const EventOverview = ({
   lineUp,
   schedule,
   content,
+  id,
 }) => {
   const newDate = new Date(date);
   let options = {
@@ -113,7 +114,7 @@ const EventOverview = ({
       <div className="flex flex-wrap mx-medium-to-large my-20">
         <p className="w-[80ch]">{content}</p>
         <div className="mt-auto ml-auto pt-10">
-          <Link href="/booktable">
+          <Link href={`/booktable/${id}`}>
             <PrimaryButtons textInput="book now" />
           </Link>
         </div>

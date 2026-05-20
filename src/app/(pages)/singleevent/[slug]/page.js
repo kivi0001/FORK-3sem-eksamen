@@ -42,6 +42,7 @@ const Details = async ({ params }) => {
         lineUp={event.lineup}
         schedule={event.schedule[2].time}
         content={event.content}
+        id={event.id}
       />
       <section className="commentsection">
         <AmountFetch id={event.id}></AmountFetch>

@@ -48,6 +48,7 @@ const valideringsSkema = z.object({
 const BookTableForm = ({
   children,
   eventDate,
+  reserved,
 }) => {
   const {
     register,
@@ -170,7 +171,6 @@ const BookTableForm = ({
             placeholder="Table Number"
             className="border p-4 w-[30em] text-(--color-placeholderfont)"
           >
-            <option value="">Table Number</option>
             <option value="1">Table: 1</option>
             <option value="2">Table: 2</option>
             <option value="3">Table: 3</option>
