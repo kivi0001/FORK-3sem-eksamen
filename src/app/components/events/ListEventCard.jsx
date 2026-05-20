@@ -45,7 +45,7 @@ const SingleEventCard = ({
             {description}
           </p>
           <Link href={`/singleevent/${slug}`}>
-            <PrimaryButtons textInput="book event"></PrimaryButtons>
+            <PrimaryButtons textInput="read more"></PrimaryButtons>
           </Link>
         </div>
       </div>

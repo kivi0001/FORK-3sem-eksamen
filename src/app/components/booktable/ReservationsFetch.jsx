@@ -1,5 +1,3 @@
-import Tables from "./Tables";
-
 export async function ReservationsFetch({
   eventId,
 }) {
