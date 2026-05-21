@@ -1,5 +1,5 @@
 import { cacheLife } from "next/cache";
-import Testiment from "./Testiment";
+import TestimonialSlider from "./TestimonialsSlider";
 
 export async function TestimonialsFetch() {
   "use cache";
@@ -11,19 +11,17 @@ export async function TestimonialsFetch() {
 
     const fetchTestimonials =
       await response.json();
-    return fetchTestimonials.map((testiment) => {
-      return (
-        <Testiment
-          key={testiment.id}
-          name={testiment.name}
-          facebook={testiment.facebook}
-          twitter={testiment.twitter}
-          testiment={testiment.content}
-          imgsrc={`${process.env.NEXT_PUBLIC_API_URL}${testiment.asset.url}`}
-          alt={testiment.asset.alt}
-        />
+
+    const featuredTestaments =
+      fetchTestimonials.filter(
+        (testiment) => testiment,
       );
-    });
+
+    return (
+      <TestimonialSlider
+        testimonials={featuredTestaments}
+      />
+    );
   } catch (error) {
     return <p>Failed to load testimonials...</p>;
   }

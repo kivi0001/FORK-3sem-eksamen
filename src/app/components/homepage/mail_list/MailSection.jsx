@@ -2,7 +2,7 @@ import MailForm from "./MailForm";
 
 const MailSection = () => {
   return (
-    <section className="flex flex-col py-large items-center gap-1">
+    <section className="flex flex-col relative items-center gap-1 my-large">
       <div className="flex flex-col items-center gap-1.5 text-center">
         <h3 className="text-(length:--font-home-form-h2) uppercase font-(--font-weight-h3) tracking-(--letter-spacing-h3)">
           want the latest night club news?

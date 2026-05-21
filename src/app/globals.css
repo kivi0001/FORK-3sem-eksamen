@@ -182,6 +182,7 @@
   --font-xs-footer-p: var(--xtrasmall-p);
   --font-home-form-h2: var(--medium-v2);
   --font-table-p: var(--xtrasmall-p);
+  --font-testimonial-p: var(--small-p);
 
   /* FONT WEIGHT TOKENS */ /* Home page */
   --font-weight-home-h1: var(--weight-medium);
