@@ -1,12 +1,15 @@
+import { Suspense } from "react";
 import { TestimonialsFetch } from "./TestimonialsFetch";
 import Image from "next/image";
 
-const TestimonialsSection = () => {
+const TestimonialsSection = ({ id }) => {
   return (
     <section className="testimonials-section flex justify-center my-10 relative">
-      <ul className="testimonials-scroller">
-        <TestimonialsFetch />
-      </ul>
+      <Suspense>
+        <ul className="testimonials-scroller flex">
+          <TestimonialsFetch id={id} />
+        </ul>
+      </Suspense>
       <Image
         className="opacity-10 brightness-45"
         src="/assets/bg/footerbg.jpg"

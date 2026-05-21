@@ -404,7 +404,7 @@ ul.artists-scroller {
   }
 }
 
-ul.testimonials-scroller {
+/* ul.testimonials-scroller {
   scroll-padding-inline: 4rem;
   overflow-inline: auto;
   scroll-snap-type: inline mandatory;
@@ -418,7 +418,7 @@ ul.testimonials-scroller {
     flex: 1 0 300px;
     scroll-snap-align: center;
   }
-}
+} */
 
 /* TABLE BOOKING */
 .booking-number {
