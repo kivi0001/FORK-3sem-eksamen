@@ -404,22 +404,6 @@ ul.artists-scroller {
   }
 }
 
-/* ul.testimonials-scroller {
-  scroll-padding-inline: 4rem;
-  overflow-inline: auto;
-  scroll-snap-type: inline mandatory;
-  list-style: none;
-  display: flex;
-  gap: 4rem;
-  height: auto;
-  width: 50%;
-
-  & li {
-    flex: 1 0 300px;
-    scroll-snap-align: center;
-  }
-} */
-
 /* TABLE BOOKING */
 .booking-number {
   top: 50%;

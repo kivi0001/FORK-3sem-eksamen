@@ -2,10 +2,6 @@
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import Image from "next/image";
-import {
-  useRouter,
-  useSearchParams,
-} from "next/navigation";
 
 const Testiment = ({
   imgsrc,
@@ -15,24 +11,13 @@ const Testiment = ({
   facebook,
   twitter,
   index,
+  activeTestament,
 }) => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const activeTestament = Number(
-    searchParams.get("testimonials") || "0",
-  );
   const isActive = index === activeTestament;
-
-  const handleButtonClick = (targetIndex) => {
-    router.push(`?testimonials=${targetIndex}`, {
-      scroll: false,
-    });
-  };
 
   return (
     <li
-      className={`justify-center z-1 flex flex-col items-center gap-4 ${isActive ? "flex" : "hidden"}`}
+      className={`justify-center flex flex-col items-center gap-2 pt-small transition-all duration-250 ease-in ${isActive ? "relative flex opacity-100 translate-y-0 scale-100 z-10" : "absolute opacity-0 translate-y-4 scale-100 pointer-events-none z-0"}`}
     >
       <Image
         src={imgsrc}
@@ -40,13 +25,13 @@ const Testiment = ({
         width={200}
         height={200}
       />
-      <h3 className="my-6 uppercase font-(--font-weight-h3)">
+      <h3 className="my-small uppercase font-(--font-weight-h3)">
         {name}
       </h3>
-      <p className="text-center w-[80ch]">
+      <p className="text-center text-(length:--font-testimonial-p) leading-[180%] w-full max-w-[100ch] px-4">
         {testiment}
       </p>
-      <div className="flex gap-6 my-6">
+      <div className="flex gap-6 mt-small-medium">
         <a
           className="border p-2"
           href={facebook}
@@ -61,35 +46,6 @@ const Testiment = ({
         >
           <FaTwitter size={25}></FaTwitter>
         </a>
-      </div>
-      <div className="flex justify-center gap-3 mt-small-medium w-full">
-        <button
-          onClick={() => handleButtonClick(0)}
-          className={`w-5 h-5 cursor-pointer border-none transition-transform ${
-            activeTestament === 0
-              ? "bg-(--pink) scale-110"
-              : "bg-foreground"
-          }`}
-          aria-label="Show featured event"
-        />
-        <button
-          onClick={() => handleButtonClick(1)}
-          className={`w-5 h-5 cursor-pointer border-none transition-transform ${
-            activeTestament === 1
-              ? "bg-(--pink) scale-110"
-              : "bg-foreground"
-          }`}
-          aria-label="Show other featured event"
-        />
-        <button
-          onClick={() => handleButtonClick(2)}
-          className={`w-5 h-5 cursor-pointer border-none transition-transform ${
-            activeTestament === 2
-              ? "bg-(--pink) scale-110"
-              : "bg-foreground"
-          }`}
-          aria-label="Show other featured event"
-        />
       </div>
     </li>
   );
