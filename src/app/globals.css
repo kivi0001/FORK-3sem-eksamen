@@ -340,6 +340,10 @@ main section {
   grid-column: content-start / content-middle;
 }
 
+.pagination-content {
+  grid-column: content-start / content-end;
+}
+
 /* FOOTER */
 
 footer {

@@ -22,7 +22,7 @@ const ListEventCard = ({
     options,
   ).format(newDate);
   return (
-    <div className="events-wrapper mt-medium-to-large">
+    <section className="events-wrapper mt-medium">
       <div className="events-wrapper-content flex gap-x-5">
         <div className="fullbleed-eventsimg">
           <img src={imagesrc} alt={alt} />
@@ -51,7 +51,7 @@ const ListEventCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
