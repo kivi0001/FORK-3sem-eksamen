@@ -5,8 +5,7 @@ import EventsPagination from "./EventsPagination";
 export async function ListEventInfo({
   searchParams,
 }) {
-  "use cache";
-  cacheLife("hours");
+  "cache no store";
 
   /* AI HJALP MED SYNTAKS RÆKKEFØLGE */
   const getParams = await searchParams;
