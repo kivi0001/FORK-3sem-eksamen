@@ -122,8 +122,7 @@
   display: grid;
   grid-template-columns: subgrid;
   grid-column: full-start / full-end;
-  padding-bottom: 6em;
-  margin-block: 4em;
+
   background: url("/assets/bg/slider_bg_overlay.png")
     no-repeat center/cover;
 
@@ -135,7 +134,7 @@
 
 /* featured card scroller */
 
-ul.full-width-scroller {
+/* ul.full-width-scroller {
   scroll-padding-inline: 2rem;
   overflow-inline: auto;
   scroll-snap-type: inline mandatory;
@@ -147,6 +146,50 @@ ul.full-width-scroller {
   & li {
     flex: 1 0 500px;
     scroll-snap-align: center;
+  }
+} */
+
+ul.full-width-scroller {
+  list-style: none;
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+
+ul.full-width-scroller li {
+  width: 100%;
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  ul.full-width-scroller {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: fit-content;
+    overflow: visible;
+  }
+
+  ul.full-width-scroller li {
+    max-width: fit-content;
+  }
+}
+
+@media (max-width: 1100px) {
+  ul.full-width-scroller {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: fit-content;
+    overflow: visible;
+  }
+
+  ul.full-width-scroller li {
+    max-width: fit-content;
   }
 }
 

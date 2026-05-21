@@ -6,6 +6,7 @@
   --primary-light: oklch(97.614% 0.00011 271.152);
   --primary-dark: oklch(15.557% 0.0017 16.767);
   --pink: oklch(65.346% 0.24194 9.256);
+  --dark-pink: oklab(53.169% 0.19443 0.0322);
   --medium-grey: oklch(82.032% 0.00009 271.152);
   --dark-grey: oklch(78.422% 0.00223 15.01);
   --background: oklch(15.557% 0.0017 16.767);
@@ -161,6 +162,7 @@
   --color-validation: var(--green);
   --color-trackbg: var(--pink);
   --color-progressbg: var(--foreground);
+  --color-featuredevent-bar: var(--dark-pink);
 
   /* FONT-SIZE TOKENS */
   --font-home-h1: var(--large);
@@ -284,7 +286,6 @@ body {
     )
     [full-end];
   grid-template-rows: auto;
-  max-width: 1440px;
   margin: auto;
 }
 
@@ -300,6 +301,7 @@ main {
   grid-template-columns: subgrid;
   grid-column: full;
   grid-row: 2 / auto;
+  max-width: 1440px;
 }
 
 .hero-image {

@@ -10,12 +10,17 @@ export async function FeaturedSectionFetch() {
     );
 
     const fetchEvents = await response.json();
-    return fetchEvents.map((event) => {
+    const featuredEvents = fetchEvents.filter(
+      (event) => event.isFeatured === true,
+    );
+
+    return featuredEvents.map((event, index) => {
       return (
         <FeaturedEventsCard
           id={event.id}
           key={event.id}
           slug={event.slug}
+          index={index}
           date={event.date}
           location={event.location}
           title={event.title}

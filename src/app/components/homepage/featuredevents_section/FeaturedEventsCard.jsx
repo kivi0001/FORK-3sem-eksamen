@@ -1,5 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  useRouter,
+  useSearchParams,
+} from "next/navigation";
 
 const FeaturedEventsCard = ({
   date,
@@ -9,7 +14,18 @@ const FeaturedEventsCard = ({
   alt,
   location,
   id,
+  index,
 }) => {
+  /* AI HELPED WITH THIS */
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const activeEvent = Number(
+    searchParams.get("event") || "0",
+  );
+  const isActive = index === activeEvent;
+  //////////////////////
+
   const newDate = new Date(date);
   let options = {
     hour: "numeric",
@@ -22,11 +38,21 @@ const FeaturedEventsCard = ({
     options,
   ).format(newDate);
 
+  /* AI HELPED WITH THIS */
+  const handleButtonClick = (targetIndex) => {
+    router.push(`?event=${targetIndex}`, {
+      scroll: false,
+    });
+  };
+  ///////////////
+
   return (
-    <li className="relative">
-      <div className="image-hover relative">
+    <li
+      className={`relative max-w-fit max-h-fit flex-col ${isActive ? "flex" : "hidden md:flex"}`}
+    >
+      <div className="image-hover relative object-cover">
         <Image
-          className="w-full h-80 object-cover"
+          className="min-h-80 object-cover"
           src={imagesrc}
           alt={alt}
           width={600}
@@ -51,9 +77,30 @@ const FeaturedEventsCard = ({
           <div className="mt-auto border-s-transparent border-bs-transparent border-e-(--pink) border-be-transparent border-s-0 border-bs-40 border-e-40 border-be-0"></div>
         </div>
       </div>
-      <div className="flex justify-between p-1 gap-2 bg-(--pink) w-full">
+      <div className="flex justify-between py-1 px-3 gap-2 bg-(--pink) w-full">
         <p>{location}</p>
         <p>{actualDate}</p>
+      </div>
+
+      <div className="flex justify-center gap-3 mt-small-medium md:hidden w-full">
+        <button
+          onClick={() => handleButtonClick(0)}
+          className={`w-5 h-5 cursor-pointer border-none transition-transform ${
+            activeEvent === 0
+              ? "bg-(--pink) scale-110"
+              : "bg-foreground"
+          }`}
+          aria-label="Show featured event"
+        />
+        <button
+          onClick={() => handleButtonClick(1)}
+          className={`w-5 h-5 cursor-pointer border-none transition-transform ${
+            activeEvent === 1
+              ? "bg-(--pink) scale-110"
+              : "bg-foreground"
+          }`}
+          aria-label="Show other featured event"
+        />
       </div>
     </li>
   );
