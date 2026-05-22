@@ -22,7 +22,7 @@ const Hero = () => {
     ].link;
 
   return (
-    <section className="hero-image flex flex-col items-center justify-center">
+    <section className="hero-image relative h-screen flex flex-col items-center justify-center">
       <Image
         alt="background hero image of party people"
         className="image-party"
