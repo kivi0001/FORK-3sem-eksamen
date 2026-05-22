@@ -4,8 +4,10 @@ import HeaderButton from "./HeaderButton";
 import BurgerMenu from "./BurgerMenu";
 import Link from "next/link";
 import "@/app/custom.css";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   return (
     <div className="header-wrapper sticky z-100 top-0 bg-background">
       <header className="flex justify-between border-y-(--pink) border-y-2">
@@ -20,18 +22,30 @@ const Header = () => {
         </div>
         <nav className="flex gap-(--padding-block-input-field) place-content-center items-center justify-between">
           <Link href="/">
-            <HeaderButton>home</HeaderButton>
+            <HeaderButton
+              active={pathname === "/"}
+            >
+              home
+            </HeaderButton>
           </Link>
           <Link href="/events">
-            <HeaderButton>events</HeaderButton>
+            <HeaderButton
+              active={pathname === "/events"}
+            >
+              events
+            </HeaderButton>
           </Link>
           <Link href="/booktable">
-            <HeaderButton>
+            <HeaderButton
+              active={pathname === "/booktable"}
+            >
               book table
             </HeaderButton>
           </Link>
           <Link href="/contact">
-            <HeaderButton>
+            <HeaderButton
+              active={pathname === "/contact"}
+            >
               contact us
             </HeaderButton>
           </Link>
