@@ -35,7 +35,6 @@ const Details = async ({ params }) => {
         />
         <Tables eventId={event.id} />
         <BookTableForm eventDate={event.date}>
-          <ReservationsFetch />
           <EventFetch />
         </BookTableForm>
       </section>

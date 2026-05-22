@@ -1,4 +1,3 @@
-import { cacheLife } from "next/cache";
 import ListEventCard from "./ListEventCard";
 import EventsPagination from "./EventsPagination";
 
