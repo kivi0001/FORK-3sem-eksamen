@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useEffect } from "react";
 import { PostBooking } from "./PostBooking";
+import BookEventTitle from "./BookEventTitle";
 
 const valideringsSkema = z.object({
   name: z
@@ -46,9 +47,8 @@ const valideringsSkema = z.object({
 });
 
 const BookTableForm = ({
-  children,
   eventDate,
-  reserved,
+  events = [],
 }) => {
   const {
     register,
@@ -220,7 +220,7 @@ const BookTableForm = ({
             /* **************************** */
             name="choiceNight"
             id="choiceNight"
-            className="border p-4 w-[30em] text-(--color-placeholderfont)"
+            className="border p-4 w-[30em] hidden text-(--color-placeholderfont)"
           >
             <option
               id="default"
@@ -228,7 +228,15 @@ const BookTableForm = ({
             >
               Choose Night
             </option>
-            {children}
+            {events.map((event) => (
+              <BookEventTitle
+                key={event.id}
+                date={event.date}
+                location={event.location}
+                title={event.title}
+                id={event.id}
+              />
+            ))}
           </select>
           {errors.choiceNight && (
             <div>
