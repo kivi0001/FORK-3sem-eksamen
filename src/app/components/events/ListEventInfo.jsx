@@ -4,8 +4,7 @@ import EventsPagination from "./EventsPagination";
 export async function ListEventInfo({
   searchParams,
 }) {
-  "cache no store";
-
+  "use server";
   /* AI HJALP MED SYNTAKS RÆKKEFØLGE */
   const getParams = await searchParams;
   const currentPage =
