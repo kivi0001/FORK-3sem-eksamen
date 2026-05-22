@@ -4,6 +4,25 @@
   container-type: inline-size;
 }
 
+.home-main {
+  overflow: visible;
+  margin: none;
+  padding: none;
+}
+
+/* AI HELPED WITH THE RIGHT CSS PLACEMENT */
+.sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  grid-column: full-start / full-end;
+}
+/* /////////////////////// */
+
+main {
+  padding-top: 0;
+}
+
 .trigger-div {
   margin-block: 2em;
   position: absolute;
