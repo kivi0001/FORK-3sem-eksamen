@@ -1,69 +1,112 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
-
-const artistImages = {
-  "Black Box Funky":
-    "/assets/content-img/track1.jpg",
-  Euphoria: "/assets/content-img/track2.jpg",
-  "Fashion Red Tape":
-    "/assets/content-img/track3.jpg",
-  "Neon Nanny": "/assets/content-img/track4.jpg",
-  Overload: "/assets/content-img/track5.jpg",
-};
+import { BiSolidLeftArrow } from "react-icons/bi";
+import { BiSolidRightArrow } from "react-icons/bi";
 
 const Artists = ({
   songs = [],
   setCurrentSong,
   setisPlaying,
+  currentSong,
 }) => {
+  const [carouselIndex, setCarouselIndex] =
+    useState(0);
+
   const handleSongChoice = (song) => {
     setCurrentSong(song);
     setisPlaying(true);
   };
 
-  return (
-    <ul className="artists-scroller  flex flex-row w-full p-0 m-0 list-none overflow-x-auto overflow-y-hidden">
-      {songs?.map((song, index) => (
-        <li
-          key={index}
-          className="artist-image-hover w-full h-full relative"
-        >
-          <div
-            className="artist-track relative max-w-47.5 max-h-47.5 cursor-pointer"
-            onClick={() => handleSongChoice(song)}
-          >
-            <Image
-              className="object-cover"
-              src={
-                artistImages[song.title] ||
-                "/assets/content-img/track1.jpg"
-              }
-              alt={`image of ${song.title}`}
-              width={190}
-              height={190}
-            />
+  const prevSong = () => {
+    setCarouselIndex((prev) =>
+      prev === 0 ? songs.length - 1 : prev - 1,
+    );
+  };
 
-            <div className="track-active-overlay absolute inset-0 flex flex-col bg-black/40 transition-opacity duration-200">
-              <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-20 border-bs-0 border-e-0 border-be-20"></div>
-              <div className="flex flex-col items-center mt-auto">
-                <button className="play-button cursor-pointer p-4 relative z-1">
-                  <Image
-                    src="/assets/icon/Play_btn.svg"
-                    alt="a play button"
-                    width={35}
-                    height={35}
-                  />
-                </button>
-              </div>
-              <p className="text-center mt-1 uppercase text-(length:--font-artist)">
-                {song.title}
-              </p>
-              <div className="mt-auto border-s-transparent border-bs-transparent border-e-(--pink) border-be-transparent border-s-0 border-bs-20 border-e-20 border-be-0 w-0 h-0 self-end"></div>
-            </div>
-          </div>
-        </li>
-      ))}
-    </ul>
+  const nextSong = () => {
+    setCarouselIndex((prev) =>
+      prev === songs.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  return (
+    <div className="w-full relative">
+      <div className="w-full overflow-hidden">
+        {songs && songs.length > 0 && (
+          <ul
+            className="flex p-0 m-0 list-none transition-transform duration-500 ease-in-out flex-nowrap flex-row md:transform-none! md:justify-center md:flex-wrap"
+            style={{
+              transform: `translateX(-${carouselIndex * 100}%)`,
+            }}
+          >
+            {songs.map((song, index) => {
+              const isActive =
+                currentSong?.id === song.id;
+
+              return (
+                <li
+                  key={index}
+                  className="w-full shrink-0 flex justify-center md:w-auto transition-all duration-500"
+                >
+                  <div
+                    className="artist-track relative max-w-fit cursor-pointer group overflow-hidden"
+                    onClick={() =>
+                      handleSongChoice(song)
+                    }
+                  >
+                    <Image
+                      className="artist-image object-cover min-w-54 md:flex hidden"
+                      src={song.image}
+                      alt={song.title}
+                      width={200}
+                      height={200}
+                    />
+
+                    <div className="absolute inset-0 flex flex-col bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-20 border-bs-0 border-e-0 border-be-20"></div>
+
+                      <div className="flex flex-col items-center mt-auto">
+                        <button className="cursor-pointer p-4 relative z-10">
+                          <Image
+                            src="/assets/icon/Play_btn.svg"
+                            alt="a play button"
+                            width={35}
+                            height={35}
+                          />
+                        </button>
+                      </div>
+
+                      <p className="text-center mt-1 uppercase text-xs text-white px-2 truncate w-full">
+                        {song.title}
+                      </p>
+
+                      <div className="mt-auto border-s-transparent border-bs-transparent border-e-(--pink) border-be-transparent border-s-0 border-bs-20 border-e-20 border-be-0 w-0 h-0 self-end"></div>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
+      {songs.length > 0 && (
+        <div className="flex md:hidden justify-between items-center max-w-60 mx-auto mb-4">
+          <button
+            onClick={prevSong}
+            className="text-white border border-white absolute left-0 top-1/2 p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
+          >
+            <BiSolidLeftArrow size={25} />
+          </button>
+          <button
+            onClick={nextSong}
+            className="text-white border border-white absolute right-0 top-1/2 p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
+          >
+            <BiSolidRightArrow size={25} />
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
 
