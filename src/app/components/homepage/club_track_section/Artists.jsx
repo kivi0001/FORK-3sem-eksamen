@@ -56,16 +56,15 @@ const Artists = ({
                     }
                   >
                     <Image
-                      className="artist-image object-cover min-w-54 md:flex"
                       src={song.image}
                       alt={song.title}
                       width={200}
                       height={200}
+                      className="artist-image object-cover min-w-54 md:flex"
                     />
 
                     <div className="absolute inset-0 flex flex-col bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-20 border-bs-0 border-e-0 border-be-20"></div>
-
                       <div className="flex flex-col items-center mt-auto">
                         <button className="cursor-pointer p-4 relative z-10">
                           <Image
