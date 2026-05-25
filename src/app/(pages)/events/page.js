@@ -6,7 +6,9 @@ import { Suspense } from "react";
 export default function Events({ searchParams }) {
   return (
     <main>
-      <Header />
+      <div className="sticky-container">
+        <Header />
+      </div>
       <Headline text="events" />
       <Suspense fallback={"loading events..."}>
         <ListEventInfo
