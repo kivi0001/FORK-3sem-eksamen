@@ -21,10 +21,13 @@ const Details = async ({ params }) => {
   const { id } = await params;
   const events = await EventFetch();
 
+  /* AI HELPED WITH THIS */
   if (!id) {
     return (
       <main>
-        <Header />
+        <div className="sticky-container">
+          <Header />
+        </div>
         <Headline text="Book Table" />
         <section className="justify-center items-center place-content-center col-span-full mt-large">
           <ChooseNightForm events={events} />
@@ -45,7 +48,9 @@ const Details = async ({ params }) => {
 
   return (
     <main>
-      <Header />
+      <div className="sticky-container">
+        <Header />
+      </div>
       <Headline text="Book Table" />
       <section className="grid grid-cols-subgrid col-span-full mt-8">
         <BookEventHeadline

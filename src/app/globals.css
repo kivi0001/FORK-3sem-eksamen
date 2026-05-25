@@ -138,6 +138,14 @@
     2.5rem
   );
 
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,20—180 */
+
+  --fluid-20-180: clamp(
+    1.25rem,
+    -3.0357rem + 19.0476cqi,
+    11.25rem
+  );
+
   /*FORM WIDTH (book table)*/
   --form-width-big: calc(100% - 20px);
   --form-width-small: calc(50% - 20px);
