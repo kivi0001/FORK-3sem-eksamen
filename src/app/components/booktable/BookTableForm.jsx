@@ -131,7 +131,10 @@ const BookTableForm = ({
   };
 
   return (
-    <section className="form-container my-20">
+    <section
+      id="book-table-form"
+      className="form-container my-20"
+    >
       <h1 className="text-(length:--font-h2) uppercase font-bold my-6 mx-4">
         book a table
       </h1>

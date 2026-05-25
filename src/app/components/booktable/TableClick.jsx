@@ -5,13 +5,35 @@ const TableClick = ({
   tableNumber,
   reserved,
 }) => {
+  /* AI HELPED WITH THIS FUNCTION: */
+
+  const scrollToBookTableForm = () => {
+    const formSection = document.querySelector(
+      "#book-table-form",
+    );
+    if (formSection) {
+      formSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+    const tableInput = document.querySelector(
+      "#tableNumber",
+    );
+    if (tableInput) {
+      tableInput.focus();
+    }
+  };
+  /* ******************************** */
+
   return (
     <div
       className="relative text-center cursor-pointer"
       /* AI HELPED WITH THIS SYNTAX: */
       onClick={() => {
         if (reserved.includes(tableNumber)) {
-          alert("This table is already booked.");
+          alert(
+            "This table is already booked. Please select an available table.",
+          );
           return;
         }
         const selectedTable =
@@ -19,6 +41,7 @@ const TableClick = ({
         if (selectedTable) {
           selectedTable.value = tableNumber;
         }
+        scrollToBookTableForm();
       }}
       /* ************************** */
     >
