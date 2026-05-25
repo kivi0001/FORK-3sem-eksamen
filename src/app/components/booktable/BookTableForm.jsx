@@ -149,7 +149,7 @@ const BookTableForm = ({
             name="name"
             id="name"
             placeholder="Your name"
-            className="name-input border p-4 w-(--form-width-small)"
+            className="name-input border p-4 w-(--form-w-small)"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
@@ -160,7 +160,7 @@ const BookTableForm = ({
             name="email"
             id="email"
             placeholder="Your email"
-            className="email-input border p-4 w-(--form-width-small)"
+            className="email-input border p-4 w-(--form-w-small)"
           ></input>
           {errors.email && (
             <div>{errors.email.message}</div>
@@ -172,7 +172,7 @@ const BookTableForm = ({
             name="tableNumber"
             id="tableNumber"
             placeholder="Table Number"
-            className="table-input border p-4 w-(--form-width-small) text-(--color-placeholderfont)"
+            className="table-input border p-4 w-(--form-w-small) text-(--color-placeholderfont)"
           >
             <option value="1">Table: 1</option>
             <option value="2">Table: 2</option>
@@ -201,7 +201,7 @@ const BookTableForm = ({
             name="guestsAmount"
             id="guestsAmount"
             placeholder="Number Of Guests"
-            className="guests-input border p-4 w-(--form-width-small)"
+            className="guests-input border p-4 w-(--form-w-small)"
           ></input>
           {errors.guestsAmount && (
             <div>
@@ -223,7 +223,7 @@ const BookTableForm = ({
             /* **************************** */
             name="choiceNight"
             id="choiceNight"
-            className="border p-4 w-(--form-width-small) hidden text-(--color-placeholderfont)"
+            className="border p-4 w-(--form-w-small) hidden text-(--color-placeholderfont)"
           >
             <option
               id="default"
@@ -252,7 +252,7 @@ const BookTableForm = ({
             name="phoneNumber"
             id="phoneNumber"
             placeholder="Your Contact Number"
-            className="border p-4 w-(--form-width-big)"
+            className="border p-4 w-(--form-w-big)"
           ></input>
           {errors.phoneNumber && (
             <div>
@@ -260,7 +260,7 @@ const BookTableForm = ({
             </div>
           )}
         </div>
-        <div className="flex flex-col w-(--form-width-big)">
+        <div className="flex flex-col w-(--form-w-big)">
           <textarea
             {...register("bookingMessage")}
             type="text"
