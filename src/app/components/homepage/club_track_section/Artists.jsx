@@ -56,7 +56,7 @@ const Artists = ({
                     }
                   >
                     <Image
-                      className="artist-image object-cover min-w-54 md:flex hidden"
+                      className="artist-image object-cover min-w-54 md:flex"
                       src={song.image}
                       alt={song.title}
                       width={200}
@@ -91,16 +91,16 @@ const Artists = ({
         )}
       </div>
       {songs.length > 0 && (
-        <div className="flex md:hidden justify-between items-center max-w-60 mx-auto mb-4">
+        <div className="flex md:hidden justify-center gap-8 items-center max-w-60 mx-auto mt-4">
           <button
             onClick={prevSong}
-            className="text-white border border-white absolute left-0 top-1/2 p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
+            className="text-white border border-white p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
           >
             <BiSolidLeftArrow size={25} />
           </button>
           <button
             onClick={nextSong}
-            className="text-white border border-white absolute right-0 top-1/2 p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
+            className="text-white border border-white p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
           >
             <BiSolidRightArrow size={25} />
           </button>

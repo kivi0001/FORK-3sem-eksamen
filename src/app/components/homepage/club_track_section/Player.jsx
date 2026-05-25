@@ -59,6 +59,7 @@ const Player = ({
     }
   };
 
+  // AI HELPED WITH THIS //
   const handleVolumeChange = (e) => {
     const rawVolume = parseFloat(e.target.value);
 
@@ -88,7 +89,9 @@ const Player = ({
       setIsMuted(true);
     }
   };
+  /////////////////
 
+  // AI HELPED WITH THIS //
   const formatTime = (timeInSeconds) => {
     if (isNaN(timeInSeconds)) return "0:00";
     const minutes = Math.floor(
@@ -101,6 +104,7 @@ const Player = ({
   const progressPercent = duration
     ? (currentTime / duration) * 100
     : 0;
+  ///////////////////////////////
 
   return (
     <div className="music-container flex flex-col text-center mx-auto px-8 w-full">
@@ -153,6 +157,7 @@ const Player = ({
           />
         </div>
         <div className="volume-container flex items-center gap-2 group text-2xl pt-5 m-auto md:pt-0 md:m-0">
+          {/* AI HELPED WITH THIS */}
           <button
             onClick={toggleMute}
             className="focus:outline-none text-2xl hover:text-trackbg"
@@ -163,7 +168,7 @@ const Player = ({
               <FaVolumeUp />
             )}
           </button>
-
+          {/* ////////////// */}
           <input
             type="range"
             min="0"
