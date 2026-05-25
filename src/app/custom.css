@@ -113,11 +113,15 @@ main {
   width: 100%;
   opacity: 0;
   transition: 1.5s ease;
-  background-color: oklch(0% 0 0);
+  background-color: oklch(0% 0 0 / 0.54);
 }
 
 .image-hover:hover .overlay {
   opacity: 90%;
+}
+
+.text-overlay {
+  background-color: oklch(0% 0 0 / 0.847);
 }
 
 /* welcome card overlay */
