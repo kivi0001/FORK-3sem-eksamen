@@ -131,7 +131,7 @@ const BookTableForm = ({
   };
 
   return (
-    <section className="my-20">
+    <section className="form-container my-20">
       <h1 className="text-(length:--font-h2) uppercase font-bold my-6 mx-4">
         book a table
       </h1>
@@ -139,14 +139,14 @@ const BookTableForm = ({
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 "
       >
-        <div className="flex gap-[1em] flex-wrap mx-4">
+        <div className="flex gap-[1.3em] flex-wrap">
           <input
             {...register("name")}
             type="text"
             name="name"
             id="name"
             placeholder="Your name"
-            className="border p-4 w-[30em]"
+            className="name-input border p-4 w-(--form-width-small)"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
@@ -157,19 +157,19 @@ const BookTableForm = ({
             name="email"
             id="email"
             placeholder="Your email"
-            className="border p-4 w-[30em]"
+            className="email-input border p-4 w-(--form-width-small)"
           ></input>
           {errors.email && (
             <div>{errors.email.message}</div>
           )}
         </div>
-        <div className="flex gap-[1em] flex-wrap mx-4">
+        <div className="flex gap-[1.3em] flex-wrap">
           <select
             {...register("tableNumber")}
             name="tableNumber"
             id="tableNumber"
             placeholder="Table Number"
-            className="border p-4 w-[30em] text-(--color-placeholderfont)"
+            className="table-input border p-4 w-(--form-width-small) text-(--color-placeholderfont)"
           >
             <option value="1">Table: 1</option>
             <option value="2">Table: 2</option>
@@ -198,7 +198,7 @@ const BookTableForm = ({
             name="guestsAmount"
             id="guestsAmount"
             placeholder="Number Of Guests"
-            className="border p-4 w-[30em]"
+            className="guests-input border p-4 w-(--form-width-small)"
           ></input>
           {errors.guestsAmount && (
             <div>
@@ -206,7 +206,7 @@ const BookTableForm = ({
             </div>
           )}
         </div>
-        <div className="flex gap-[1em] flex-wrap mx-4">
+        <div className="flex flex-wrap">
           <select
             {...register("choiceNight")}
             /* AI HELPED WITH THIS SYNTAX: */
@@ -220,7 +220,7 @@ const BookTableForm = ({
             /* **************************** */
             name="choiceNight"
             id="choiceNight"
-            className="border p-4 w-[30em] hidden text-(--color-placeholderfont)"
+            className="border p-4 w-(--form-width-small) hidden text-(--color-placeholderfont)"
           >
             <option
               id="default"
@@ -249,7 +249,7 @@ const BookTableForm = ({
             name="phoneNumber"
             id="phoneNumber"
             placeholder="Your Contact Number"
-            className="border p-4 w-[30em]"
+            className="border p-4 w-(--form-width-big)"
           ></input>
           {errors.phoneNumber && (
             <div>
@@ -257,14 +257,14 @@ const BookTableForm = ({
             </div>
           )}
         </div>
-        <div className="flex flex-col max-w-[61em]">
+        <div className="flex flex-col w-(--form-width-big)">
           <textarea
             {...register("bookingMessage")}
             type="text"
             name="bookingMessage"
             id="bookingMessage"
             placeholder="Your comment"
-            className="border p-4 w-full h-[12em] mx-4"
+            className="border p-4 w-full h-[12em]"
           ></textarea>
           {errors.bookingMessage && (
             <div className="my-4 mx-4">

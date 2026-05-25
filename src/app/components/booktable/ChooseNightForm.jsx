@@ -35,8 +35,8 @@ const ChooseNightForm = ({ events = [] }) => {
   /*  ********************** */
 
   return (
-    <section className="flex justify-center mb-10">
-      <form className="flex flex-col gap-2">
+    <section className="night-container flex justify-center">
+      <form className="night-form flex flex-col gap-2 w-(--form-width-small)">
         <label
           htmlFor="choiceNight"
           className="uppercase text-(length:--font-p) font-bold"
@@ -56,7 +56,7 @@ const ChooseNightForm = ({ events = [] }) => {
           /* **************************** */
           name="choiceNight"
           id="choiceNight"
-          className="border p-4 w-[30em] text-(--color-placeholderfont)"
+          className="border p-4 text-(--color-placeholderfont)"
         >
           <option
             id="default"

@@ -137,6 +137,10 @@
     0.7386rem + 2.2727cqi,
     2.5rem
   );
+
+  /*FORM WIDTH (book table)*/
+  --form-width-big: calc(100% - 20px);
+  --form-width-small: calc(50% - 20px);
 }
 
 @theme inline {

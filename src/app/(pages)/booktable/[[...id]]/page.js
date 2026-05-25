@@ -1,3 +1,4 @@
+import Header from "@/app/components/Header";
 import BookTableForm from "@/app/components/booktable/BookTableForm";
 import Headline from "@/app/components/Headline";
 import Tables from "@/app/components/booktable/Tables";
@@ -20,6 +21,22 @@ const Details = async ({ params }) => {
   const { id } = await params;
   const events = await EventFetch();
 
+  if (!id) {
+    return (
+      <main>
+        <Header />
+        <Headline text="Book Table" />
+        <section className="justify-center items-center place-content-center col-span-full mt-large">
+          <ChooseNightForm events={events} />
+          <p className="text-center my-large">
+            Please select a night to see available
+            tables
+          </p>
+        </section>
+      </main>
+    );
+  }
+
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/events/${id}`,
   );
@@ -28,8 +45,9 @@ const Details = async ({ params }) => {
 
   return (
     <main>
-      <section className="grid grid-cols-subgrid col-span-full">
-        <Headline text="Book Table" />
+      <Header />
+      <Headline text="Book Table" />
+      <section className="grid grid-cols-subgrid col-span-full mt-8">
         <BookEventHeadline
           title={event.title}
           date={event.date}
@@ -37,6 +55,7 @@ const Details = async ({ params }) => {
         <ChooseNightForm events={events} />
         <Tables eventId={event.id} />
         <BookTableForm
+          eventId={event.id}
           eventDate={event.date}
           events={events}
         >

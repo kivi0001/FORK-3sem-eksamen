@@ -11,7 +11,7 @@ const Tables = async ({ eventId }) => {
 
   return (
     <section>
-      <div className="table-container mb-(--spacing-large)">
+      <div className="table-container my-large">
         <TableClick
           tableNumber="1"
           reserved={reserved}

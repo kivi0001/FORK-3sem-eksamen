@@ -421,3 +421,26 @@ ul.full-width-scroller li {
   row-gap: var(--spacing-medium);
   text-align: center;
 }
+
+.form-container {
+  container-type: inline-size;
+}
+
+@container (width < 600px) {
+  .name-input,
+  .email-input,
+  .table-input,
+  .guests-input {
+    width: var(--form-width-big);
+  }
+}
+
+.night-container {
+  container-type: inline-size;
+}
+
+@container (width < 600px) {
+  .night-form {
+    width: var(--form-width-big);
+  }
+}
