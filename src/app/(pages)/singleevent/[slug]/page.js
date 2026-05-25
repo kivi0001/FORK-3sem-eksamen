@@ -4,11 +4,15 @@ import CommentForm from "@/app/components/singleevent/CommentForm";
 import { EventComments } from "@/app/components/singleevent/EventComments";
 import EventOverview from "@/app/components/singleevent/EventOverview";
 import { Suspense } from "react";
+import Header from "@/app/components/Header";
 
 const SingleEvent = ({ params }) => {
   return (
     <main>
       <Suspense fallback={<div>Loading...</div>}>
+        <div className="sticky-container">
+          <Header />
+        </div>
         <Details params={params}></Details>
       </Suspense>
     </main>

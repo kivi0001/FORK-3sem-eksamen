@@ -60,7 +60,7 @@ const BurgerMenu = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <HeaderButton>
-                  book table
+                  book&nbsp;table
                 </HeaderButton>
               </Link>
               <Link
@@ -68,7 +68,7 @@ const BurgerMenu = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <HeaderButton>
-                  contact us
+                  contact&nbsp;us
                 </HeaderButton>
               </Link>
             </div>
