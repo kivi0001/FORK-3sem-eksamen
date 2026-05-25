@@ -59,6 +59,7 @@ const Player = ({
     }
   };
 
+  // AI HELPED WITH THIS //
   const handleVolumeChange = (e) => {
     const rawVolume = parseFloat(e.target.value);
 
@@ -88,7 +89,9 @@ const Player = ({
       setIsMuted(true);
     }
   };
+  /////////////////
 
+  // AI HELPED WITH THIS //
   const formatTime = (timeInSeconds) => {
     if (isNaN(timeInSeconds)) return "0:00";
     const minutes = Math.floor(
@@ -101,6 +104,7 @@ const Player = ({
   const progressPercent = duration
     ? (currentTime / duration) * 100
     : 0;
+  ///////////////////////////////
 
   return (
     <div className="music-container flex flex-col text-center mx-auto px-8 w-full">
@@ -125,12 +129,13 @@ const Player = ({
         </div>
       </div>
 
-      <div className="track-controls flex flex-row text-2xl justify-between items-center">
-        <div className="time-display flex flex-row text-sm text-progressbg px-1s gap-1 font-medium self-center">
-          <span>{formatTime(currentTime)} /</span>
+      <div className="track-controls flex flex-row text-2xl justify-between items-center pt-2">
+        <div className="time-display flex flex-row text-(length:--small-p) text-progressbg gap-1 font-medium self-center">
+          <span>{formatTime(currentTime)}</span>
+          <span>/</span>
           <span>{formatTime(duration)}</span>
         </div>
-        <div className="track-icons flex flex-row gap-5 justify-between ">
+        <div className="track-icons flex flex-row gap-6 justify-between ">
           <FaFastBackward
             className="btn-prevnext"
             onClick={prevSong}
@@ -151,7 +156,8 @@ const Player = ({
             onClick={nextSong}
           />
         </div>
-        <div className="volume-container flex items-center gap-2 group text-2xl">
+        <div className="volume-container flex items-center gap-2 group text-2xl pt-5 m-auto md:pt-0 md:m-0">
+          {/* AI HELPED WITH THIS */}
           <button
             onClick={toggleMute}
             className="focus:outline-none text-2xl hover:text-trackbg"
@@ -162,7 +168,7 @@ const Player = ({
               <FaVolumeUp />
             )}
           </button>
-
+          {/* ////////////// */}
           <input
             type="range"
             min="0"

@@ -312,22 +312,6 @@ ul.full-width-scroller li {
 
 /* SEKTION 4: NIGHT CLUB TRACK */
 
-ul.artists-scroller {
-  /* scroll-padding-inline: 2rem; */
-  /* overflow-inline: auto;
-  scroll-snap-type: inline mandatory; */
-  list-style: none;
-  display: flex;
-  height: fit-content;
-  align-items: center;
-  place-content: center;
-
-  /* & li {
-    flex: 1 0 250px;
-    scroll-snap-align: center;
-  } */
-}
-
 .track-active-overlay {
   position: absolute;
   top: 0;
@@ -388,16 +372,8 @@ ul.artists-scroller {
   }
 
   .track-controls {
-    flex-wrap: wrap;
-  }
-
-  .artists-scroller {
-    display: block;
-    min-block-size: 150px;
-
-    img {
-      min-block-size: 150px;
-    }
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
