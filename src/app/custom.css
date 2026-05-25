@@ -426,15 +426,26 @@ ul.full-width-scroller li {
   text-align: center;
 }
 
+.input-wrapper > div {
+  width: var(--form-width-small);
+}
+
 .form-container {
   container-type: inline-size;
 }
 
 @container (width < 600px) {
-  .name-input,
-  .email-input,
-  .table-input,
-  .guests-input {
+  .input-wrapper {
+    flex-direction: column;
+  }
+}
+
+.input-wrapper {
+  container-type: inline-size;
+}
+
+@container (width < 600px) {
+  .input-wrapper > div {
     width: var(--form-width-big);
   }
 }

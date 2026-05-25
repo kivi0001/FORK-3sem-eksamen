@@ -140,10 +140,10 @@ const BookTableForm = ({
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 "
+        className="flex flex-col w-full gap-4 "
       >
-        <div className="flex gap-[1.3em] flex-wrap">
-          <div className="flex flex-col w-(--form-w-small)">
+        <div className="input-wrapper flex gap-[1.3em] flex-wrap">
+          <div className="flex flex-col">
             <input
               {...register("name")}
               type="text"
@@ -158,7 +158,7 @@ const BookTableForm = ({
               </div>
             )}
           </div>
-          <div className="flex flex-col w-(--form-w-small)">
+          <div className="flex flex-col">
             <input
               {...register("email")}
               type="text"
@@ -174,8 +174,8 @@ const BookTableForm = ({
             )}
           </div>
         </div>
-        <div className="flex gap-[1.3em] flex-wrap">
-          <div className="flex flex-col w-(--form-w-small)">
+        <div className="input-wrapper flex gap-[1.3em] flex-wrap">
+          <div className="flex flex-col">
             <select
               {...register("tableNumber")}
               name="tableNumber"
@@ -217,7 +217,7 @@ const BookTableForm = ({
               </div>
             )}
           </div>
-          <div className="flex flex-col w-(--form-w-small)">
+          <div className="flex flex-col">
             <input
               {...register("guestsAmount")}
               type="number"
@@ -247,7 +247,7 @@ const BookTableForm = ({
             /* **************************** */
             name="choiceNight"
             id="choiceNight"
-            className="border p-4 w-(--form-w-small) hidden text-(--color-placeholderfont)"
+            className="border p-4 hidden text-(--color-placeholderfont)"
           >
             <option
               id="default"
@@ -276,7 +276,7 @@ const BookTableForm = ({
             name="phoneNumber"
             id="phoneNumber"
             placeholder="Your Contact Number"
-            className="border p-4 w-(--form-w-big)"
+            className="border p-4 w-(--form-width-big)"
           ></input>
           {errors.phoneNumber && (
             <div className="text-alert">
@@ -284,7 +284,7 @@ const BookTableForm = ({
             </div>
           )}
         </div>
-        <div className="flex flex-col w-(--form-w-big)">
+        <div className="flex flex-col w-(--form-width-big)">
           <textarea
             {...register("bookingMessage")}
             type="text"
