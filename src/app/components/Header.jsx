@@ -141,7 +141,7 @@ const Header = () => {
             <HeaderButton
               active={pathname === "/booktable"}
             >
-              book table
+              book&nbsp;table
             </HeaderButton>
           </Link>
           <Link
@@ -157,7 +157,7 @@ const Header = () => {
             <HeaderButton
               active={pathname === "/contact"}
             >
-              contact us
+              contact&nbsp;us
             </HeaderButton>
           </Link>
         </nav>
