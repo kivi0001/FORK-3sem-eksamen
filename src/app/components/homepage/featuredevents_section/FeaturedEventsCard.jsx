@@ -59,7 +59,7 @@ const FeaturedEventsCard = ({
           height={500}
         />
 
-        <div className="flex flex-col overlay border-y-(--pink) border-y-2">
+        <div className="flex flex-col featured-overlay border-y-(--pink) border-y-2">
           <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40 z-10"></div>
           <div className="flex justify-center mt-15">
             <Link href={`/booktable/${id}`}>

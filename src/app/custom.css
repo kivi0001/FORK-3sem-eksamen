@@ -113,17 +113,12 @@ main {
   width: 100%;
   opacity: 0;
   transition: 1.5s ease;
-  background-color: oklch(0% 0 0 / 0.54);
+  background-color: oklch(0% 0 0);
 }
 
 .image-hover:hover .overlay {
   opacity: 90%;
 }
-
-.text-overlay {
-  background-color: oklch(0% 0 0 / 0.847);
-}
-
 /* welcome card overlay */
 
 .overlay-text {
@@ -135,8 +130,28 @@ main {
 
 /* featured card overlay */
 
+.featured-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1.5s ease;
+  background-color: oklch(0% 0 0 / 0.54);
+}
+
+.image-hover:hover .featured-overlay {
+  opacity: 90%;
+}
+
 .featured-overlay-text {
   transform: translate(-50%, 0%);
+}
+.text-overlay {
+  background-color: oklch(0% 0 0 / 0.847);
 }
 
 /* featured card grid and background */
@@ -156,21 +171,6 @@ main {
 }
 
 /* featured card scroller */
-
-/* ul.full-width-scroller {
-  scroll-padding-inline: 2rem;
-  overflow-inline: auto;
-  scroll-snap-type: inline mandatory;
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  height: fit-content;
-
-  & li {
-    flex: 1 0 500px;
-    scroll-snap-align: center;
-  }
-} */
 
 ul.full-width-scroller {
   list-style: none;
