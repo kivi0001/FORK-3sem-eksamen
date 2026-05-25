@@ -4,7 +4,9 @@ import Header from "@/app/components/Header";
 export default function Contact() {
   return (
     <main>
-      <Header />
+      <div className="sticky-container">
+        <Header />
+      </div>
       <Headline text="contact us" />
       <ContactForm />
     </main>

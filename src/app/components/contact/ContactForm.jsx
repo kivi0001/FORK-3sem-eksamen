@@ -70,43 +70,42 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="my-20">
+    <section className="my-20 mx-(--fluid-20-180)">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col justify-center items-center gap-4"
+        className="flex flex-col justify-center w-full items-center gap-4"
       >
-        <div className="flex gap-[1em] w-[90%] flex-wrap">
-          <input
-            {...register("name")}
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-            className="border p-4 w-full"
-          ></input>
-          {errors.name && (
-            <div>{errors.name.message}</div>
-          )}
-          <input
-            {...register("email")}
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            className="border p-4 w-full"
-          ></input>
-          {errors.email && (
-            <div>{errors.email.message}</div>
-          )}
-        </div>
-        <div className="flex w-[90%] flex-col">
+        <input
+          {...register("name")}
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Your name"
+          className="border p-4 w-full"
+        ></input>
+        {errors.name && (
+          <div>{errors.name.message}</div>
+        )}
+        <input
+          {...register("email")}
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Your email"
+          className="border p-4 w-full"
+        ></input>
+        {errors.email && (
+          <div>{errors.email.message}</div>
+        )}
+
+        <div className="flex w-full flex-col">
           <textarea
             {...register("contactMessage")}
             type="text"
             name="contactMessage"
             id="contactMessage"
             placeholder="Your comment"
-            className="border p-4 w-full h-[12em]"
+            className="border box-border w-full p-4 h-[12em]"
           ></textarea>
           {errors.contactMessage && (
             <div className="my-4 mx-4">
