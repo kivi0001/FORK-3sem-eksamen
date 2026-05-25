@@ -1,4 +1,5 @@
 "use server";
+import { revalidatePath } from "next/cache";
 
 export async function PostBooking({
   name,
@@ -23,7 +24,7 @@ export async function PostBooking({
           email,
           table: tableNumber,
           guests: guestsAmount,
-          eventId: choiceNight,
+          eventId: Number(choiceNight),
           phone: phoneNumber,
           date: eventDate,
           content: bookingMessage,
@@ -39,6 +40,8 @@ export async function PostBooking({
         error: errorComment.message,
       };
     }
+
+    revalidatePath(`/booktable/${choiceNight}`);
 
     const data = await response.json();
     return { success: true, data };
