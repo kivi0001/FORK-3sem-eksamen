@@ -111,7 +111,7 @@ const EventOverview = ({
           <p className="uppercase">{lineUp}</p>
         </div>
       </div>
-      <div className="flex flex-wrap mx-medium-to-large my-20">
+      <div className="flex flex-wrap mx-(--fluid-20-180) my-20">
         <p className="w-[80ch]">{content}</p>
         <div className="mt-auto ml-auto pt-10">
           <Link href={`/booktable/${id}`}>
