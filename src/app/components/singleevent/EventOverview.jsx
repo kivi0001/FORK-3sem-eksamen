@@ -48,7 +48,7 @@ const EventOverview = ({
         />
       </div>
       <div className="flex justify-between my-4 flex-wrap gap-2">
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-(--spacing-small)">
           <p className="uppercase text-(--pink) font-bold">
             date:
           </p>
@@ -111,7 +111,7 @@ const EventOverview = ({
           <p className="uppercase">{lineUp}</p>
         </div>
       </div>
-      <div className="flex flex-wrap mx-(--fluid-20-180) my-20">
+      <div className="flex items-center flex-wrap mx-auto max-w-250 my-20">
         <p className="w-[80ch]">{content}</p>
         <div className="mt-auto ml-auto pt-10">
           <Link href={`/booktable/${id}`}>
