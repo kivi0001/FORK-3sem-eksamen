@@ -41,10 +41,10 @@ const ListEventCard = ({
               {location}
             </span>
           </h3>
-          <p className="text-bodyfont text-(length:--font-table-p) tracking-(--letter-spacing-p) mt-6 leading-7">
+          <p className="text-bodyfont text-(length:--font-table-p) tracking-(--letter-spacing-p) mt-6 mb-2 leading-7">
             {description}
           </p>
-          <div className="mt-auto ml-auto mb-auto">
+          <div className="events-button mt-auto ml-auto mb-auto ">
             <Link href={`/singleevent/${slug}`}>
               <PrimaryButtons textInput="Read More"></PrimaryButtons>
             </Link>
