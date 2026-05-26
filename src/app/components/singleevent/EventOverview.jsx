@@ -48,7 +48,7 @@ const EventOverview = ({
         />
       </div>
       <div className="flex justify-between my-4 flex-wrap gap-2">
-        <div className="flex flex-wrap gap-(--spacing-small)">
+        <div className="flex flex-wrap gap-small">
           <p className="uppercase text-(--pink) font-bold">
             date:
           </p>
