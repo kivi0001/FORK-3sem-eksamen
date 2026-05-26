@@ -180,6 +180,7 @@ const BookTableForm = ({
               {...register("tableNumber")}
               name="tableNumber"
               id="tableNumber"
+              disabled
               placeholder="Table Number"
               className="table-input border p-4 text-(--color-placeholderfont)"
             >
@@ -272,11 +273,11 @@ const BookTableForm = ({
           )}
           <input
             {...register("phoneNumber")}
-            type="number"
+            type="text"
             name="phoneNumber"
             id="phoneNumber"
             placeholder="Your Contact Number"
-            className="border p-4 w-(--form-width-big)"
+            className="border p-4 w-(--form-width-big) "
           ></input>
           {errors.phoneNumber && (
             <div className="text-alert">

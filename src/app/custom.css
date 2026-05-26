@@ -430,6 +430,14 @@ ul.full-width-scroller li {
   text-align: center;
 }
 
+.table-input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* FORM RESPONSIVITET FOR BOOKING AND CONTACT */
+
 .input-wrapper > div {
   width: var(--form-width-small);
 }
@@ -449,7 +457,8 @@ ul.full-width-scroller li {
 }
 
 @container (width < 600px) {
-  .input-wrapper > div {
+  .input-wrapper > div,
+  input {
     width: var(--form-width-big);
   }
 }

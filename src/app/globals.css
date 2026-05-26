@@ -294,7 +294,7 @@
 /* GRIDS */
 html {
   background: var(--background);
-  max-width: 2600px;
+  max-width: 2000px;
   margin: auto;
 }
 

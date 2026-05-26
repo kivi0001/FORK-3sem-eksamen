@@ -58,12 +58,6 @@ const ChooseNightForm = ({ events = [] }) => {
           id="choiceNight"
           className="border p-4 text-(--color-placeholderfont)"
         >
-          <option
-            id="default"
-            className="text-(--color-formfont)"
-          >
-            Choose Night
-          </option>
           {events.map((event) => (
             <BookEventTitle
               key={event.id}
