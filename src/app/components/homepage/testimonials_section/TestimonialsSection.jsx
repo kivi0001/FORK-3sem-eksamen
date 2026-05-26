@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const TestimonialsSection = () => {
   return (
-    <section className="testimonials-section flex justify-center my-small relative ">
+    <section className="testimonials-section flex justify-center my-small relative bg-background">
       <Suspense
         fallback={<p>Loading testimonials..</p>}
       >

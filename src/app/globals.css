@@ -15,6 +15,7 @@
     24.807% 0.00715 325.606 / 0.825
   );
   --green: oklch(87.088% 0.27592 143.572);
+  --black-background: oklch(0% 0 0);
 
   /* FLUID FONT-SIZES */
   --large: clamp(
@@ -175,6 +176,10 @@
   --color-trackbg: var(--pink);
   --color-progressbg: var(--foreground);
   --color-featuredevent-bar: var(--dark-pink);
+  --color-background: var(--primary-dark);
+  --color-black-background: var(
+    --black-background
+  );
 
   /* FONT-SIZE TOKENS */
   --font-home-h1: var(--large);
@@ -306,6 +311,7 @@ body {
     )
     [full-end];
   grid-template-rows: auto;
+  background-image: url("/assets/bg/pattern_bg.jpg");
 }
 
 .header-wrapper {
