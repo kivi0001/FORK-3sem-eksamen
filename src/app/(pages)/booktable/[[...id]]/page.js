@@ -22,6 +22,7 @@ const Details = async ({ params }) => {
   const events = await EventFetch();
 
   /* AI HELPED WITH THIS */
+  /* se synopsis om AI brug: Book Table page */
   if (!id) {
     return (
       <main>
@@ -39,6 +40,7 @@ const Details = async ({ params }) => {
       </main>
     );
   }
+  /*   ******************* */
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/events/${id}`,

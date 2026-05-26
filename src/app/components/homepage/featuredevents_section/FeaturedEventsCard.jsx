@@ -17,6 +17,7 @@ const FeaturedEventsCard = ({
   index,
 }) => {
   /* AI HELPED WITH THIS */
+  /* se synopsis om AI brug: Featured Events */
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -39,6 +40,7 @@ const FeaturedEventsCard = ({
   ).format(newDate);
 
   /* AI HELPED WITH THIS */
+  /* se synopsis om AI brug: Featured Events */
   const handleButtonClick = (targetIndex) => {
     router.push(`?event=${targetIndex}`, {
       scroll: false,
