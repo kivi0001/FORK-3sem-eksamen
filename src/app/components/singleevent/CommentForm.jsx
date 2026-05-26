@@ -72,16 +72,16 @@ const CommentForm = ({ eventId }) => {
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4"
+        className="form-container flex flex-col gap-4"
       >
-        <div className="flex gap-[1em] flex-wrap mx-4">
+        <div className="input-wrapper flex gap-5">
           <input
             {...register("name")}
             type="text"
             name="name"
             id="name"
             placeholder="Your name"
-            className="border p-4 w-[30em]"
+            className="border p-4 w-(--form-w-small)"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
@@ -92,27 +92,27 @@ const CommentForm = ({ eventId }) => {
             name="email"
             id="email"
             placeholder="Your email"
-            className="border p-4 w-[30em]"
+            className="border p-4 w-(--form-w-small)"
           ></input>
           {errors.email && (
             <div>{errors.email.message}</div>
           )}
         </div>
-        <div className="flex flex-col max-w-[61em]">
+        <div className="flex flex-col w-full">
           <textarea
             {...register("comment")}
             type="text"
             name="comment"
             id="comment"
             placeholder="Your comment"
-            className="border p-4 w-full h-[12em] mx-4"
+            className="border p-4 w-(--form-w-big) h-[12em]"
           ></textarea>
           {errors.comment && (
             <div className="my-4 mx-4">
               {errors.comment.message}
             </div>
           )}
-          <div className="ml-auto mt-5">
+          <div className="mr-5 ml-auto mt-5">
             <PrimaryButtons
               type="submit"
               textInput="submit"

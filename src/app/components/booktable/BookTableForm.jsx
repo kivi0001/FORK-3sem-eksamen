@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useEffect } from "react";
 import { PostBooking } from "./PostBooking";
+import BookEventTitle from "./BookEventTitle";
 
 const valideringsSkema = z.object({
   name: z
@@ -46,9 +47,8 @@ const valideringsSkema = z.object({
 });
 
 const BookTableForm = ({
-  children,
   eventDate,
-  reserved,
+  events = [],
 }) => {
   const {
     register,
@@ -131,82 +131,110 @@ const BookTableForm = ({
   };
 
   return (
-    <section className="my-20">
+    <section
+      id="book-table-form"
+      className="form-container my-20"
+    >
       <h1 className="text-(length:--font-h2) uppercase font-bold my-6 mx-4">
         book a table
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 "
+        className="flex flex-col w-full gap-4 "
       >
-        <div className="flex gap-[1em] flex-wrap mx-4">
-          <input
-            {...register("name")}
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-            className="border p-4 w-[30em]"
-          ></input>
-          {errors.name && (
-            <div>{errors.name.message}</div>
-          )}
-          <input
-            {...register("email")}
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            className="border p-4 w-[30em]"
-          ></input>
-          {errors.email && (
-            <div>{errors.email.message}</div>
-          )}
+        <div className="input-wrapper flex gap-[1.3em] flex-wrap">
+          <div className="flex flex-col">
+            <input
+              {...register("name")}
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              className="name-input border p-4"
+            ></input>
+            {errors.name && (
+              <div className="text-alert">
+                {errors.name.message}
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col">
+            <input
+              {...register("email")}
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Your email"
+              className="email-input border p-4"
+            ></input>
+            {errors.email && (
+              <div className="text-alert">
+                {errors.email.message}
+              </div>
+            )}
+          </div>
         </div>
-        <div className="flex gap-[1em] flex-wrap mx-4">
-          <select
-            {...register("tableNumber")}
-            name="tableNumber"
-            id="tableNumber"
-            placeholder="Table Number"
-            className="border p-4 w-[30em] text-(--color-placeholderfont)"
-          >
-            <option value="1">Table: 1</option>
-            <option value="2">Table: 2</option>
-            <option value="3">Table: 3</option>
-            <option value="4">Table: 4</option>
-            <option value="5">Table: 5</option>
-            <option value="6">Table: 6</option>
-            <option value="7">Table: 7</option>
-            <option value="8">Table: 8</option>
-            <option value="9">Table: 9</option>
-            <option value="10">Table: 10</option>
-            <option value="11">Table: 11</option>
-            <option value="12">Table: 12</option>
-            <option value="13">Table: 13</option>
-            <option value="14">Table: 14</option>
-            <option value="15">Table: 15</option>
-          </select>
-          {errors.tableNumber && (
-            <div>
-              {errors.tableNumber.message}
-            </div>
-          )}
-          <input
-            {...register("guestsAmount")}
-            type="number"
-            name="guestsAmount"
-            id="guestsAmount"
-            placeholder="Number Of Guests"
-            className="border p-4 w-[30em]"
-          ></input>
-          {errors.guestsAmount && (
-            <div>
-              {errors.guestsAmount.message}
-            </div>
-          )}
+        <div className="input-wrapper flex gap-[1.3em] flex-wrap">
+          <div className="flex flex-col">
+            <select
+              {...register("tableNumber")}
+              name="tableNumber"
+              id="tableNumber"
+              disabled
+              placeholder="Table Number"
+              className="table-input border p-4 text-(--color-placeholderfont)"
+            >
+              <option value="1">Table: 1</option>
+              <option value="2">Table: 2</option>
+              <option value="3">Table: 3</option>
+              <option value="4">Table: 4</option>
+              <option value="5">Table: 5</option>
+              <option value="6">Table: 6</option>
+              <option value="7">Table: 7</option>
+              <option value="8">Table: 8</option>
+              <option value="9">Table: 9</option>
+              <option value="10">
+                Table: 10
+              </option>
+              <option value="11">
+                Table: 11
+              </option>
+              <option value="12">
+                Table: 12
+              </option>
+              <option value="13">
+                Table: 13
+              </option>
+              <option value="14">
+                Table: 14
+              </option>
+              <option value="15">
+                Table: 15
+              </option>
+            </select>
+            {errors.tableNumber && (
+              <div className="text-alert">
+                {errors.tableNumber.message}
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col">
+            <input
+              {...register("guestsAmount")}
+              type="number"
+              name="guestsAmount"
+              id="guestsAmount"
+              placeholder="Number Of Guests"
+              className="guests-input border p-4"
+            ></input>
+            {errors.guestsAmount && (
+              <div className="text-alert">
+                {errors.guestsAmount.message}
+              </div>
+            )}
+          </div>
         </div>
-        <div className="flex gap-[1em] flex-wrap mx-4">
+        <div className="flex flex-wrap">
           <select
             {...register("choiceNight")}
             /* AI HELPED WITH THIS SYNTAX: */
@@ -220,7 +248,7 @@ const BookTableForm = ({
             /* **************************** */
             name="choiceNight"
             id="choiceNight"
-            className="border p-4 w-[30em] text-(--color-placeholderfont)"
+            className="border p-4 hidden text-(--color-placeholderfont)"
           >
             <option
               id="default"
@@ -228,38 +256,46 @@ const BookTableForm = ({
             >
               Choose Night
             </option>
-            {children}
+            {events.map((event) => (
+              <BookEventTitle
+                key={event.id}
+                date={event.date}
+                location={event.location}
+                title={event.title}
+                id={event.id}
+              />
+            ))}
           </select>
           {errors.choiceNight && (
-            <div>
+            <div className="text-alert">
               {errors.choiceNight.message}
             </div>
           )}
           <input
             {...register("phoneNumber")}
-            type="number"
+            type="text"
             name="phoneNumber"
             id="phoneNumber"
             placeholder="Your Contact Number"
-            className="border p-4 w-[30em]"
+            className="border p-4 w-(--form-width-big) "
           ></input>
           {errors.phoneNumber && (
-            <div>
+            <div className="text-alert">
               {errors.phoneNumber.message}
             </div>
           )}
         </div>
-        <div className="flex flex-col max-w-[61em]">
+        <div className="flex flex-col w-(--form-width-big)">
           <textarea
             {...register("bookingMessage")}
             type="text"
             name="bookingMessage"
             id="bookingMessage"
             placeholder="Your comment"
-            className="border p-4 w-full h-[12em] mx-4"
+            className="border p-4 w-full h-[12em]"
           ></textarea>
           {errors.bookingMessage && (
-            <div className="my-4 mx-4">
+            <div className="text-alert">
               {errors.bookingMessage.message}
             </div>
           )}
@@ -273,7 +309,7 @@ const BookTableForm = ({
             ></PrimaryButtons>
           </div>
         </div>
-        <div className="font-h3 place-self-center font-bold mx-4">
+        <div className="text-alert font-h3 place-self-center font-bold mx-4">
           {message}
         </div>
       </form>

@@ -3,11 +3,24 @@ import "@/app/custom.css";
 import { Popover } from "radix-ui";
 import HeaderButton from "./HeaderButton";
 import { RxCross2 } from "react-icons/rx";
+import Link from "next/link";
+import { useState } from "react";
 
 const BurgerMenu = () => {
+  /* AI HELPED WITH THIS */
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleOpenClosed = (open) => {
+    setIsOpen(open);
+  };
+  /* ******************** */
   return (
     <div className="burger-container">
-      <Popover.Root className="popover-root">
+      <Popover.Root
+        open={isOpen}
+        onOpenChange={toggleOpenClosed}
+        id="popoverRoot"
+        className="popover-root"
+      >
         <Popover.Trigger>
           <div className="trigger-div">
             <span className="popover-trigger"></span>
@@ -21,20 +34,43 @@ const BurgerMenu = () => {
             <Popover.Close
               className="absolute top-0 right-5"
               aria-label="Close"
+              onClick={() => setIsOpen(false)}
             >
               <div className="bg-black">
                 <RxCross2 size={50}></RxCross2>
               </div>
             </Popover.Close>
             <div className="flex flex-col gap-10 items-center justify-center w-screen h-screen">
-              <HeaderButton>home</HeaderButton>
-              <HeaderButton>events</HeaderButton>
-              <HeaderButton>
-                book table
-              </HeaderButton>
-              <HeaderButton>
-                contact us
-              </HeaderButton>
+              <Link
+                href="/"
+                onClick={() => setIsOpen(false)}
+              >
+                <HeaderButton>home</HeaderButton>
+              </Link>
+              <Link
+                href="/events"
+                onClick={() => setIsOpen(false)}
+              >
+                <HeaderButton>
+                  events
+                </HeaderButton>
+              </Link>
+              <Link
+                href="/booktable"
+                onClick={() => setIsOpen(false)}
+              >
+                <HeaderButton>
+                  book&nbsp;table
+                </HeaderButton>
+              </Link>
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+              >
+                <HeaderButton>
+                  contact&nbsp;us
+                </HeaderButton>
+              </Link>
             </div>
           </Popover.Content>
         </Popover.Portal>

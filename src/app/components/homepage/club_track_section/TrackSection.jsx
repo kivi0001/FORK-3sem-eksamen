@@ -1,13 +1,16 @@
 import HomeHeadlines from "../HomeHeadlines";
 import TrackPlayer from "./TrackPlayer";
 import Artists from "./Artists";
+import { Suspense } from "react";
 
 const TrackSection = () => {
   return (
-    <section>
+    <section className="track-container">
       <HomeHeadlines text="night club track" />
-      <TrackPlayer />
-      <Artists />
+      <Suspense fallback="Could not load Night Club Track player..">
+        <TrackPlayer />
+        <Artists />
+      </Suspense>
     </section>
   );
 };

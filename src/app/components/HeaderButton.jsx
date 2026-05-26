@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
-const HeaderButton = ({ children }) => {
+const HeaderButton = ({ children, active }) => {
   return (
     <motion.button
-      className="uppercase self-center font-(--font-weight-header-button) text-(length:--font-header-button) relative block overflow-hidden whitespace-nowrap cursor-pointer"
+      className={`${active ? "text-(--pink)" : "text-current"} uppercase self-center font-(--font-weight-header-button) text-(length:--font-header-button) relative block overflow-hidden whitespace-nowrap cursor-pointer`}
       style={{ lineHeight: 0.8 }}
       initial="initial"
       whileHover="hovered"

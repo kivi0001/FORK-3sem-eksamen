@@ -4,6 +4,25 @@
   container-type: inline-size;
 }
 
+.home-main {
+  overflow: visible;
+  margin: none;
+  padding: none;
+}
+
+/* AI HELPED WITH THE RIGHT CSS PLACEMENT */
+.sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  grid-column: full-start / full-end;
+}
+/* /////////////////////// */
+
+main {
+  padding-top: 0;
+}
+
 .trigger-div {
   margin-block: 2em;
   position: absolute;
@@ -100,7 +119,6 @@
 .image-hover:hover .overlay {
   opacity: 90%;
 }
-
 /* welcome card overlay */
 
 .overlay-text {
@@ -112,8 +130,28 @@
 
 /* featured card overlay */
 
+.featured-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1.5s ease;
+  background-color: oklch(0% 0 0 / 0.54);
+}
+
+.image-hover:hover .featured-overlay {
+  opacity: 90%;
+}
+
 .featured-overlay-text {
   transform: translate(-50%, 0%);
+}
+.text-overlay {
+  background-color: oklch(0% 0 0 / 0.847);
 }
 
 /* featured card grid and background */
@@ -122,8 +160,7 @@
   display: grid;
   grid-template-columns: subgrid;
   grid-column: full-start / full-end;
-  padding-bottom: 6em;
-  margin-block: 4em;
+
   background: url("/assets/bg/slider_bg_overlay.png")
     no-repeat center/cover;
 
@@ -136,17 +173,46 @@
 /* featured card scroller */
 
 ul.full-width-scroller {
-  scroll-padding-inline: 2rem;
-  overflow-inline: auto;
-  scroll-snap-type: inline mandatory;
   list-style: none;
-  display: flex;
-  gap: 2rem;
-  height: fit-content;
+  display: block;
+  padding: 0;
+  width: 100%;
+}
 
-  & li {
-    flex: 1 0 500px;
-    scroll-snap-align: center;
+ul.full-width-scroller li {
+  width: 100%;
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  ul.full-width-scroller {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: fit-content;
+    overflow: visible;
+  }
+
+  ul.full-width-scroller li {
+    max-width: fit-content;
+  }
+}
+
+@media (max-width: 1100px) {
+  ul.full-width-scroller {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: fit-content;
+    overflow: visible;
+  }
+
+  ul.full-width-scroller li {
+    max-width: fit-content;
   }
 }
 
@@ -250,22 +316,6 @@ ul.full-width-scroller {
 
 /* SEKTION 4: NIGHT CLUB TRACK */
 
-ul.artists-scroller {
-  /* scroll-padding-inline: 2rem; */
-  /* overflow-inline: auto;
-  scroll-snap-type: inline mandatory; */
-  list-style: none;
-  display: flex;
-  height: fit-content;
-  align-items: center;
-  place-content: center;
-
-  /* & li {
-    flex: 1 0 250px;
-    scroll-snap-align: center;
-  } */
-}
-
 .track-active-overlay {
   position: absolute;
   top: 0;
@@ -313,6 +363,10 @@ ul.artists-scroller {
   container-type: inline-size;
 }
 
+.track-container {
+  display: grid;
+}
+
 @container (width < 760px) {
   .track-player-wrapper {
     margin-bottom: 20px;
@@ -326,16 +380,8 @@ ul.artists-scroller {
   }
 
   .track-controls {
-    flex-wrap: wrap;
-  }
-
-  .artists-scroller {
-    display: block;
-    min-block-size: 150px;
-
-    img {
-      min-block-size: 150px;
-    }
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
@@ -361,22 +407,6 @@ ul.artists-scroller {
   }
 }
 
-ul.testimonials-scroller {
-  scroll-padding-inline: 4rem;
-  overflow-inline: auto;
-  scroll-snap-type: inline mandatory;
-  list-style: none;
-  display: flex;
-  gap: 4rem;
-  height: auto;
-  width: 50%;
-
-  & li {
-    flex: 1 0 300px;
-    scroll-snap-align: center;
-  }
-}
-
 /* TABLE BOOKING */
 .booking-number {
   top: 50%;
@@ -398,4 +428,47 @@ ul.testimonials-scroller {
   column-gap: var(--spacing-small);
   row-gap: var(--spacing-medium);
   text-align: center;
+}
+
+.table-input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* FORM RESPONSIVITET FOR BOOKING AND CONTACT */
+
+.input-wrapper > div {
+  width: var(--form-width-small);
+}
+
+.form-container {
+  container-type: inline-size;
+}
+
+@container (width < 600px) {
+  .input-wrapper {
+    flex-direction: column;
+  }
+}
+
+.input-wrapper {
+  container-type: inline-size;
+}
+
+@container (width < 600px) {
+  .input-wrapper > div,
+  input {
+    width: var(--form-width-big);
+  }
+}
+
+.night-container {
+  container-type: inline-size;
+}
+
+@container (width < 600px) {
+  .night-form {
+    width: var(--form-width-big);
+  }
 }

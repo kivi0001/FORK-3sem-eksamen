@@ -15,7 +15,7 @@ const PrimaryButtons = ({ textInput }) => {
         ease: "easeInOut",
       }}
     >
-      <div className="grid grid-cols-1">
+      <div className=" grid grid-cols-1">
         <motion.span
           className="absolute top-0 left-0 w-full h-0.5 border-t-2 border-t-button inline-block"
           variants={{

@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative bottom-0">
+    <footer className="relative bottom-0 bg-background">
       <Image
         className="footer-img brightness-25"
         src="/assets/bg/footerbg.jpg"

@@ -10,36 +10,36 @@ import {
 
 const songsdata = [
   {
+    id: 1,
     title: "Black Box Funky",
     src: "/assets/media/black-box-funky.mp3",
+    image: "/assets/content-img/track1.jpg",
   },
   {
+    id: 2,
     title: "Euphoria",
     src: "/assets/media/euphoria.mp3",
+    image: "/assets/content-img/track2.jpg",
   },
   {
+    id: 3,
     title: "Fashion Red Tape",
     src: "/assets/media/fashion-red-tape.mp3",
+    image: "/assets/content-img/track3.jpg",
   },
   {
+    id: 4,
     title: "Neon Nanny",
     src: "/assets/media/black-box-funky.mp3",
+    image: "/assets/content-img/track4.jpg",
   },
   {
+    id: 5,
     title: "Overload",
     src: "/assets/media/euphoria.mp3",
+    image: "/assets/content-img/track5.jpg",
   },
 ];
-
-const artistImages = {
-  "Black Box Funky":
-    "/assets/content-img/track1.jpg",
-  Euphoria: "/assets/content-img/track2.jpg",
-  "Fashion Red Tape":
-    "/assets/content-img/track3.jpg",
-  "Neon Nanny": "/assets/content-img/track4.jpg",
-  Overload: "/assets/content-img/track5.jpg",
-};
 
 const TrackPlayer = () => {
   const [songs] = useState(songsdata);
@@ -81,13 +81,13 @@ const TrackPlayer = () => {
   };
 
   return (
-    <div className="track-player-container w-full m-auto select-none">
+    <div className="track-player-container w-full max-w-250 m-auto select-none">
       <div className="track-player-wrapper flex flex-row w-full h-full relative">
         <div className="current-track-image max-w-50 max-h-50 relative">
           <Image
             className="object-cover"
             src={
-              artistImages[currentSong.title] ||
+              currentSong.image ||
               "/assets/content-img/track1.jpg"
             }
             alt={`Image of artist for ${currentSong.title}`}
@@ -96,7 +96,7 @@ const TrackPlayer = () => {
             priority
           />
         </div>
-        <div className="player-controls-wrapper flex flex-col justify-center w-full min-w-0">
+        <div className="player-controls-wrapper flex flex-col justify-center w-full m-auto">
           <audio
             src={currentSong.src}
             ref={audioElem}

@@ -22,13 +22,13 @@ const ListEventCard = ({
     options,
   ).format(newDate);
   return (
-    <div className="events-wrapper mt-medium-to-large">
+    <section className="events-wrapper bg-black-background">
       <div className="events-wrapper-content flex gap-x-5">
         <div className="fullbleed-eventsimg">
           <img src={imagesrc} alt={alt} />
         </div>
         <div className="events-content flex flex-col w-fit">
-          <h2 className="uppercase text-foreground mb-2 font-(--font-weight-h2) text-(length:--font-h2)">
+          <h2 className="uppercase text-foreground mb-2 mt-auto font-(--font-weight-h2) text-(length:--font-h2)">
             {title}
           </h2>
           <h3 className="text-info text-(length:--font-h3)">
@@ -41,17 +41,17 @@ const ListEventCard = ({
               {location}
             </span>
           </h3>
-          <p className="text-bodyfont text-(length:--font-table-p) tracking-(--letter-spacing-p) mt-6 leading-7">
+          <p className="text-bodyfont text-(length:--font-table-p) tracking-(--letter-spacing-p) mt-6 mb-2 leading-7">
             {description}
           </p>
-          <div className="mt-auto ml-auto">
+          <div className="events-button mt-auto ml-auto mb-auto ">
             <Link href={`/singleevent/${slug}`}>
               <PrimaryButtons textInput="Read More"></PrimaryButtons>
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

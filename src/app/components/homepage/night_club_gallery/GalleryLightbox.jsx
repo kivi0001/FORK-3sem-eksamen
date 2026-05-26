@@ -102,15 +102,21 @@ export default function GalleryLightBox({
                   e.stopPropagation()
                 }
               >
-                <img
-                  src={`${process.env.NEXT_PUBLIC_API_URL}${selectedImage.asset?.url}`}
-                  className="object-cover max-h-130"
-                  alt={
-                    selectedImage.asset?.alt ||
-                    selectedImage.asset
-                      .description
-                  }
-                />
+                <div className="relative">
+                  <div className="flex flex-col relative border-b-(--pink) border-b-2">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_API_URL}${selectedImage.asset?.url}`}
+                      className="object-cover max-h-130"
+                      alt={
+                        selectedImage.asset
+                          ?.alt ||
+                        selectedImage.asset
+                          .description
+                      }
+                    />
+                    <div className="absolute bottom-0 right-0 mt-auto border-s-transparent border-bs-transparent border-e-(--pink) border-be-transparent border-s-0 border-bs-40 border-e-40 border-be-0"></div>
+                  </div>
+                </div>
                 <button
                   onClick={closeLightbox}
                   className="button-exit absolute top-4 right-4 z-30 text-white hover:text-button-hover hover:cursor-pointer text-3xl"

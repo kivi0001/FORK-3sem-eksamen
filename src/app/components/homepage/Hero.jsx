@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 const heroImages = [
   {
@@ -21,7 +22,7 @@ const Hero = () => {
     ].link;
 
   return (
-    <section className="hero-image flex flex-col items-center justify-center">
+    <section className="hero-image relative h-screen flex flex-col items-center justify-center bg-background!">
       <Image
         alt="background hero image of party people"
         className="image-party"
@@ -53,12 +54,18 @@ const Hero = () => {
           ></Image>
         </div>
         <div className="flex gap-5">
-          <button className="black-btn uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25">
+          <Link
+            href="/events"
+            className="black-btn uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25"
+          >
             view events
-          </button>
-          <button className="pink-btn uppercase border-2 border-white/50 cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]">
+          </Link>
+          <Link
+            href="/booktable"
+            className="pink-btn uppercase border-2 border-white/50 cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]"
+          >
             book table
-          </button>
+          </Link>
         </div>
       </div>
     </section>

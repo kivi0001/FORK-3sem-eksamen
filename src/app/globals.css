@@ -6,6 +6,7 @@
   --primary-light: oklch(97.614% 0.00011 271.152);
   --primary-dark: oklch(15.557% 0.0017 16.767);
   --pink: oklch(65.346% 0.24194 9.256);
+  --dark-pink: oklab(53.169% 0.19443 0.0322);
   --medium-grey: oklch(82.032% 0.00009 271.152);
   --dark-grey: oklch(78.422% 0.00223 15.01);
   --background: oklch(15.557% 0.0017 16.767);
@@ -14,6 +15,7 @@
     24.807% 0.00715 325.606 / 0.825
   );
   --green: oklch(87.088% 0.27592 143.572);
+  --black-background: oklch(0% 0 0);
 
   /* FLUID FONT-SIZES */
   --large: clamp(
@@ -136,6 +138,18 @@
     0.7386rem + 2.2727cqi,
     2.5rem
   );
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1200,20—180 */
+
+  --fluid-20-180: clamp(
+    1.25rem,
+    -3.0357rem + 19.0476cqi,
+    11.25rem
+  );
+
+  /* FORM WIDTH */
+  --form-width-big: calc(100% - 20px);
+  --form-width-small: calc(50% - 20px);
 }
 
 @theme inline {
@@ -161,6 +175,11 @@
   --color-validation: var(--green);
   --color-trackbg: var(--pink);
   --color-progressbg: var(--foreground);
+  --color-featuredevent-bar: var(--dark-pink);
+  --color-background: var(--primary-dark);
+  --color-black-background: var(
+    --black-background
+  );
 
   /* FONT-SIZE TOKENS */
   --font-home-h1: var(--large);
@@ -180,6 +199,7 @@
   --font-xs-footer-p: var(--xtrasmall-p);
   --font-home-form-h2: var(--medium-v2);
   --font-table-p: var(--xtrasmall-p);
+  --font-testimonial-p: var(--small-p);
 
   /* FONT WEIGHT TOKENS */ /* Home page */
   --font-weight-home-h1: var(--weight-medium);
@@ -244,6 +264,11 @@
     --letterspace-narrow
   );
 
+  /* FORM WIDTHS */
+
+  --form-w-small: var(--form-width-small);
+  --form-w-big: var(--form-width-big);
+
   /* FLUID SPACING */
   --margin-main: var(--fluid-24-240);
 
@@ -269,6 +294,8 @@
 /* GRIDS */
 html {
   background: var(--background);
+  max-width: 2000px;
+  margin: auto;
 }
 
 body {
@@ -284,8 +311,7 @@ body {
     )
     [full-end];
   grid-template-rows: auto;
-  max-width: 1440px;
-  margin: auto;
+  background-image: url("/assets/bg/pattern_bg.jpg");
 }
 
 .header-wrapper {
@@ -335,6 +361,43 @@ main section {
 
 .events-wrapper:nth-child(odd) .events-content {
   grid-column: content-start / content-middle;
+}
+
+.pagination-content {
+  grid-column: content-start / content-end;
+}
+
+@media (width < 1250px) {
+  .events-wrapper:nth-child(odd) .events-content {
+    grid-column: content-middle / full-start;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+  }
+
+  .events-wrapper:nth-child(even)
+    .events-content {
+    grid-column: content-middle / full-end;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (width < 768px) {
+  .events-wrapper-content,
+  .fullbleed-eventsimg {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .events-content {
+    margin-block: var(--spacing-small);
+    padding-left: 1rem;
+  }
+
+  .events-button {
+    margin: auto;
+    margin-block: var(--spacing-small);
+  }
 }
 
 /* FOOTER */

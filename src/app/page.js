@@ -7,20 +7,24 @@ import TestimonialsSection from "./components/homepage/testimonials_section/Test
 import LatestVideo from "./components/latest_video/LatestVideoSection";
 import TrackSection from "./components/homepage/club_track_section/TrackSection";
 import MailSection from "./components/homepage/mail_list/MailSection";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
     <main>
-      <Suspense>
+      <Suspense fallback="Loading Night Club...">
         <Hero />
+        <div className="sticky-container">
+          <Header />
+        </div>
+        <WelcomeSection />
+        <FeaturedSection />
+        <GallerySection />
+        <TrackSection />
+        <LatestVideo />
+        <TestimonialsSection />
+        <MailSection />
       </Suspense>
-      <WelcomeSection />
-      <FeaturedSection />
-      <GallerySection />
-      <TrackSection />
-      <LatestVideo />
-      <TestimonialsSection />
-      <MailSection />
     </main>
   );
 }
