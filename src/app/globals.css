@@ -390,7 +390,7 @@ main section {
   }
 
   .events-content {
-    margin-bottom: 1rem;
+    margin-block: var(--spacing-small);
     padding-left: 1rem;
   }
 

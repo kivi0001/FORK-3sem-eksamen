@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 const TrackSection = () => {
   return (
-    <section>
+    <section className="track-container">
       <HomeHeadlines text="night club track" />
       <Suspense fallback="Could not load Night Club Track player..">
         <TrackPlayer />

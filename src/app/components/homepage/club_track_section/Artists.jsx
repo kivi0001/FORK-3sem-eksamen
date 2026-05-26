@@ -58,9 +58,9 @@ const Artists = ({
                     <Image
                       src={song.image}
                       alt={song.title}
-                      width={200}
-                      height={200}
-                      className="artist-image object-cover min-w-54 md:flex"
+                      width={180}
+                      height={180}
+                      className="artist-image object-cover max-w-50 min-w-fit md:flex"
                     />
 
                     <div className="absolute inset-0 flex flex-col bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

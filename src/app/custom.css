@@ -363,6 +363,10 @@ ul.full-width-scroller li {
   container-type: inline-size;
 }
 
+.track-container {
+  display: grid;
+}
+
 @container (width < 760px) {
   .track-player-wrapper {
     margin-bottom: 20px;
