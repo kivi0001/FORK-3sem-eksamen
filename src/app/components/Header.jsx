@@ -68,12 +68,14 @@ const Header = () => {
       <header className="flex justify-between border-y-(--pink) border-y-2">
         <div className="border-s-transparent border-bs-(--pink) border-e-transparent border-be-transparent border-s-0 border-bs-40 border-e-40 border-be-0"></div>
         <div className="py-4">
-          <Image
-            src="/assets/Logo.png"
-            width={220}
-            height={50}
-            alt="Logo with the text 'Night Club'"
-          ></Image>
+          <Link href="/">
+            <Image
+              src="/assets/Logo.png"
+              width={220}
+              height={50}
+              alt="Logo with the text 'Night Club'"
+            ></Image>
+          </Link>
         </div>
         <nav className="relative flex gap-(--padding-block-input-field) place-content-center items-center justify-between">
           <motion.div
