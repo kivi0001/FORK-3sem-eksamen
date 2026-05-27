@@ -36,6 +36,10 @@ const Player = ({
       audioprogress * duration;
   };
 
+  const progressPercent = duration
+    ? (currentTime / duration) * 100
+    : 0;
+
   const prevSong = () => {
     const index = songs.findIndex(
       (x) => x.title == currentSong.title,
@@ -60,6 +64,7 @@ const Player = ({
   };
 
   // AI HELPED WITH THIS //
+  //  Se synopsis om AI brug: Player.jsx
   const handleVolumeChange = (e) => {
     const rawVolume = parseFloat(e.target.value);
 
@@ -100,10 +105,6 @@ const Player = ({
     const secs = Math.floor(timeInSeconds % 60);
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
-
-  const progressPercent = duration
-    ? (currentTime / duration) * 100
-    : 0;
   ///////////////////////////////
 
   return (
@@ -137,30 +138,29 @@ const Player = ({
         </div>
         <div className="track-icons flex flex-row gap-6 justify-between ">
           <FaFastBackward
-            className="btn-prevnext"
+            className="btn-prevnext cursor-pointer"
             onClick={prevSong}
           />
           {isPlaying ? (
             <FaRegCirclePause
-              className="btn-playpause"
+              className="btn-playpause cursor-pointer"
               onClick={PlayPause}
             />
           ) : (
             <FaRegCirclePlay
-              className="btn-playpause"
+              className="btn-playpause cursor-pointer"
               onClick={PlayPause}
             />
           )}
           <FaFastForward
-            className="btn-prevnext"
+            className="btn-prevnext cursor-pointer"
             onClick={nextSong}
           />
         </div>
         <div className="volume-container flex items-center gap-2 group text-2xl pt-5 m-auto md:pt-0 md:m-0">
-          {/* AI HELPED WITH THIS */}
           <button
             onClick={toggleMute}
-            className="focus:outline-none text-2xl hover:text-trackbg"
+            className="focus:outline-none text-2xl hover:text-trackbg cursor-pointer"
           >
             {isMuted || volume === 0 ? (
               <FaVolumeMute />
@@ -168,7 +168,6 @@ const Player = ({
               <FaVolumeUp />
             )}
           </button>
-          {/* ////////////// */}
           <input
             type="range"
             min="0"
