@@ -1,5 +1,4 @@
 import HomeHeadlines from "../HomeHeadlines";
-import { Suspense } from "react";
 import VideoContainer from "./VideoContainer";
 
 const LatestVideoSection = () => {
