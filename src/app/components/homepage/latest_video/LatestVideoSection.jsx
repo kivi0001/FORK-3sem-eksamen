@@ -1,19 +1,14 @@
 import HomeHeadlines from "../HomeHeadlines";
-import VideoComponent from "./VideoComponent";
 import { Suspense } from "react";
 import VideoContainer from "./VideoContainer";
 
-const LatestVideo = () => {
+const LatestVideoSection = () => {
   return (
     <section className="video-section">
       <HomeHeadlines text="Latest Video" />
-      <Suspense
-        fallback={<p>Loading videos..</p>}
-      >
-        <VideoContainer />
-      </Suspense>
+      <VideoContainer />
     </section>
   );
 };
 
-export default LatestVideo;
+export default LatestVideoSection;
