@@ -10,14 +10,12 @@
   padding: none;
 }
 
-/* AI HELPED WITH THE RIGHT CSS PLACEMENT */
 .sticky-container {
   position: sticky;
   top: 0;
   z-index: 50;
   grid-column: full-start / full-end;
 }
-/* /////////////////////// */
 
 main {
   padding-top: 0;
@@ -37,7 +35,7 @@ main {
   margin-bottom: 6px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #fff;
+  background-color: oklab(100% 0 -0.00011);
 }
 
 .PopoverContent {
@@ -335,14 +333,14 @@ ul.full-width-scroller li {
   width: 15px !important;
   height: 15px !important;
   border-radius: 50%;
-  background: #ffffff;
+  background: oklch(100% 0.00011 271.152);
   cursor: pointer;
 }
 .volume-slider::-moz-range-thumb {
   width: 15px !important;
   height: 15px !important;
   border-radius: 50%;
-  background: #ffffff;
+  background: oklch(100% 0.00011 271.152);
   cursor: pointer;
   border: none;
 }
@@ -404,6 +402,70 @@ ul.full-width-scroller li {
 
   > * {
     grid-column: content-start / content-end;
+  }
+}
+
+/* EVENTS */
+.events-wrapper,
+.events-wrapper-content {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full-start / full-end;
+}
+
+.fullbleed-eventsimg {
+  grid-column: full-start / content-middle;
+  grid-row: 1;
+}
+
+.events-content {
+  grid-column: content-middle / content-end;
+  grid-row: 1;
+}
+
+.events-wrapper:nth-child(odd)
+  .fullbleed-eventsimg {
+  grid-column: content-middle / full-end;
+}
+
+.events-wrapper:nth-child(odd) .events-content {
+  grid-column: content-start / content-middle;
+}
+
+.pagination-content {
+  grid-column: content-start / content-end;
+}
+
+@media (width < 1250px) {
+  .events-wrapper:nth-child(odd) .events-content {
+    grid-column: content-middle / full-start;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+  }
+
+  .events-wrapper:nth-child(even)
+    .events-content {
+    grid-column: content-middle / full-end;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (width < 768px) {
+  .events-wrapper-content,
+  .fullbleed-eventsimg {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .events-content {
+    margin-block: var(--spacing-small);
+    padding-left: 1rem;
+  }
+
+  .events-button {
+    margin: auto;
+    margin-block: var(--spacing-small);
   }
 }
 
