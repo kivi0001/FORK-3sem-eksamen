@@ -5,6 +5,8 @@ import {
 } from "next/navigation";
 import Testiment from "./Testiment";
 
+// AI HELPED WITH THIS
+// Se synopsis om AI brug: TestimonialsSlider.jsx
 const TestimonialSlider = ({ testimonials }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -18,6 +20,7 @@ const TestimonialSlider = ({ testimonials }) => {
       scroll: false,
     });
   };
+  /////////
 
   return (
     <div className="flex flex-col items-center w-full z-1 my-medium ">
@@ -38,7 +41,8 @@ const TestimonialSlider = ({ testimonials }) => {
       </ul>
 
       <div className="flex justify-center gap-4 w-full mt-small-medium">
-        {/* AI HELPED WITH SYNTAX */}
+        {/* AI HELPED WITH THIS */}
+        {/*Se synopsis om AI brug: TestimonialsSlider.jsx */}
         {testimonials.map((_, index) => (
           <button
             key={index}
@@ -53,6 +57,7 @@ const TestimonialSlider = ({ testimonials }) => {
             aria-label={`Show testimonial ${index + 1}`}
           />
         ))}
+        {/* //////// */}
       </div>
     </div>
   );
