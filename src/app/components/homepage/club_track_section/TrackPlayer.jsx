@@ -56,11 +56,7 @@ const TrackPlayer = () => {
 
   useEffect(() => {
     if (isPlaying) {
-      audioElem.current
-        .play()
-        .catch((err) =>
-          console.log("Playback error:", err),
-        );
+      audioElem.current.play();
     } else {
       audioElem.current.pause();
     }
