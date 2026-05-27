@@ -64,7 +64,7 @@ const Player = ({
   };
 
   // AI HELPED WITH THIS //
-  //  Se synopsis om AI brug: Player.jsx
+  //  Se synopsis om AI brug: Night Club Track //
   const handleVolumeChange = (e) => {
     const rawVolume = parseFloat(e.target.value);
 
@@ -95,8 +95,8 @@ const Player = ({
     }
   };
   /////////////////
-
   // AI HELPED WITH THIS //
+  //  Se synopsis om AI brug: Night Club Track //
   const formatTime = (timeInSeconds) => {
     if (isNaN(timeInSeconds)) return "0:00";
     const minutes = Math.floor(

@@ -14,7 +14,7 @@ const Testiment = ({
   activeTestament,
 }) => {
   // AI HELPED WITH THIS
-  // Se synopsis om AI brug: Testiment.jsx
+  // Se synopsis om AI brug: Testimonials //
   const isActive = index === activeTestament;
   /////////
   return (

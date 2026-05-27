@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // AI HELPED WITH THIS //
-// Se synopsis om AI brug: EventsPagination.jsx
+// Se synopsis om AI brug: Events //
 const EventsPagination = ({ currentPage }) => {
   const totalPages = 3;
   const pages = [1, 2, 3];

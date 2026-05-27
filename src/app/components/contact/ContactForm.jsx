@@ -37,7 +37,8 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
 
   const onSubmit = async (data) => {
-    /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
+    /* AI HELPED WITH THIS */
+    // Se synopsis om AI brug: Forms //
     const result = await PostContactInfo({
       name: data.name,
       email: data.email,

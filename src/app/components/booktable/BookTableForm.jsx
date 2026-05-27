@@ -60,14 +60,14 @@ const BookTableForm = ({
   });
 
   /* AI HELPED WITH THIS FUNCTION: */
+  // Se synopsis om AI brug: Book Table //
+
   useEffect(() => {
     const diffPageRoute =
       window.location.pathname;
     const eventId = diffPageRoute
       .split("/")
       .pop();
-    const defaultTitle =
-      document.querySelector("#default");
     if (eventId) {
       setValue("choiceNight", eventId);
     }
@@ -78,6 +78,7 @@ const BookTableForm = ({
 
   const onSubmit = async (data) => {
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
+    // Se synopsis om AI brug: Forms //
     const result = await PostBooking({
       name: data.name,
       email: data.email,
@@ -238,6 +239,7 @@ const BookTableForm = ({
           <select
             {...register("choiceNight")}
             /* AI HELPED WITH THIS SYNTAX: */
+            // Se synopsis om AI brug: Book Table //
             onChange={(night) => {
               const selectedNight =
                 night.target.value;

@@ -37,7 +37,8 @@ const CommentForm = ({ eventId }) => {
   const [message, setMessage] = useState("");
 
   const onSubmit = async (data) => {
-    /* AI HJALP MED DETTE: MEDTAG DATA FRA POSTCOMMENT */
+    /* AI HJALP MED DETTE: */
+    // Se synopsis om AI brug: Forms //
     const result = await PostComment({
       eventId,
       name: data.name,

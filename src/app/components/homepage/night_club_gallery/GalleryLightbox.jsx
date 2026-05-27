@@ -17,7 +17,7 @@ export default function GalleryLightBox({
     useState(null);
 
   // AI HELPED WITH THIS //
-  // Se synopsis om AI brug: GalleryLightbox
+  // Se synopsis om AI brug: Night Club Gallery //
   const openLightbox = (index) =>
     setCurrentIndex(index);
   const closeLightbox = () =>

@@ -19,6 +19,7 @@ export async function PostComment({
           name,
           content: comment,
           /* AI HELPED WITH THIS */
+          // Se synopsis om AI brug: POSTs //
           date: new Date().toISOString(),
           /************/
           email,
@@ -26,6 +27,7 @@ export async function PostComment({
       },
     );
     /* AI HELPED WITH THIS: */
+    // Se synopsis om AI brug: POSTs //
     if (!response.ok) {
       const errorComment = await response.json();
       return {

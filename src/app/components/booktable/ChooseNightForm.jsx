@@ -21,6 +21,7 @@ const ChooseNightForm = ({ events = [] }) => {
   });
 
   /* AI HELPED WITH THIS FUNCTION: */
+  // Se synopsis om AI brug: Book Table //
   useEffect(() => {
     const diffPageRoute =
       window.location.pathname;
@@ -33,7 +34,6 @@ const ChooseNightForm = ({ events = [] }) => {
     }
   }, [setValue]);
   /*  ********************** */
-
   return (
     <section className="night-container flex justify-center">
       <form className="night-form flex flex-col gap-2 w-(--form-width-small)">
@@ -46,6 +46,7 @@ const ChooseNightForm = ({ events = [] }) => {
         <select
           {...register("choiceNight")}
           /* AI HELPED WITH THIS SYNTAX: */
+          // Se synopsis om AI brug: Book Table //
           onChange={(night) => {
             const selectedNight =
               night.target.value;

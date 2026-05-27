@@ -5,8 +5,8 @@ import {
 } from "next/navigation";
 import Testiment from "./Testiment";
 
-// AI HELPED WITH THIS
-// Se synopsis om AI brug: TestimonialsSlider.jsx
+// AI HELPED WITH THIS //
+// Se synopsis om AI brug: Testimonials //
 const TestimonialSlider = ({ testimonials }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -42,7 +42,7 @@ const TestimonialSlider = ({ testimonials }) => {
 
       <div className="flex justify-center gap-4 w-full mt-small-medium">
         {/* AI HELPED WITH THIS */}
-        {/*Se synopsis om AI brug: TestimonialsSlider.jsx */}
+        {/*Se synopsis om AI brug: Testimonials*/}
         {testimonials.map((_, index) => (
           <button
             key={index}

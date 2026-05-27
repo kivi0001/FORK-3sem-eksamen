@@ -6,7 +6,7 @@ import FeaturedSection from "./components/homepage/featuredevents_section/Featur
 import TestimonialsSection from "./components/homepage/testimonials_section/TestimonialsSection";
 import LatestVideoSection from "./components/homepage/latest_video/LatestVideoSection";
 import TrackSection from "./components/homepage/club_track_section/TrackSection";
-import MailSection from "./components/homepage/mail_list/MailSection";
+import MailSection from "./components/homepage/newsletter/MailSection";
 import Header from "./components/Header";
 import Loading from "./loading";
 

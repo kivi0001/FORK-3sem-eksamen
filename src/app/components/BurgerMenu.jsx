@@ -8,6 +8,7 @@ import { useState } from "react";
 
 const BurgerMenu = () => {
   /* AI HELPED WITH THIS */
+  // Se synopsis om AI brug: Header //
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpenClosed = (open) => {
     setIsOpen(open);

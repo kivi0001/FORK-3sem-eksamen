@@ -23,7 +23,7 @@ const Details = async ({ params }) => {
   const events = await EventFetch();
 
   /* AI HELPED WITH THIS */
-  /* se synopsis om AI brug: Book Table page */
+  /* se synopsis om AI brug: Book Table */
   if (!id) {
     return (
       <main>

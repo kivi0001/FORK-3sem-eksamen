@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 const Header = () => {
   const pathname = usePathname();
   // AI HELPED WITH THIS //
-  // Se synopsis om AI brug: Header.jsx
+  // Se synopsis om AI brug: Header //
   const [activeLink, setActiveLink] =
     useState(pathname);
   const [underline, setUnderline] = useState({
