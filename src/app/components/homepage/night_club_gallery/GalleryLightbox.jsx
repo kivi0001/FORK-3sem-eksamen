@@ -16,6 +16,8 @@ export default function GalleryLightBox({
   const [currentIndex, setCurrentIndex] =
     useState(null);
 
+  // AI HELPED WITH THIS //
+  // Se synopsis om AI brug: GalleryLightbox
   const openLightbox = (index) =>
     setCurrentIndex(index);
   const closeLightbox = () =>
@@ -36,6 +38,7 @@ export default function GalleryLightBox({
         initialImages.length,
     );
   };
+  ///////
 
   const selectedImage =
     currentIndex !== null
