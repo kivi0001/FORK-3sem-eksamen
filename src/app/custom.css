@@ -498,7 +498,7 @@ ul.full-width-scroller li {
   appearance: none;
 }
 
-/* FORM RESPONSIVITET FOR BOOKING AND CONTACT */
+/* FORM RESPONSIVITET FOR BOOKING AND COMMENTS */
 
 .input-wrapper > div {
   width: var(--form-width-small);
@@ -519,8 +519,7 @@ ul.full-width-scroller li {
 }
 
 @container (width < 600px) {
-  .input-wrapper > div,
-  input {
+  .input-wrapper > div {
     width: var(--form-width-big);
   }
 }
