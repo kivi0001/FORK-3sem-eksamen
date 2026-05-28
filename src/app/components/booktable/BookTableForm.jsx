@@ -141,7 +141,7 @@ const BookTableForm = ({
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col w-full gap-4 "
+        className=" flex flex-col w-full gap-4"
       >
         <div className="input-wrapper flex gap-[1.3em] flex-wrap">
           <div className="flex flex-col">
