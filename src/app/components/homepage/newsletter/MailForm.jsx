@@ -56,10 +56,12 @@ const MailForm = () => {
         id="email"
         placeholder="Enter your e-mail"
         className="outline-none text-foreground placeholder-foreground border-b-2 p-2 tracking-(--letter-spacing-input) w-80 focus:bg-input-bg"
+        aria-label="Input field for e-mail"
       />
       <PrimaryButtons
         type="submit"
         textInput="Subscribe"
+        id="primarybtn"
         reset
       />
       {message && (

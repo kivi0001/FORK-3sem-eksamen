@@ -13,31 +13,31 @@ const songsdata = [
     id: 1,
     title: "Black Box Funky",
     src: "/assets/media/black-box-funky.mp3",
-    image: "/assets/content-img/track1.jpg",
+    image: "/assets/content-img/track1.webp",
   },
   {
     id: 2,
     title: "Euphoria",
     src: "/assets/media/euphoria.mp3",
-    image: "/assets/content-img/track2.jpg",
+    image: "/assets/content-img/track2.webp",
   },
   {
     id: 3,
     title: "Fashion Red Tape",
     src: "/assets/media/fashion-red-tape.mp3",
-    image: "/assets/content-img/track3.jpg",
+    image: "/assets/content-img/track3.webp",
   },
   {
     id: 4,
     title: "Neon Nanny",
     src: "/assets/media/black-box-funky.mp3",
-    image: "/assets/content-img/track4.jpg",
+    image: "/assets/content-img/track4.webp",
   },
   {
     id: 5,
     title: "Overload",
     src: "/assets/media/euphoria.mp3",
-    image: "/assets/content-img/track5.jpg",
+    image: "/assets/content-img/track5.webp",
   },
 ];
 
@@ -84,7 +84,7 @@ const TrackPlayer = () => {
             className="object-cover"
             src={
               currentSong.image ||
-              "/assets/content-img/track1.jpg"
+              "/assets/content-img/track1.webp"
             }
             alt={`Image of artist for ${currentSong.title}`}
             width={250}

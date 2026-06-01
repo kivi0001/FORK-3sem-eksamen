@@ -140,21 +140,25 @@ const Player = ({
           <FaFastBackward
             className="btn-prevnext cursor-pointer"
             onClick={prevSong}
+            aria-label="previous song button"
           />
           {isPlaying ? (
             <FaRegCirclePause
               className="btn-playpause cursor-pointer"
               onClick={PlayPause}
+              aria-label="Pause button"
             />
           ) : (
             <FaRegCirclePlay
               className="btn-playpause cursor-pointer"
               onClick={PlayPause}
+              aria-label="Play button"
             />
           )}
           <FaFastForward
             className="btn-prevnext cursor-pointer"
             onClick={nextSong}
+            aria-label="Next song button"
           />
         </div>
         <div className="volume-container flex items-center gap-2 group text-2xl pt-5 m-auto md:pt-0 md:m-0">
@@ -163,9 +167,9 @@ const Player = ({
             className="focus:outline-none text-2xl hover:text-trackbg cursor-pointer"
           >
             {isMuted || volume === 0 ? (
-              <FaVolumeMute />
+              <FaVolumeMute aria-label="Mute button" />
             ) : (
-              <FaVolumeUp />
+              <FaVolumeUp aria-label="Volume up button" />
             )}
           </button>
           <input
@@ -176,6 +180,7 @@ const Player = ({
             value={isMuted ? 0 : volume}
             onChange={handleVolumeChange}
             className="volume-slider w-25 h-1 appearance-none cursor-pointer bg-trackbg"
+            aria-label="Volume slider"
           />
         </div>
       </div>

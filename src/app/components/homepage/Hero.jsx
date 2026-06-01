@@ -5,11 +5,11 @@ import Link from "next/link";
 const heroImages = [
   {
     image: "img1",
-    link: "/assets/bg/header_bg_1.jpg",
+    link: "/assets/bg/header_bg_1.webp",
   },
   {
     image: "img2",
-    link: "/assets/bg/header_bg_2.jpg",
+    link: "/assets/bg/header_bg_2.webp",
   },
 ];
 
@@ -48,7 +48,7 @@ const Hero = () => {
         <div>
           <Image
             alt="image of a pink decorative line"
-            src="/assets/bottom_line.png"
+            src="/assets/bottom_line.webp"
             width={800}
             height={100}
           ></Image>
@@ -57,12 +57,14 @@ const Hero = () => {
           <Link
             href="/events"
             className="black-btn uppercase border-2 cursor-pointer border-white/50 py-2 px-4 bg-[#030202]/25"
+            aria-label="Link to events page"
           >
             view events
           </Link>
           <Link
             href="/booktable"
             className="pink-btn uppercase border-2 border-white/50 cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]"
+            aria-label="Link to book table page"
           >
             book table
           </Link>
