@@ -51,7 +51,7 @@ const ListEventCard = ({
             >
               <PrimaryButtons
                 id="primarybtn"
-                textInput="Read More"
+                textInput="view event"
               ></PrimaryButtons>
             </Link>
           </div>

@@ -311,7 +311,7 @@ body {
     )
     [full-end];
   grid-template-rows: auto;
-  background-image: url("/assets/bg/pattern_bg.jpg");
+  background-image: url("/assets/bg/pattern_bg.webp");
 }
 
 .header-wrapper {
