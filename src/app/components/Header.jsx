@@ -69,9 +69,12 @@ const Header = () => {
       <header className="flex justify-between border-y-(--pink) border-y-2">
         <div className="border-s-transparent border-bs-(--pink) border-e-transparent border-be-transparent border-s-0 border-bs-40 border-e-40 border-be-0"></div>
         <div className="py-4">
-          <Link href="/">
+          <Link
+            aria-label="Logo button for home page"
+            href="/"
+          >
             <Image
-              src="/assets/Logo.png"
+              src="/assets/Logo.webp"
               width={220}
               height={50}
               alt="Logo with the text 'Night Club'"
@@ -93,7 +96,7 @@ const Header = () => {
             className="absolute bottom-3 h-3 z-0"
           >
             <Image
-              src="/assets/bottom_line2.png"
+              src="/assets/bottom_line2.webp"
               height={20}
               width={200}
               className="w-full h-full object-container"
@@ -101,6 +104,7 @@ const Header = () => {
             />
           </motion.div>
           <Link
+            aria-label="Button for homepage"
             href="/"
             ref={(el) =>
               (linkRefs.current["/"] = el)
@@ -115,6 +119,7 @@ const Header = () => {
             </HeaderButton>
           </Link>
           <Link
+            aria-label="Button for events page"
             href="/events"
             ref={(el) =>
               (linkRefs.current["/events"] = el)
@@ -131,6 +136,7 @@ const Header = () => {
             </HeaderButton>
           </Link>
           <Link
+            aria-label="Button for book table page"
             href="/booktable"
             ref={(el) =>
               (linkRefs.current["/booktable"] =
@@ -148,6 +154,7 @@ const Header = () => {
             </HeaderButton>
           </Link>
           <Link
+            aria-label="Button for contact page"
             href="/contact"
             ref={(el) =>
               (linkRefs.current["/contact"] = el)

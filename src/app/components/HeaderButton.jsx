@@ -5,6 +5,7 @@ const STAGGER = 0.025;
 const HeaderButton = ({ children, active }) => {
   return (
     <motion.button
+      aria-label="Header menu point"
       className={`${active ? "text-(--pink)" : "text-current"} uppercase self-center font-(--font-weight-header-button) text-(length:--font-header-button) relative block overflow-hidden whitespace-nowrap cursor-pointer`}
       style={{ lineHeight: 0.8 }}
       initial="initial"

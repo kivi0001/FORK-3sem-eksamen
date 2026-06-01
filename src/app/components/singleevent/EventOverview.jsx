@@ -115,7 +115,10 @@ const EventOverview = ({
         <p className="w-[80ch]">{content}</p>
         <div className="mt-auto ml-auto pt-10">
           <Link href={`/booktable/${id}`}>
-            <PrimaryButtons textInput="book now" />
+            <PrimaryButtons
+              id="primarybtn"
+              textInput="book now"
+            />
           </Link>
         </div>
       </div>
