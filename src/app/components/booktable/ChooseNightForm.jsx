@@ -45,6 +45,7 @@ const ChooseNightForm = ({ events = [] }) => {
         </label>
         <select
           {...register("choiceNight")}
+          aria-label="selection of night of event"
           /* AI HELPED WITH THIS SYNTAX: */
           // Se synopsis om AI brug: Book Table //
           onChange={(night) => {

@@ -18,7 +18,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 1"
             width={300}
             height={200}
@@ -43,7 +43,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 2"
             width={300}
             height={200}
@@ -67,7 +67,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_2.png"
+            src="/assets/table/table_2.webp"
             alt="Table 3"
             width={300}
             height={200}
@@ -91,7 +91,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 4"
             width={300}
             height={200}
@@ -115,7 +115,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_3.png"
+            src="/assets/table/table_3.webp"
             alt="Table 5"
             width={300}
             height={200}
@@ -139,7 +139,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 6"
             width={300}
             height={200}
@@ -163,7 +163,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 7"
             width={300}
             height={200}
@@ -187,7 +187,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_2.png"
+            src="/assets/table/table_2.webp"
             alt="Table 8"
             width={300}
             height={200}
@@ -211,7 +211,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 9"
             width={300}
             height={200}
@@ -235,7 +235,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_3.png"
+            src="/assets/table/table_3.webp"
             alt="Table 10"
             width={300}
             height={200}
@@ -259,7 +259,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 11"
             width={300}
             height={200}
@@ -283,7 +283,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 12"
             width={300}
             height={200}
@@ -307,7 +307,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_2.png"
+            src="/assets/table/table_2.webp"
             alt="Table 13"
             width={300}
             height={200}
@@ -331,7 +331,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_1.png"
+            src="/assets/table/table_1.webp"
             alt="Table 14"
             width={300}
             height={200}
@@ -355,7 +355,7 @@ const Tables = async ({ eventId }) => {
           reserved={reserved}
         >
           <Image
-            src="/assets/table/table_3.png"
+            src="/assets/table/table_3.webp"
             alt="Table 15"
             width={300}
             height={200}

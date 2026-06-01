@@ -147,6 +147,7 @@ const BookTableForm = ({
           <div className="flex flex-col">
             <input
               {...register("name")}
+              aria-label="input field for name"
               type="text"
               name="name"
               id="name"
@@ -162,6 +163,7 @@ const BookTableForm = ({
           <div className="flex flex-col">
             <input
               {...register("email")}
+              aria-label="input field for email"
               type="text"
               name="email"
               id="email"
@@ -179,6 +181,7 @@ const BookTableForm = ({
           <div className="flex flex-col">
             <select
               {...register("tableNumber")}
+              aria-label="view of selection of table"
               name="tableNumber"
               id="tableNumber"
               disabled
@@ -222,6 +225,7 @@ const BookTableForm = ({
           <div className="flex flex-col">
             <input
               {...register("guestsAmount")}
+              aria-label="input field for amount of guests"
               type="number"
               name="guestsAmount"
               id="guestsAmount"
@@ -238,6 +242,7 @@ const BookTableForm = ({
         <div className="flex flex-wrap">
           <select
             {...register("choiceNight")}
+            aria-label="selection of night of event"
             /* AI HELPED WITH THIS SYNTAX: */
             // Se synopsis om AI brug: Book Table //
             onChange={(night) => {
@@ -275,6 +280,7 @@ const BookTableForm = ({
           )}
           <input
             {...register("phoneNumber")}
+            aria-label="input field for phonenumber"
             type="text"
             name="phoneNumber"
             id="phoneNumber"
@@ -290,6 +296,7 @@ const BookTableForm = ({
         <div className="flex flex-col w-(--form-width-big)">
           <textarea
             {...register("bookingMessage")}
+            aria-label="input field for message"
             type="text"
             name="bookingMessage"
             id="bookingMessage"
@@ -303,6 +310,7 @@ const BookTableForm = ({
           )}
           <div className="ml-auto mt-5">
             <PrimaryButtons
+              id="primarybtn"
               type="submit"
               textInput="submit"
               onClick={() => {

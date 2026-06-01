@@ -45,8 +45,14 @@ const ListEventCard = ({
             {description}
           </p>
           <div className="events-button mt-auto ml-auto mb-auto ">
-            <Link href={`/singleevent/${slug}`}>
-              <PrimaryButtons textInput="Read More"></PrimaryButtons>
+            <Link
+              aria-label="Button for page of the event"
+              href={`/singleevent/${slug}`}
+            >
+              <PrimaryButtons
+                id="primarybtn"
+                textInput="Read More"
+              ></PrimaryButtons>
             </Link>
           </div>
         </div>
