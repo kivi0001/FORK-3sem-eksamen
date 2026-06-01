@@ -159,7 +159,7 @@ main {
   grid-template-columns: subgrid;
   grid-column: full-start / full-end;
 
-  background: url("/assets/bg/slider_bg_overlay.png")
+  background: url("/assets/bg/slider_bg_overlay.webp")
     no-repeat center/cover;
 
   > * {
