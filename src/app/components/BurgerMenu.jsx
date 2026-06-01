@@ -22,7 +22,7 @@ const BurgerMenu = () => {
         id="popoverRoot"
         className="popover-root"
       >
-        <Popover.Trigger>
+        <Popover.Trigger aria-label="Open">
           <div className="trigger-div">
             <span className="popover-trigger"></span>
             <span className="popover-trigger"></span>
@@ -43,12 +43,14 @@ const BurgerMenu = () => {
             </Popover.Close>
             <div className="flex flex-col gap-10 items-center justify-center w-screen h-screen">
               <Link
+                aria-label="Button for home page"
                 href="/"
                 onClick={() => setIsOpen(false)}
               >
                 <HeaderButton>home</HeaderButton>
               </Link>
               <Link
+                aria-label="Button for events page"
                 href="/events"
                 onClick={() => setIsOpen(false)}
               >
@@ -57,6 +59,7 @@ const BurgerMenu = () => {
                 </HeaderButton>
               </Link>
               <Link
+                aria-label="Button for book table page"
                 href="/booktable"
                 onClick={() => setIsOpen(false)}
               >
@@ -65,6 +68,7 @@ const BurgerMenu = () => {
                 </HeaderButton>
               </Link>
               <Link
+                aria-label="Button for contact page"
                 href="/contact"
                 onClick={() => setIsOpen(false)}
               >

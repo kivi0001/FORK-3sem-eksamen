@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="relative bottom-0 bg-background">
       <Image
         className="footer-img brightness-25"
-        src="/assets/bg/footerbg.jpg"
+        src="/assets/bg/footerbg.webp"
         layout="fill"
         objectFit="cover"
         alt="footer background"
@@ -51,7 +51,7 @@ const Footer = () => {
           </h3>
           <div className="news">
             <Image
-              src="/assets/content-img/recent_post1.jpg"
+              src="/assets/content-img/recent_post1.webp"
               width={50}
               height={50}
               alt="DJ wearing cap playing music"
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
           <div className="news">
             <Image
-              src="/assets/content-img/recent_post2.jpg"
+              src="/assets/content-img/recent_post2.webp"
               width={50}
               height={50}
               alt="DJ wearing cap playing music"

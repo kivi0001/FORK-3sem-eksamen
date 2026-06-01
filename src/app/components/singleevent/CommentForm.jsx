@@ -78,6 +78,7 @@ const CommentForm = ({ eventId }) => {
         <div className="input-wrapper flex gap-5">
           <input
             {...register("name")}
+            aria-label="input field for name"
             type="text"
             name="name"
             id="name"
@@ -89,6 +90,7 @@ const CommentForm = ({ eventId }) => {
           )}
           <input
             {...register("email")}
+            aria-label="input field for email"
             type="text"
             name="email"
             id="email"
@@ -102,6 +104,7 @@ const CommentForm = ({ eventId }) => {
         <div className="flex flex-col w-full">
           <textarea
             {...register("comment")}
+            aria-label="input field for comment"
             type="text"
             name="comment"
             id="comment"
@@ -115,6 +118,7 @@ const CommentForm = ({ eventId }) => {
           )}
           <div className="mr-5 ml-auto mt-5">
             <PrimaryButtons
+              id="primarybtn"
               type="submit"
               textInput="submit"
               onClick={() => {
