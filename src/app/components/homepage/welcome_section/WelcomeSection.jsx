@@ -7,19 +7,19 @@ const WelcomeSection = () => {
       <HomeHeadlines text="welcome in nightclub" />
       <div className="welcome-image-div w-full flex justify-center gap-8">
         <WelcomeCard
-          link="/assets/content-img/thumb1.jpg"
+          link="/assets/content-img/thumb1.webp"
           iconlink="/assets/icon/dance_icon.svg"
           theme="nightclub"
           description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, ex!"
         />
         <WelcomeCard
-          link="/assets/content-img/reastaurant_1.jpg"
+          link="/assets/content-img/reastaurant_1.webp"
           iconlink="/assets/icon/restaurant_icon.svg"
           theme="restaurant"
           description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, ex!"
         />
         <WelcomeCard
-          link="/assets/content-img/thumb2.jpg"
+          link="/assets/content-img/thumb2.webp"
           iconlink="/assets/icon/bar_icon.svg"
           theme="bar"
           description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, ex!"

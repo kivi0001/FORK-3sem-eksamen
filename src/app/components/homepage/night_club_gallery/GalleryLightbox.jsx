@@ -74,13 +74,13 @@ export default function GalleryLightBox({
                 onClick={prevImage}
                 className="button-left absolute left-1 top-1/2 -translate-y-1/2 z-30 text-white hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-(length:--font-button) "
               >
-                <BiSolidLeftArrow />
+                <BiSolidLeftArrow aria-label="Previous image button" />
               </button>
               <button
                 onClick={nextImage}
                 className="button-right absolute right-1 top-1/2 -translate-y-1/2 z-30 text-white hover:text-button-hover border p-2 hover:border-button-hover hover:cursor-pointer text-(length:--font-button) "
               >
-                <BiSolidRightArrow />
+                <BiSolidRightArrow aria-label="Next image button" />
               </button>
               <motion.div
                 key={currentIndex}
@@ -124,7 +124,7 @@ export default function GalleryLightBox({
                   onClick={closeLightbox}
                   className="button-exit absolute top-4 right-4 z-30 text-white hover:text-button-hover hover:cursor-pointer text-3xl"
                 >
-                  <MdClose />
+                  <MdClose aria-label="Close lightbox button" />
                 </button>
                 <div className="flex-1 flex flex-col justify-between p-6">
                   <p className="text-bodyfont text-xl font-semibold">
@@ -133,7 +133,10 @@ export default function GalleryLightBox({
                         .description}
                   </p>
                   <div className="mt-6 flex justify-end">
-                    <PrimaryButtons textInput="read more" />
+                    <PrimaryButtons
+                      id="primarybtn"
+                      textInput="read more"
+                    />
                   </div>
                 </div>
               </motion.div>

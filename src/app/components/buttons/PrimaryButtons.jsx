@@ -5,6 +5,7 @@ const PrimaryButtons = ({ textInput }) => {
   return (
     <motion.button
       className="relative inline-block w-fit overflow-hidden uppercase py-2 px-4.5 place-items-center cursor-pointer"
+      aria-labelledby="primarybtn"
       initial="initial"
       whileHover="hovered"
       variants={{

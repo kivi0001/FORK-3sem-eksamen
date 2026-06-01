@@ -7,7 +7,7 @@ const HomeHeadlines = ({ text }) => {
         {text}
       </h2>
       <Image
-        src="/assets/bottom_line2.png"
+        src="/assets/bottom_line2.webp"
         alt="a pink line under text"
         width={400}
         height={200}
