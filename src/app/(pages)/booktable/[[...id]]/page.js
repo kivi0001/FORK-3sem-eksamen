@@ -1,12 +1,9 @@
 import Header from "@/app/components/Header";
-import BookTableForm from "@/app/components/booktable/BookTableForm";
 import Headline from "@/app/components/Headline";
 import { Suspense } from "react";
 import { EventFetch } from "@/app/components/booktable/EventFetch";
-import BookEventHeadline from "@/app/components/booktable/BookEventHeadline";
 import ChooseNightForm from "@/app/components/booktable/ChooseNightForm";
 import Loading from "@/app/loading";
-import TablesClient from "@/app/components/booktable/TablesClient";
 import BookingWrapper from "@/app/components/booktable/BookingWrapper";
 
 const BookTable = ({ params }) => {

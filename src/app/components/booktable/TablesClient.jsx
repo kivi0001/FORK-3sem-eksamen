@@ -11,6 +11,7 @@ const tableCapacity = {
 const TablesClient = ({
   reserved = [],
   setSelectedTable,
+  selectedTable,
 }) => {
   const tableImage = {
     small: { url: "/assets/table/table_1.webp" },
@@ -81,6 +82,13 @@ const TablesClient = ({
                   tableCapacity[table.size],
               });
               scrollToBookTableForm();
+            }}
+            style={{
+              backgroundColor:
+                selectedTable?.number ===
+                table.number
+                  ? "green"
+                  : "transparent",
             }}
           >
             <Image
