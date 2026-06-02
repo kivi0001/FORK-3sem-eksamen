@@ -39,7 +39,7 @@ const EventOverview = ({
 
   return (
     <section className="mt-15">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center w-full h-auto">
         <Image
           src={imagesrc}
           alt={alt}

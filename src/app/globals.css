@@ -311,7 +311,7 @@ body {
     )
     [full-end];
   grid-template-rows: auto;
-  background-image: url("/assets/bg/pattern_bg.jpg");
+  background-image: url("/assets/bg/pattern_bg.webp");
 }
 
 .header-wrapper {
@@ -347,6 +347,8 @@ footer {
 
 .footer-img {
   opacity: 0.2;
+  width: 100%;
+  height: auto;
 }
 
 .footer-wrapper {

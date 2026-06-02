@@ -28,6 +28,7 @@ const EventsPagination = ({ currentPage }) => {
       aria-label="Pagination"
     >
       <Link
+        aria-label="Button for viewing the previuos three events"
         href={`?page=${currentPage - 1}`}
         className={previousButtonClass}
       >
@@ -39,6 +40,7 @@ const EventsPagination = ({ currentPage }) => {
           const isActive = page === currentPage;
           return (
             <Link
+              aria-label="Button for the current three events in view"
               key={page}
               href={`?page=${page}`}
               aria-current={
@@ -57,6 +59,7 @@ const EventsPagination = ({ currentPage }) => {
       </div>
 
       <Link
+        aria-label="Button for viewing the next three events"
         href={`?page=${currentPage + 1}`}
         className={nextButtonClass}
       >

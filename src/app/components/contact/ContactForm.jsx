@@ -78,6 +78,7 @@ const ContactForm = () => {
       >
         <input
           {...register("name")}
+          aria-label="input field for name"
           type="text"
           name="name"
           id="name"
@@ -89,6 +90,7 @@ const ContactForm = () => {
         )}
         <input
           {...register("email")}
+          aria-label="input field for email"
           type="text"
           name="email"
           id="email"
@@ -102,6 +104,7 @@ const ContactForm = () => {
         <div className="flex w-full flex-col">
           <textarea
             {...register("contactMessage")}
+            aria-label="input field for contact message"
             type="text"
             name="contactMessage"
             id="contactMessage"
@@ -115,6 +118,7 @@ const ContactForm = () => {
           )}
           <div className="ml-auto mt-5">
             <PrimaryButtons
+              id="primarybtn"
               type="submit"
               textInput="submit"
               onClick={() => {

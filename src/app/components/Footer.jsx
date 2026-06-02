@@ -12,6 +12,7 @@ const Footer = () => {
         layout="fill"
         objectFit="cover"
         alt="footer background"
+        fetchPriority="high"
       />
       <section className="footer-wrapper z-1">
         <div className="clubinfo-wrapper">

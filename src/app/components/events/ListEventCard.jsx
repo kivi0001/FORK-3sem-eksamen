@@ -24,7 +24,7 @@ const ListEventCard = ({
   return (
     <section className="events-wrapper bg-black-background">
       <div className="events-wrapper-content flex gap-x-5">
-        <div className="fullbleed-eventsimg">
+        <div className="fullbleed-eventsimg w-full h-auto">
           <img src={imagesrc} alt={alt} />
         </div>
         <div className="events-content flex flex-col w-fit">
@@ -45,8 +45,14 @@ const ListEventCard = ({
             {description}
           </p>
           <div className="events-button mt-auto ml-auto mb-auto ">
-            <Link href={`/singleevent/${slug}`}>
-              <PrimaryButtons textInput="Read More"></PrimaryButtons>
+            <Link
+              aria-label="Button for page of the event"
+              href={`/singleevent/${slug}`}
+            >
+              <PrimaryButtons
+                id="primarybtn"
+                textInput="view event"
+              ></PrimaryButtons>
             </Link>
           </div>
         </div>
