@@ -24,7 +24,7 @@ const ListEventCard = ({
   return (
     <section className="events-wrapper bg-black-background">
       <div className="events-wrapper-content flex gap-x-5">
-        <div className="fullbleed-eventsimg">
+        <div className="fullbleed-eventsimg w-full h-auto">
           <img src={imagesrc} alt={alt} />
         </div>
         <div className="events-content flex flex-col w-fit">
