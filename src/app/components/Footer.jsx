@@ -6,16 +6,14 @@ import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="relative bottom-0 bg-background">
-      <Image
-        className="footer-img brightness-25"
+      <img
+        className="footer-img brightness-25 min-w-screen min-h-fit"
         src="/assets/bg/footerbg.webp"
-        layout="fill"
-        objectFit="cover"
         alt="footer background"
         fetchPriority="high"
-        loading="lazy"
+        loading="eager"
       />
-      <section className="footer-wrapper z-1">
+      <section className="footer-wrapper z-1s">
         <div className="clubinfo-wrapper">
           <Image
             src="/assets/icon/Logo_main.svg"
