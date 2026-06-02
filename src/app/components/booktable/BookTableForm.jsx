@@ -101,6 +101,21 @@ const BookTableForm = ({
   const [message, setMessage] = useState("");
 
   const onSubmit = async (data) => {
+    const selectedTableData = tableOptions.find(
+      (tab) =>
+        tab.number.toString() ===
+        data.tableNumber,
+    );
+    if (
+      selectedTableData &&
+      data.guestsAmount >
+        selectedTableData.capacity
+    ) {
+      setMessage(
+        `This table is not big enough for the amount of guests you are booking for... Reduce the number of guests, and make several reservations instead.`,
+      );
+      return;
+    }
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
     // Se synopsis om AI brug: Forms //
     const result = await PostBooking({
