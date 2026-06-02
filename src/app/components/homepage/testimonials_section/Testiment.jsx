@@ -37,14 +37,16 @@ const Testiment = ({
         <a
           className="border p-2"
           href={facebook}
-          target="_blank"
+          target=""
+          aria-label="Facebook link"
         >
           <FaFacebookF size={25} />
         </a>
         <a
           className="border p-2"
           href={twitter}
-          target="_blank"
+          target=""
+          aria-label="Twitter link"
         >
           <FaTwitter size={25}></FaTwitter>
         </a>

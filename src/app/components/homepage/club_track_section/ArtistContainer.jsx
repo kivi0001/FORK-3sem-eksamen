@@ -95,13 +95,19 @@ const Artists = ({
             onClick={prevSong}
             className="text-white border border-white p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
           >
-            <BiSolidLeftArrow size={25} />
+            <BiSolidLeftArrow
+              size={25}
+              aria-label="Previous song button"
+            />
           </button>
           <button
             onClick={nextSong}
             className="text-white border border-white p-1 z-10 hover:border-(--pink) hover:text-(--pink)"
           >
-            <BiSolidRightArrow size={25} />
+            <BiSolidRightArrow
+              size={25}
+              aria-label="Next song button"
+            />
           </button>
         </div>
       )}

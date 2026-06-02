@@ -140,7 +140,7 @@ const Player = ({
           <FaFastBackward
             className="btn-prevnext cursor-pointer"
             onClick={prevSong}
-            aria-label="previous song button"
+            aria-label="Previous song button"
           />
           {isPlaying ? (
             <FaRegCirclePause

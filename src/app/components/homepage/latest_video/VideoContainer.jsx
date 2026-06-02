@@ -41,9 +41,11 @@ export default function VideoContainer() {
         <button
           onClick={previousVideo}
           className="py-2 px-2 text-white border"
-          aria-label="Previous video button"
         >
-          <BiSolidLeftArrow size={25} />
+          <BiSolidLeftArrow
+            size={25}
+            aria-label="Previous video button"
+          />
         </button>
         <button
           onClick={nextVideo}
