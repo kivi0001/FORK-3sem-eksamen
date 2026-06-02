@@ -4,7 +4,7 @@ const Headline = ({ text }) => {
   return (
     <div className="flex flex-col py-8 col-span-full relative h-60 bg-background">
       <Image
-        className="opacity-20 brightness-45"
+        className="opacity-20 brightness-45 w-full h-auto"
         src="/assets/bg/footerbg.webp"
         layout="fill"
         objectFit="cover"

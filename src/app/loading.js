@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Loading() {
   return (
-    <section className="m-auto my-5">
+    <section className="flex justify-center m-auto my-5 w-full h-auto">
       <Image
         src="/assets/loader/madbars.gif"
         width={100}

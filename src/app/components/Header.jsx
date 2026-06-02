@@ -75,9 +75,10 @@ const Header = () => {
           >
             <Image
               src="/assets/Logo.webp"
-              width={220}
-              height={50}
+              width={250}
+              height={100}
               alt="Logo with the text 'Night Club'"
+              className="w-full h-15"
             ></Image>
           </Link>
         </div>
