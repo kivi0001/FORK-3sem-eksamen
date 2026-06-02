@@ -18,6 +18,7 @@ const Headline = ({ text }) => {
         <Image
           src="/assets/bottom_line2.webp"
           alt="a pink line under text"
+          className="w-[30%] h-auto"
           width={400}
           height={200}
         ></Image>

@@ -29,6 +29,7 @@ const Hero = () => {
         src={randomImage}
         layout="fill"
         objectFit="cover"
+        loading="eager"
         suppressHydrationWarning={true}
       ></Image>
 
@@ -36,7 +37,7 @@ const Hero = () => {
         <div>
           <Image
             alt="logo image with the text 'Night Club'"
-            className="logo-image"
+            className="logo-image w-full h-auto"
             src="/assets/icon/Logo.svg"
             width={800}
             height={200}
@@ -49,6 +50,7 @@ const Hero = () => {
           <Image
             alt="image of a pink decorative line"
             src="/assets/bottom_line.webp"
+            className="w-full h-auto"
             width={800}
             height={100}
           ></Image>
