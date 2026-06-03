@@ -65,7 +65,6 @@ const BookTableForm = ({
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
   } = useForm({
     resolver: zodResolver(valideringsSkema),
     defaultValues: {
@@ -114,6 +113,7 @@ const BookTableForm = ({
       setMessage(
         `This table is not big enough for the amount of guests you are booking for... Reduce the number of guests, and make several reservations instead.`,
       );
+
       return;
     }
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
@@ -204,7 +204,8 @@ const BookTableForm = ({
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" flex flex-col w-full gap-4"
+        className="flex flex-col w-full gap-4"
+        id="book-table-form"
       >
         <div className="input-wrapper flex gap-[1.3em] flex-wrap">
           <div className="flex flex-col">
@@ -252,7 +253,8 @@ const BookTableForm = ({
               className="table-input border p-4 text-(--color-placeholderfont)"
             >
               <option value="">
-                Select a table
+                Table selection: Please select a
+                table in the table section above
               </option>
               {tableOptions.map((table) => (
                 <option
@@ -364,6 +366,7 @@ const BookTableForm = ({
               onClick={() => {
                 updateBookings;
               }}
+              reset
             ></PrimaryButtons>
           </div>
         </div>

@@ -58,8 +58,31 @@ const TablesClient = ({
   );
 
   return (
-    <section>
-      <div className="table-container my-large">
+    <section className="mt-medium">
+      <h3 className="text-center mb-8 text-(length:--font-h3) font-(--font-weight-book-h2)">
+        Please select a table in the section below
+      </h3>
+      <div className="flex flex-wrap gap-2 justify-evenly">
+        <div className="flex gap-2 my-2">
+          <div className="border border-gray-500 p-3"></div>
+          <p className="text-(length:--font-p) font-home-p tracking-(--letter-spacing-home-track-h3)">
+            Available
+          </p>
+        </div>
+        <div className="flex gap-2 my-2">
+          <div className="bg-red-950 p-3"></div>
+          <p className="text-(length:--font-p) font-home-p tracking-(--letter-spacing-home-track-h3)">
+            Reserved
+          </p>
+        </div>
+        <div className="flex gap-2 my-2">
+          <div className="bg-green-800 p-3"></div>
+          <p className="text-(length:--font-p) font-home-p tracking-(--letter-spacing-home-track-h3)">
+            Your choice
+          </p>
+        </div>
+      </div>
+      <div className="table-container my-medium">
         {tables.map((table) => (
           <div
             className="relative text-center cursor-pointer"
@@ -87,7 +110,7 @@ const TablesClient = ({
               backgroundColor:
                 selectedTable?.number ===
                 table.number
-                  ? "green"
+                  ? "oklch(44.8% 0.119 151.328)"
                   : "transparent",
             }}
           >
@@ -111,7 +134,7 @@ const TablesClient = ({
                   : "none",
               }}
             />
-            <p className="booking-number absolute text-(length:--font-table-p)">
+            <p className="booking-number absolute font-bold text-(length:--font-table-p)">
               {table.number}
             </p>
           </div>
