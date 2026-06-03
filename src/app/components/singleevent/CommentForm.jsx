@@ -117,7 +117,7 @@ const CommentForm = ({ eventId }) => {
               {errors.comment.message}
             </div>
           )}
-          <div className="mr-5 ml-auto mt-5">
+          <div className="ml-auto mt-5">
             <PrimaryButtons
               id="primarybtn"
               type="submit"

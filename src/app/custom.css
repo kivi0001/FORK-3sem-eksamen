@@ -559,14 +559,18 @@ ul.full-width-scroller li {
 
 .singleview-textbox {
   grid-column: 2;
-  line-height: 1.7;
+  line-height: 1.9;
   letter-spacing: var(--letterspace-narrow);
 }
 
 .singleview-scrollbar {
+  scrollbar-width: thin;
   scrollbar-color: var(--pink)
     var(--color-background);
   scroll-behavior: smooth;
+  background-color: oklch(
+    19.125% 0.00002 271.152 / 0.521
+  );
 }
 
 @media (width < 860px) {
@@ -575,7 +579,20 @@ ul.full-width-scroller li {
     flex-direction: column;
   }
 
-  .singleview-textbox {
+  .singleview-scrollbar {
     overflow-y: none;
+    background-color: transparent;
+    overflow: auto;
+    max-height: fit-content;
+    max-width: fit-content;
+  }
+
+  .singleview-textbox {
+    max-width: fit-content;
+  }
+
+  .singleview-text {
+    max-width: none;
+    padding-left: 0;
   }
 }

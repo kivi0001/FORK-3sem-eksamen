@@ -38,7 +38,7 @@ const EventOverview = ({
   ).format(newDoors);
 
   return (
-    <section className="mt-small singleview-section">
+    <section className="mt-small-medium singleview-section">
       <div className="singleview-info flex md:justify-center md:my-4 my-2 flex-wrap gap-small items-center">
         <div className="flex flex-wrap gap-2 items-center">
           <p className="uppercase text-(--pink) font-bold text-(length:--font-p)">
@@ -128,11 +128,18 @@ const EventOverview = ({
             |
           </span>
         </div>
-        {/* <div className="flex flex-wrap gap-1">
-          <p className="uppercase text-(--pink) font-bold">
+        {/* <div className="flex flex-row gap-2 md:justify-center items-start">
+          <p className="uppercase text-(--pink) font-bold text-(length:--font-p)">
             schedule:
           </p>
-          <p className="uppercase">{schedule}</p>
+          <p className="uppercase text-(length:--font-p)">
+            {schedule}
+          </p>
+        </div>
+        <div className="divider">
+          <span className="text-divider text-(length:--font-p)">
+            |
+          </span>
         </div> */}
         <div className="flex flex-row gap-2 md:justify-center items-start">
           <p className="uppercase text-(--pink) font-bold text-(length:--font-p)">
@@ -144,7 +151,7 @@ const EventOverview = ({
         </div>
       </div>
       <div className="singleview-content gap-small my-small-medium">
-        <div className="singleview-img w-full h-auto object-cover">
+        <div className="singleview-img w-full h-auto object-cover my-small">
           <Image
             src={imagesrc}
             alt={alt}
@@ -159,13 +166,13 @@ const EventOverview = ({
             }}
           />
         </div>
-        <div className="singleview-textbox flex flex-col md:max-w-120 md:min-w-100 md:py-0 py-small">
-          <div className="singleview-scrollbar md:max-h-100 md:overflow-y-scroll">
-            <p className="singleview-text text-(length:--font-p) md:max-w-110 md:pb-4 md:pl-6">
+        <div className="singleview-textbox flex flex-col md:max-w-120 md:min-w-100">
+          <div className="singleview-scrollbar max-h-100 overflow-y-scroll my-small">
+            <p className="singleview-text text-(length:--font-p) max-w-110 md:pb-4 md:pl-6 py-4">
               {content}
             </p>
           </div>
-          <div className="mt-auto ml-auto pt-5 self-end">
+          <div className="mt-3 ml-auto mb-5 self-end">
             <Link href={`/booktable/${id}`}>
               <PrimaryButtons
                 id="primarybtn"
