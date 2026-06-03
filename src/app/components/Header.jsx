@@ -78,7 +78,7 @@ const Header = () => {
               width={250}
               height={100}
               alt="Logo with the text 'Night Club'"
-              className="w-full h-15"
+              className="md:w-full md:h-15 w-fit h-10"
             ></Image>
           </Link>
         </div>
