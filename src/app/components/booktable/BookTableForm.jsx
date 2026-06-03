@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useEffect } from "react";
 import { PostBooking } from "./PostBooking";
-import BookEventTitle from "./BookEventTitle";
 
 const valideringsSkema = z.object({
   name: z
@@ -40,23 +39,39 @@ const valideringsSkema = z.object({
     ),
   tableNumber: z
     .string()
-    .min(1, "Please select a table"),
+    .min(
+      1,
+      "Please select a table in the section above.",
+    ),
   choiceNight: z
     .string()
     .min(1, "Please select an event"),
 });
 
+const tableCapacity = {
+  small: 4,
+  medium: 6,
+  large: 8,
+};
+
 const BookTableForm = ({
   eventDate,
   events = [],
+  selectedTable,
+  selectionReset,
 }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
     setValue,
+    reset,
+    formState: { errors },
   } = useForm({
     resolver: zodResolver(valideringsSkema),
+    defaultValues: {
+      tableNumber:
+        selectedTable?.number.toString() || "",
+    },
   });
 
   /* AI HELPED WITH THIS FUNCTION: */
@@ -74,9 +89,34 @@ const BookTableForm = ({
   }, [setValue]);
   /*  ********************** */
 
+  useEffect(() => {
+    if (selectedTable) {
+      setValue(
+        "tableNumber",
+        selectedTable.number.toString(),
+      );
+    }
+  }, [selectedTable, setValue]);
+
   const [message, setMessage] = useState("");
 
   const onSubmit = async (data) => {
+    const selectedTableData = tableOptions.find(
+      (tab) =>
+        tab.number.toString() ===
+        data.tableNumber,
+    );
+    if (
+      selectedTableData &&
+      data.guestsAmount >
+        selectedTableData.capacity
+    ) {
+      setMessage(
+        `This table is not big enough for the amount of guests you are booking for... Reduce the number of guests, and make several reservations instead.`,
+      );
+
+      return;
+    }
     /* AI HJALP MED DETTE: MEDTAG DATA FRA POST komponent */
     // Se synopsis om AI brug: Forms //
     const result = await PostBooking({
@@ -101,7 +141,35 @@ const BookTableForm = ({
         "Ooops! We failed to submit your booking...",
       );
     }
+    reset();
+    if (selectionReset) {
+      selectionReset();
+    }
   };
+
+  const tableOptions = Array.from(
+    { length: 15 },
+    (_, i) => {
+      const tableNumber = i + 1;
+      if ([3, 8, 13].includes(tableNumber))
+        return {
+          number: tableNumber,
+          size: "medium",
+          capacity: 6,
+        };
+      if ([5, 10, 15].includes(tableNumber))
+        return {
+          number: tableNumber,
+          size: "large",
+          capacity: 8,
+        };
+      return {
+        number: tableNumber,
+        size: "small",
+        capacity: 4,
+      };
+    },
+  );
 
   const [bookingName, setBookingName] =
     useState("");
@@ -141,7 +209,8 @@ const BookTableForm = ({
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" flex flex-col w-full gap-4"
+        className="flex flex-col w-full gap-4"
+        id="book-table-form"
       >
         <div className="input-wrapper flex gap-[1.3em] flex-wrap">
           <div className="flex flex-col">
@@ -186,35 +255,20 @@ const BookTableForm = ({
               id="tableNumber"
               disabled
               placeholder="Table Number"
-              className="table-input border p-4 text-(--color-placeholderfont)"
+              className="table-input border border-(--pink) p-4 text-(--color-placeholderfont)"
             >
-              <option value="1">Table: 1</option>
-              <option value="2">Table: 2</option>
-              <option value="3">Table: 3</option>
-              <option value="4">Table: 4</option>
-              <option value="5">Table: 5</option>
-              <option value="6">Table: 6</option>
-              <option value="7">Table: 7</option>
-              <option value="8">Table: 8</option>
-              <option value="9">Table: 9</option>
-              <option value="10">
-                Table: 10
+              <option value="">
+                Please select a table above
               </option>
-              <option value="11">
-                Table: 11
-              </option>
-              <option value="12">
-                Table: 12
-              </option>
-              <option value="13">
-                Table: 13
-              </option>
-              <option value="14">
-                Table: 14
-              </option>
-              <option value="15">
-                Table: 15
-              </option>
+              {tableOptions.map((table) => (
+                <option
+                  key={table.number}
+                  value={table.number}
+                >
+                  Table {table.number} (maximum of{" "}
+                  {table.capacity} guests)
+                </option>
+              ))}
             </select>
             {errors.tableNumber && (
               <div className="text-alert">
@@ -257,20 +311,19 @@ const BookTableForm = ({
             id="choiceNight"
             className="border p-4 hidden text-(--color-placeholderfont)"
           >
-            <option
-              id="default"
-              className="text-(--color-formfont)"
-            >
-              Choose Night
-            </option>
             {events.map((event) => (
-              <BookEventTitle
+              <option
                 key={event.id}
-                date={event.date}
-                location={event.location}
-                title={event.title}
-                id={event.id}
-              />
+                value={event.id}
+              >
+                {new Date(
+                  event.date,
+                ).toLocaleString("en-UK", {
+                  month: "long",
+                  day: "numeric",
+                })}{" "}
+                - {event.title}
+              </option>
             ))}
           </select>
           {errors.choiceNight && (
@@ -316,6 +369,7 @@ const BookTableForm = ({
               onClick={() => {
                 updateBookings;
               }}
+              reset
             ></PrimaryButtons>
           </div>
         </div>

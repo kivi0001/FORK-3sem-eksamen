@@ -1,12 +1,10 @@
 import Header from "@/app/components/Header";
-import BookTableForm from "@/app/components/booktable/BookTableForm";
 import Headline from "@/app/components/Headline";
-import Tables from "@/app/components/booktable/Tables";
 import { Suspense } from "react";
 import { EventFetch } from "@/app/components/booktable/EventFetch";
-import BookEventHeadline from "@/app/components/booktable/BookEventHeadline";
 import ChooseNightForm from "@/app/components/booktable/ChooseNightForm";
 import Loading from "@/app/loading";
+import BookingWrapper from "@/app/components/booktable/BookingWrapper";
 
 const BookTable = ({ params }) => {
   return (
@@ -33,7 +31,7 @@ const Details = async ({ params }) => {
         <Headline text="Book Table" />
         <section className="justify-center items-center place-content-center col-span-full mt-large">
           <ChooseNightForm events={events} />
-          <p className="text-center my-large">
+          <p className="text-center my-large text-(length:--font-h3) font-(--font-weight-book-h2)">
             Please select a night to see available
             tables
           </p>
@@ -43,11 +41,21 @@ const Details = async ({ params }) => {
   }
   /*   ******************* */
 
-  const response = await fetch(
+  const eventResponse = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/events/${id}`,
   );
 
-  const event = await response.json();
+  const event = await eventResponse.json();
+
+  const resResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/reservations`,
+  );
+  const fetchReserved = await resResponse.json();
+  const reserved = fetchReserved
+    .filter(
+      (eventRes) => eventRes.eventId === event.id,
+    )
+    .map((res) => res.table);
 
   return (
     <main>
@@ -56,19 +64,11 @@ const Details = async ({ params }) => {
       </div>
       <Headline text="Book Table" />
       <section className="grid grid-cols-subgrid col-span-full mt-8">
-        <BookEventHeadline
-          title={event.title}
-          date={event.date}
-        />
-        <ChooseNightForm events={events} />
-        <Tables eventId={event.id} />
-        <BookTableForm
-          eventId={event.id}
-          eventDate={event.date}
+        <BookingWrapper
+          event={event}
           events={events}
-        >
-          <EventFetch />
-        </BookTableForm>
+          reserved={reserved}
+        />
       </section>
     </main>
   );
