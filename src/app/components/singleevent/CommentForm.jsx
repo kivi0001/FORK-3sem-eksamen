@@ -83,7 +83,7 @@ const CommentForm = ({ eventId }) => {
             name="name"
             id="name"
             placeholder="Your name"
-            className="border p-4 w-(--form-w-small)"
+            className="border p-4 md:w-(--form-w-small) w-full"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
@@ -95,7 +95,7 @@ const CommentForm = ({ eventId }) => {
             name="email"
             id="email"
             placeholder="Your email"
-            className="border p-4 w-(--form-w-small)"
+            className="border p-4 md:w-(--form-w-small) w-full"
           ></input>
           {errors.email && (
             <div>{errors.email.message}</div>
@@ -109,7 +109,7 @@ const CommentForm = ({ eventId }) => {
             name="comment"
             id="comment"
             placeholder="Your comment"
-            className="border p-4 w-(--form-w-big) h-[12em]"
+            className="border p-4 md:w-(--form-w-big) h-[12em]"
           ></textarea>
           {errors.comment && (
             <div className="my-4 mx-4">
@@ -119,12 +119,13 @@ const CommentForm = ({ eventId }) => {
           <div className="mr-5 ml-auto mt-5">
             <PrimaryButtons
               id="primarybtn"
+              reset
               type="submit"
               textInput="submit"
               onClick={() => {
-                updateCommentSection;
+                updateCommentSection.reset;
               }}
-            ></PrimaryButtons>
+            />
           </div>
         </div>
         <div className="font-h3 font-bold mx-4">
