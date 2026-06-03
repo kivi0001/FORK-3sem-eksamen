@@ -58,13 +58,14 @@ const BookTableForm = ({
   eventDate,
   events = [],
   selectedTable,
+  selectionReset,
 }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
     setValue,
     reset,
+    formState: { errors },
   } = useForm({
     resolver: zodResolver(valideringsSkema),
     defaultValues: {
@@ -113,7 +114,6 @@ const BookTableForm = ({
       setMessage(
         `This table is not big enough for the amount of guests you are booking for... Reduce the number of guests, and make several reservations instead.`,
       );
-      reset();
 
       return;
     }
@@ -140,6 +140,10 @@ const BookTableForm = ({
       setMessage(
         "Ooops! We failed to submit your booking...",
       );
+    }
+    reset();
+    if (selectionReset) {
+      selectionReset();
     }
   };
 

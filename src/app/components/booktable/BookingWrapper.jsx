@@ -13,6 +13,11 @@ const BookingWrapper = ({
 }) => {
   const [selectedTable, setSelectedTable] =
     useState();
+
+  const resetSelection = () => {
+    console.log("Resetting selection");
+    setSelectedTable(null);
+  };
   return (
     <>
       <BookEventHeadline
@@ -31,6 +36,7 @@ const BookingWrapper = ({
         eventDate={event.date}
         events={events}
         selectedTable={selectedTable}
+        selectionReset={resetSelection}
       />
     </>
   );
