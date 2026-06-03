@@ -24,10 +24,17 @@ const TablesClient = ({
       "#book-table-form",
     );
     if (formSection) {
-      formSection.scrollIntoView({
+      const sizeAndPos =
+        formSection.getBoundingClientRect();
+      const offSet =
+        sizeAndPos.top + window.scrollY - 100;
+
+      window.scrollTo({
+        top: offSet,
         behavior: "smooth",
       });
     }
+
     const tableInput = document.querySelector(
       "#tableNumber",
     );
