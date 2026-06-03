@@ -31,7 +31,7 @@ const Details = async ({ params }) => {
         <Headline text="Book Table" />
         <section className="justify-center items-center place-content-center col-span-full mt-large">
           <ChooseNightForm events={events} />
-          <p className="text-center my-large">
+          <p className="text-center my-large text-(length:--font-h3) font-(--font-weight-book-h2)">
             Please select a night to see available
             tables
           </p>

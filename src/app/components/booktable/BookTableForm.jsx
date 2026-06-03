@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useEffect } from "react";
 import { PostBooking } from "./PostBooking";
-import BookEventTitle from "./BookEventTitle";
 
 const valideringsSkema = z.object({
   name: z
@@ -65,6 +64,7 @@ const BookTableForm = ({
     handleSubmit,
     formState: { errors },
     setValue,
+    reset,
   } = useForm({
     resolver: zodResolver(valideringsSkema),
     defaultValues: {
@@ -113,6 +113,7 @@ const BookTableForm = ({
       setMessage(
         `This table is not big enough for the amount of guests you are booking for... Reduce the number of guests, and make several reservations instead.`,
       );
+      reset();
 
       return;
     }
@@ -250,11 +251,10 @@ const BookTableForm = ({
               id="tableNumber"
               disabled
               placeholder="Table Number"
-              className="table-input border p-4 text-(--color-placeholderfont)"
+              className="table-input border border-(--pink) p-4 text-(--color-placeholderfont)"
             >
               <option value="">
-                Table selection: Please select a
-                table in the table section above
+                Please select a table above
               </option>
               {tableOptions.map((table) => (
                 <option
@@ -307,20 +307,19 @@ const BookTableForm = ({
             id="choiceNight"
             className="border p-4 hidden text-(--color-placeholderfont)"
           >
-            <option
-              id="default"
-              className="text-(--color-formfont)"
-            >
-              Choose Night
-            </option>
             {events.map((event) => (
-              <BookEventTitle
+              <option
                 key={event.id}
-                date={event.date}
-                location={event.location}
-                title={event.title}
-                id={event.id}
-              />
+                value={event.id}
+              >
+                {new Date(
+                  event.date,
+                ).toLocaleString("en-UK", {
+                  month: "long",
+                  day: "numeric",
+                })}{" "}
+                - {event.title}
+              </option>
             ))}
           </select>
           {errors.choiceNight && (

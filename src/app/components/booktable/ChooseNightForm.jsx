@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
-import BookEventTitle from "./BookEventTitle";
 
 const valideringsSkema = z.object({
   choiceNight: z
@@ -18,6 +17,9 @@ const ChooseNightForm = ({ events = [] }) => {
     setValue,
   } = useForm({
     resolver: zodResolver(valideringsSkema),
+    defaultValues: {
+      choiceNight: "",
+    },
   });
 
   /* AI HELPED WITH THIS FUNCTION: */
@@ -58,16 +60,24 @@ const ChooseNightForm = ({ events = [] }) => {
           /* **************************** */
           name="choiceNight"
           id="choiceNight"
-          className="border p-4 text-(--color-placeholderfont)"
+          className="cursor-pointer border border-(--pink) p-4 text-(--color-placeholderfont)"
         >
+          <option value="" disabled>
+            Please select a night
+          </option>
           {events.map((event) => (
-            <BookEventTitle
+            <option
               key={event.id}
-              date={event.date}
-              location={event.location}
-              title={event.title}
-              id={event.id}
-            />
+              value={event.id}
+            >
+              {new Date(
+                event.date,
+              ).toLocaleString("en-UK", {
+                month: "long",
+                day: "numeric",
+              })}{" "}
+              - {event.title}
+            </option>
           ))}
         </select>
         {errors.choiceNight && (
