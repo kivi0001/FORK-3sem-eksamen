@@ -29,6 +29,7 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(valideringsSkema),
@@ -46,9 +47,9 @@ const ContactForm = () => {
     });
     console.log("result:", result);
     /*************/
-
+    reset();
     setMessage(
-      "Thank you for submitting your message!",
+      "Thank you for submitting your message! We will get back to you within 2-3 workdays!",
     );
   };
 
@@ -121,10 +122,11 @@ const ContactForm = () => {
               id="primarybtn"
               type="submit"
               textInput="submit"
+              reset
               onClick={() => {
                 updateContact;
               }}
-            ></PrimaryButtons>
+            />
           </div>
         </div>
         <div className="font-h3 font-bold mx-4">

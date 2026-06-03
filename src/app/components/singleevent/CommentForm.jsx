@@ -29,6 +29,7 @@ const CommentForm = ({ eventId }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(valideringsSkema),
@@ -47,7 +48,7 @@ const CommentForm = ({ eventId }) => {
     });
     console.log("result:", result);
     /*************/
-
+    reset();
     setMessage("Thank you for your comment!");
   };
 
@@ -73,9 +74,9 @@ const CommentForm = ({ eventId }) => {
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="form-container flex flex-col gap-4"
+        className="form-container flex flex-col w-(--form-width-big) gap-4"
       >
-        <div className="input-wrapper flex gap-5">
+        <div className="input-wrapper flex gap-[1.3em]">
           <input
             {...register("name")}
             aria-label="input field for name"
@@ -83,7 +84,7 @@ const CommentForm = ({ eventId }) => {
             name="name"
             id="name"
             placeholder="Your name"
-            className="border p-4 w-(--form-w-small)"
+            className="border p-4 w-full"
           ></input>
           {errors.name && (
             <div>{errors.name.message}</div>
@@ -95,7 +96,7 @@ const CommentForm = ({ eventId }) => {
             name="email"
             id="email"
             placeholder="Your email"
-            className="border p-4 w-(--form-w-small)"
+            className="border p-4 w-full"
           ></input>
           {errors.email && (
             <div>{errors.email.message}</div>
@@ -109,22 +110,23 @@ const CommentForm = ({ eventId }) => {
             name="comment"
             id="comment"
             placeholder="Your comment"
-            className="border p-4 w-(--form-w-big) h-[12em]"
+            className="border p-4 w-full h-[12em]"
           ></textarea>
           {errors.comment && (
             <div className="my-4 mx-4">
               {errors.comment.message}
             </div>
           )}
-          <div className="mr-5 ml-auto mt-5">
+          <div className="ml-auto mt-5">
             <PrimaryButtons
               id="primarybtn"
               type="submit"
               textInput="submit"
+              reset
               onClick={() => {
                 updateCommentSection;
               }}
-            ></PrimaryButtons>
+            />
           </div>
         </div>
         <div className="font-h3 font-bold mx-4">

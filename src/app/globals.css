@@ -354,6 +354,7 @@ footer {
   display: grid;
   grid-column: content-start / content-end;
   grid-template-columns: repeat(3, 1fr);
+  padding-top: var(--spacing-small-medium);
   container-type: inline-size;
   align-items: start;
 }
