@@ -562,11 +562,6 @@ ul.full-width-scroller li {
   letter-spacing: var(--letterspace-narrow);
 }
 
-.singleview-headline {
-  text-box: trim-start cap alphabetic;
-  margin-trim: block;
-}
-
 .singleview-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: var(--pink)

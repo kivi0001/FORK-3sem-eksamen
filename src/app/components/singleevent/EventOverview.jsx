@@ -87,6 +87,9 @@ const EventOverview = ({
           <p className="uppercase text-(length:--font-p)">
             {location}
           </p>
+          <span className="text-divider text-(length:--font-p)">
+            |
+          </span>
         </div>
       </div>
       <div className="singleview-info flex md:justify-center md:my-4 my-2 flex-wrap gap-small items-center">
@@ -170,7 +173,7 @@ const EventOverview = ({
           </select>
         </div>
       </div>
-      <div className="singleview-content gap-small my-small-medium">
+      <div className="singleview-content gap-small my-medium">
         <div className="singleview-img w-full h-auto object-cover my-small">
           <Image
             src={imagesrc}
