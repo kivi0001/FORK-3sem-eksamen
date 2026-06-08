@@ -16,6 +16,7 @@ const EventOverview = ({
   schedule,
   content,
   id,
+  title,
 }) => {
   const newDate = new Date(date);
   let options = {
@@ -141,13 +142,24 @@ const EventOverview = ({
             |
           </span>
         </div> */}
-        <div className="flex flex-row gap-2 md:justify-center items-start">
+        <div className="flex flex-row gap-2 md:justify-center items-center max-w-auto">
           <p className="uppercase text-(--pink) font-bold text-(length:--font-p)">
             lineup:
           </p>
-          <p className="uppercase text-(length:--font-p)">
-            {lineUp}
-          </p>
+          <select
+            name="Lineup"
+            defaultValue=""
+            className="uppercase text-(length:--font-p) bg-transparent border-none outline-none cursor-pointer max-w-25"
+          >
+            <option value="" disabled>
+              View acts
+            </option>
+            {lineUp.map((act, index) => (
+              <option key={index} value={act}>
+                {act}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
       <div className="singleview-content gap-small my-small-medium">
@@ -167,8 +179,11 @@ const EventOverview = ({
           />
         </div>
         <div className="singleview-textbox flex flex-col md:max-w-120 md:min-w-100">
-          <div className="singleview-scrollbar max-h-100 overflow-y-scroll my-small">
-            <p className="singleview-text text-(length:--font-p) max-w-110 md:pb-4 md:pl-6 py-4">
+          <div className="singleview-scrollbar max-h-100 overflow-y-scroll my-small md:pb-4 md:pl-6 pt-1 pb-4">
+            <h3 className="singleview-headline text-(--pink) text-(length:--font-h3) uppercase font-medium mb-small tracking-(--letter-spacing-h1)">
+              {title}
+            </h3>
+            <p className="singleview-text text-(length:--font-p) max-w-110 pr-small">
               {content}
             </p>
           </div>
