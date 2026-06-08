@@ -39,16 +39,17 @@ const Details = async ({ params }) => {
         }
         date={event.date}
         doorsOpen={event.doorsOpen}
-        startTime={event.schedule[0].time}
+        schedule={event.schedule}
         location={event.location}
         category={event.category}
         price={event.price}
         ageRestriction={event.ageLimit}
         lineUp={event.lineup}
-        schedule={event.schedule[2].time}
         content={event.content}
         id={event.id}
         title={event.title}
+        time={event.time}
+        label={event.label}
       />
       <section className="commentsection">
         <AmountFetch id={event.id}></AmountFetch>

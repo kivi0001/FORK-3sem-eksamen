@@ -129,19 +129,26 @@ const EventOverview = ({
             |
           </span>
         </div>
-        {/* <div className="flex flex-row gap-2 md:justify-center items-start">
+        <div className="flex flex-row gap-2 md:justify-center items-center max-w-auto">
           <p className="uppercase text-(--pink) font-bold text-(length:--font-p)">
             schedule:
           </p>
-          <p className="uppercase text-(length:--font-p)">
-            {schedule}
-          </p>
+          <select
+            name="schedule"
+            aria-label="line-up dropdown"
+            defaultValue=""
+            className="uppercase text-(length:--font-p) bg-transparent border-none outline-none cursor-pointer max-w-35"
+          >
+            <option value="" disabled>
+              View schedule
+            </option>
+            {schedule.map((item, index) => (
+              <option key={index} value={item}>
+                {item.time}: {item.label}
+              </option>
+            ))}
+          </select>
         </div>
-        <div className="divider">
-          <span className="text-divider text-(length:--font-p)">
-            |
-          </span>
-        </div> */}
         <div className="flex flex-row gap-2 md:justify-center items-center max-w-auto">
           <p className="uppercase text-(--pink) font-bold text-(length:--font-p)">
             lineup:
