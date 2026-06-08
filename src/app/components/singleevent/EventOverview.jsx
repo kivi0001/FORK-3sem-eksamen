@@ -148,6 +148,7 @@ const EventOverview = ({
           </p>
           <select
             name="Lineup"
+            aria-label="line-up dropdown"
             defaultValue=""
             className="uppercase text-(length:--font-p) bg-transparent border-none outline-none cursor-pointer max-w-25"
           >
