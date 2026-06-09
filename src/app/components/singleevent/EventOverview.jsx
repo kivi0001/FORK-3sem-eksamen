@@ -152,6 +152,11 @@ const EventOverview = ({
             ))}
           </select>
         </div>
+        <div className="divider">
+          <span className="text-divider text-(length:--font-p)">
+            |
+          </span>
+        </div>
         <div className="flex flex-row gap-2 md:justify-center items-center max-w-auto">
           <p className="uppercase text-(--pink) font-bold text-(length:--font-p)">
             lineup:
