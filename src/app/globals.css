@@ -16,6 +16,9 @@
   );
   --green: oklch(87.088% 0.27592 143.572);
   --black-background: oklch(0% 0 0);
+  --dark-grey-background: oklch(
+    20.904% 0.00002 271.152
+  );
 
   /* FLUID FONT-SIZES */
   --large: clamp(
@@ -177,6 +180,9 @@
   --color-progressbg: var(--foreground);
   --color-featuredevent-bar: var(--dark-pink);
   --color-background: var(--primary-dark);
+  --select-background: var(
+    --dark-grey-background
+  );
   --color-black-background: var(
     --black-background
   );
