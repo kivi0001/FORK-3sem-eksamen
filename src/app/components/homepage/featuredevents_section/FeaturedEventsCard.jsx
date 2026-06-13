@@ -13,7 +13,7 @@ const FeaturedEventsCard = ({
   imagesrc,
   alt,
   location,
-  id,
+  slug,
   index,
 }) => {
   /* AI HELPED WITH THIS */
@@ -65,7 +65,7 @@ const FeaturedEventsCard = ({
           <div className="border-s-(--pink) border-bs-transparent border-e-transparent border-be-transparent border-s-40 border-bs-0 border-e-0 border-be-40 z-10"></div>
           <div className="flex justify-center mt-15">
             <Link
-              href={`/singleevent/${id}`}
+              href={`/singleevent/${slug}`}
               aria-label="Book event button"
             >
               <button className="pink-btn uppercase cursor-pointer  py-2 px-4 bg-[#030202]/25 bg-linear-to-r from-[#f72a78] to-[#b822b5]">
