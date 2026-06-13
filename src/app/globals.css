@@ -206,6 +206,7 @@
   --font-home-form-h2: var(--medium-v2);
   --font-table-p: var(--small-p);
   --font-testimonial-p: var(--small-p);
+  --event-dropdown-p: var(--small-p);
 
   /* FONT WEIGHT TOKENS */ /* Home page */
   --font-weight-home-h1: var(--weight-medium);
